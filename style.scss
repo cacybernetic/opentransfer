@@ -1,7 +1,7 @@
 // Dependencies.
 @import "tools.scss";
 
-/*Label*/
+// Label.
 label {
     font-family: "Times New Roman", Times, serif;
     letter-spacing: 1.5px;
@@ -9,28 +9,58 @@ label {
     font-size: 16px;
 }
 
-/*Body*/
+// Body.
 body {
+    transition-property: padding-left, padding-right;
+    transition-duration: 0.3s;
     box-sizing: border-box;
-    padding-right: 120px;
-    padding-left: 120px;
+    padding-right: 10%;
+    padding-left: 10%;
     margin: 0;
-    /*App bar*/
+    // Responsive global body.
+    @include responsive (741px, 825px) {
+        padding-right: 5%;
+        padding-left: 5%;
+    } @include responsive (0, 740px) {
+        padding-right: 2%;
+        padding-left: 2%;
+    }
+    // App bar.
     div.app-bar {
         justify-content: center;
         display: inline-flex;
         align-items: center;
         width: 100%;
-        /*Left logo*/
+        // Left logo.
         div.left-logo {
             padding-top: 16px;
             width: 100%;
+            // Image.
+            img {
+                transition-property: height, width;
+                transition-duration: 0.3s;
+                // Responsive product icon.
+                @include responsive (741px, 825px) {
+                    height: 86px;
+                    width: 86px;
+                } @include responsive (0, 740px) {
+                    height: 52px;
+                    width: 52px;
+                }
+            }
         }
-        /*Right logo*/
+        // Right logo.
         div.right-logo {
             transform: translateY(1px);
+            transition: right 0.3s;
             position: absolute;
-            right: 120px;
+            right: 10%;
+            // Responsive container.
+            @include responsive (741px, 825px) {
+                right: 5%;
+            } @include responsive (0, 740px) {
+                right: 2%;
+            }
             // Label.
             label {
                 // Responsive text.
@@ -59,11 +89,12 @@ body {
             // Product name.
             div.product-name {
                 label {
+                    transition: font-size 0.3s;
                     display: inline-block;
-                    font-size: 36px;
                     text-align: left;
+                    font-size: 36px;
                     // Responsive label.
-                    @include responsive (0, 900px) {
+                    @include responsive (0, 940px) {
                         font-size: 25px;
                     }
                 }
@@ -71,8 +102,8 @@ body {
             // Product version.
             div.product-version {
                 transform: scale(0.9);
-                margin-top: 5px;
                 margin-left: -15px;
+                margin-top: 5px;
                 label {
                     strong {
                         color: #707070;
@@ -82,8 +113,8 @@ body {
             // Product details.
             div.product-details {
                 label {
-                    text-align: justify;
                     line-height: 25px;
+                    text-align: left;
                     display: block;
                 }
             }
@@ -113,10 +144,12 @@ body {
                 border: none;
                 // Text link.
                 label {
+                    transition: font-size 0.3s;
                     cursor: pointer;
                     // Responsive object.
-                    @include responsive (0, 285px) {
-                        font-size: 13px;
+                    @include responsive (0, 825px) {
+                        padding: 5px 10px 5px 10px;
+                        font-size: 14px;
                     }
                 }
                 // Hover.
