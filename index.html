@@ -7,7 +7,7 @@
             <!--Meta configurations-->
             <meta charset = "utf-8" name = "viewport" content = "width=device-width, initial-scale=1.0"/>
             <!--Loads page style-->
-            <link rel = "stylesheet" href = "style.css"/>
+            <link rel = "stylesheet" href = "./css/style.css"/>
             <!--Site title-->
             <title>Open Transfer (OTR)</title>
         </head>
@@ -16,7 +16,7 @@
             <!--Website bar-->
             <div class = "app-bar">
                 <!--Left logo-->
-                <div class = "left-logo"><img src = "./otr.svg" width = "96px" height = "96px"/></div>
+                <div class = "left-logo"><img src = "./icons/otr.svg" width = "96px" height = "96px"/></div>
                 <!--Right logo-->
                 <div class = "right-logo"><label><strong>C</strong>A <strong>C</strong>ybernetic</label></div>
             </div><br/><br/><br/>
@@ -27,11 +27,11 @@
                     <!--Product name-->
                     <div class = "product-name"><label><strong>Open Transfer</strong></label></div>
                     <!--Product version-->
-                    <div class = "product-version"><label>version <strong>0.0.1</strong></label></div><br/>
+                    <div class = "product-version"><label>version <strong>0.0.1</strong>, expire le <strong>21 Janvier 2023</strong></label></div><br/>
                     <!--Product details-->
                     <div class = "product-details">
-                        <label>Une alternative pour contourner les pénibles codes USSD afin de faire des transactions
-                        facilement via les Mobiles Money. Mais, attention, cette application ne gère pas les
+                        <label>Une alternative pour contourner les pénibles codes USSD (Ex: <strong>*880*1*1*......#</strong>) afin de
+                        faire des transactions facilement via les Mobiles Money. Mais, attention, cette application ne gère pas les
                         bénéficiaires qui n'ont pas de compte Mobile Money.</label>
                     </div><br/>
                     <!--Enterprise source-->
@@ -40,17 +40,28 @@
                     <div class = "entity-name" align = "center">
                         <!--Entity name-->
                         <label><i><strong>C</strong>onsole <strong>A</strong>rt <strong>C</strong>ybernetic</i></label>
-                    </div><br/><br/>
+                    </div><br/>
+                    <!--Contact-->
+                    <div class = "gmail-contact">
+                        <!--Gmail text and logo-->
+                        <img src = "./icons/gmail.svg" width = "28px" height = "28px"/><label>ca.cybernetic@gmail.com</label>
+                    </div><br/><br/><br/>
                     <!--Button download-->
-                    <div align = "center"><a id = "download-btn" title = "Télécharger la nouvelle version de cette application." href = "open_transfer.apk">
+                    <div align = "center"><a id = "download-btn" title = "Télécharger la nouvelle version de cette application." href = "./product/open_transfer.apk">
                         <!--Text link-->
                         <label>Télécharger maintenant</label>
                     </a></div>
                     <!--Makes a little bottom margins-->
-                    <br/><br/><br/><br/>
+                    <br/><br/><br/>
                 </div>
-                <!--Product screenshots data-->
-                <div class = "product-screenshots"></div>
-            </div>
+                <!--Product screenshots section-->
+                <div class = "product-screenshots">
+                    <!--Screenshot image-->
+                    <div class = "product-screenshot"><img src = "./screenshots/screenshot_3.jpeg" class = "product"/></div>
+                </div>
+            </div><br/><br/><br/>
         </body>
+        <!--Controller-->
+        <script type = "text/javascript" src = "./js/jquery.js"></script>
+        <script type = "text/javascript" src = "./js/controller.js"></script>
     </html>

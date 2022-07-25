@@ -1,0 +1,172 @@
+/*
+* @source: https://google.com
+* @organization: CodiTheck
+* @platforms: MOBILE & PC (DESKTOP || LAPTOP)
+* @created: 2022-07-01
+* @updated: 2022-07-06
+* @framework: React
+* @author: Obrymec
+* @version: 0.0.2
+*/
+label {
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 1.5px;
+  user-select: none;
+  font-size: 16px; }
+
+div.disable-display {
+  display: block !important; }
+  div.disable-display div.product-infos {
+    width: auto !important; }
+    div.disable-display div.product-infos div.product-name {
+      justify-content: center;
+      display: flex; }
+    div.disable-display div.product-infos div.product-version {
+      margin-left: 0 !important;
+      justify-content: center;
+      display: flex; }
+      div.disable-display div.product-infos div.product-version label {
+        text-align: center; }
+    div.disable-display div.product-infos div.product-details label {
+      text-align: center !important; }
+
+body {
+  transition-property: padding-left, padding-right;
+  transition-duration: 0.3s;
+  box-sizing: border-box;
+  padding-right: 10%;
+  padding-left: 10%;
+  margin: 0; }
+  @media only screen and (min-width: 741px) and (max-width: 825px) {
+    body {
+      padding-right: 5%;
+      padding-left: 5%; } }
+  @media only screen and (min-width: 0) and (max-width: 740px) {
+    body {
+      padding-right: 2%;
+      padding-left: 2%; } }
+  body div.app-bar {
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    width: 100%; }
+    body div.app-bar div.left-logo {
+      padding-top: 16px;
+      width: 100%; }
+      body div.app-bar div.left-logo img {
+        transition-property: height, width;
+        transition-duration: 0.3s; }
+        @media only screen and (min-width: 741px) and (max-width: 825px) {
+          body div.app-bar div.left-logo img {
+            height: 86px;
+            width: 86px; } }
+        @media only screen and (min-width: 0) and (max-width: 740px) {
+          body div.app-bar div.left-logo img {
+            height: 52px;
+            width: 52px; } }
+    body div.app-bar div.right-logo {
+      transform: translateY(1px);
+      transition: right 0.3s;
+      position: absolute;
+      right: 10%; }
+      @media only screen and (min-width: 741px) and (max-width: 825px) {
+        body div.app-bar div.right-logo {
+          right: 5%; } }
+      @media only screen and (min-width: 0) and (max-width: 740px) {
+        body div.app-bar div.right-logo {
+          right: 2%; } }
+      @media only screen and (min-width: 0) and (max-width: 285px) {
+        body div.app-bar div.right-logo label {
+          font-size: 14px; } }
+  body div.app-body {
+    display: inline-flex;
+    align-items: center; }
+    body div.app-body div.product-screenshots {
+      justify-content: center;
+      display: inline-flex;
+      width: 100%; }
+      body div.app-body div.product-screenshots div.product-screenshot {
+        transition: filter 0.4s;
+        display: inline-flex;
+        align-items: center; }
+        body div.app-body div.product-screenshots div.product-screenshot:hover {
+          filter: brightness(1.06); }
+          body div.app-body div.product-screenshots div.product-screenshot:hover img.left-arrow, body div.app-body div.product-screenshots div.product-screenshot:hover img.right-arrow {
+            opacity: 1; }
+        body div.app-body div.product-screenshots div.product-screenshot img.left-arrow {
+          transform: translateX(40px);
+          transition: opacity 0.4s;
+          cursor: pointer;
+          opacity: 0; }
+        body div.app-body div.product-screenshots div.product-screenshot img.product {
+          box-shadow: 0 0 30px gray;
+          border-radius: 15px;
+          display: block;
+          height: 100%;
+          width: 250px; }
+        body div.app-body div.product-screenshots div.product-screenshot img.right-arrow {
+          transform: translateX(-40px);
+          transition: opacity 0.4s;
+          cursor: pointer;
+          opacity: 0; }
+    body div.app-body div.product-infos {
+      align-items: center;
+      padding-right: 15px;
+      width: 50%; }
+      body div.app-body div.product-infos div.product-name label {
+        transition: font-size 0.3s;
+        display: inline-block;
+        text-align: left;
+        font-size: 36px; }
+        @media only screen and (min-width: 0) and (max-width: 940px) {
+          body div.app-body div.product-infos div.product-name label {
+            font-size: 25px; } }
+      body div.app-body div.product-infos div.product-version {
+        transform: scale(0.9);
+        margin-left: -15px;
+        margin-top: 5px; }
+        body div.app-body div.product-infos div.product-version label {
+          font-size: 13px; }
+          body div.app-body div.product-infos div.product-version label strong {
+            color: #707070; }
+      body div.app-body div.product-infos div.product-details label {
+        line-height: 25px;
+        text-align: left;
+        display: block; }
+      body div.app-body div.product-infos div.entity-source label {
+        font-size: 13px; }
+      body div.app-body div.product-infos div.entity-name {
+        margin-top: 8px; }
+      body div.app-body div.product-infos div.gmail-contact {
+        justify-content: center;
+        display: inline-flex;
+        align-items: center;
+        width: 100%; }
+        body div.app-body div.product-infos div.gmail-contact label {
+          display: inline-block;
+          margin-left: 10px; }
+      body div.app-body div.product-infos a#download-btn {
+        box-shadow: 0px 0px 16px rgba(242, 153, 74, 0.72);
+        transition: background-color text-shadow;
+        text-shadow: 0 0 0 transparent;
+        padding: 10px 15px 10px 15px;
+        background-color: #F2994A;
+        transition-duration: 0.4s;
+        text-decoration: none;
+        border-radius: 30px;
+        cursor: pointer;
+        margin-top: 5px;
+        color: #FFF;
+        border: none; }
+        body div.app-body div.product-infos a#download-btn label {
+          transition: font-size 0.3s;
+          cursor: pointer; }
+          @media only screen and (min-width: 0) and (max-width: 825px) {
+            body div.app-body div.product-infos a#download-btn label {
+              padding: 5px 10px 5px 10px;
+              font-size: 14px; } }
+        body div.app-body div.product-infos a#download-btn:hover {
+          background-color: #dd7d29;
+          text-shadow: 0 0 10px; }
+
+/*# sourceMappingURL=style.css.map */
