@@ -1,12 +1,10 @@
 /*
-* @source: https://google.com
-* @organization: CodiTheck
 * @platforms: MOBILE & PC (DESKTOP || LAPTOP)
+* @organization: Console Art Cybernetic
 * @created: 2022-07-01
-* @updated: 2022-07-06
-* @framework: React
+* @updated: 2022-07-26
 * @author: Obrymec
-* @version: 0.0.2
+* @version: 0.0.3
 */
 
 // Responsive object.
@@ -15,4 +13,10 @@
     @media only screen and (min-width: $min-width) and (max-width: $max-width) {
         @content;
     }
+}
+
+// Loads Roboto Slabo text font.
+@font-face {
+    src: url ("../fonts/roboto-light.ttf");
+    font-family: "Roboto";
 }

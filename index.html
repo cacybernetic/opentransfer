@@ -6,6 +6,9 @@
         <head>
             <!--Meta configurations-->
             <meta charset = "utf-8" name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+            <!--App favicon-->
+            <link rel = "shortcut icon" type = "image/ico" href = "./favicon.ico"/>
+            <link rel = "icon" type = "image/ico" href = "./favicon.ico"/>
             <!--Loads page style-->
             <link rel = "stylesheet" href = "./css/style.css"/>
             <!--Site title-->
@@ -27,15 +30,18 @@
                     <!--Product name-->
                     <div class = "product-name"><label><strong>Open Transfer</strong></label></div>
                     <!--Product version-->
-                    <div class = "product-version"><label>version <strong>0.0.1</strong>, expire le <strong>21 Janvier 2023</strong></label></div><br/>
+                    <div class = "product-version">
+                        <!--Product source-->
+                        <label><span>version</span> <strong>0.0.1</strong>, <span>expire le</span> <strong>21 Janvier 2023</strong></label>
+                    </div><br/>
                     <!--Product details-->
                     <div class = "product-details">
-                        <label>Une alternative pour contourner les pénibles codes USSD (Ex: <strong>*880*1*1*......#</strong>) afin de
+                        <label>Une alternative pour contourner les pénibles codes USSD (Ex: <strong>*880*1*1*...#, etc...</strong>) afin de
                         faire des transactions facilement via les Mobiles Money. Mais, attention, cette application ne gère pas les
                         bénéficiaires qui n'ont pas de compte Mobile Money.</label>
                     </div><br/>
                     <!--Enterprise source-->
-                    <div class = "entity-source" align = "center"><label>Développé par</label></div>
+                    <div class = "entity-source" align = "center"><label></label></div>
                     <!--Enterprise name-->
                     <div class = "entity-name" align = "center">
                         <!--Entity name-->
@@ -44,21 +50,42 @@
                     <!--Contact-->
                     <div class = "gmail-contact">
                         <!--Gmail text and logo-->
-                        <img src = "./icons/gmail.svg" width = "28px" height = "28px"/><label>ca.cybernetic@gmail.com</label>
+                        <img src = "./icons/gmail.svg" width = "22px" height = "22px"/><label>ca.cybernetic@gmail.com</label>
                     </div><br/><br/><br/>
                     <!--Button download-->
-                    <div align = "center"><a id = "download-btn" title = "Télécharger la nouvelle version de cette application." href = "./product/open_transfer.apk">
-                        <!--Text link-->
-                        <label>Télécharger maintenant</label>
-                    </a></div>
+                    <div align = "center" class = "btn">
+                        <a id = "download-btn" title = "Télécharger la nouvelle version de cette application." href = "./product/open_transfer.apk">
+                            <!--Text link-->
+                            <label>Télécharger maintenant</label>
+                        </a>
+                    </div>
                     <!--Makes a little bottom margins-->
                     <br/><br/><br/>
                 </div>
-                <!--Product screenshots section-->
-                <div class = "product-screenshots">
-                    <!--Screenshot image-->
-                    <div class = "product-screenshot"><img src = "./screenshots/screenshot_3.jpeg" class = "product"/></div>
-                </div>
+                <!--Makes little middle margin-->
+                <div class = "middle-margin"></div>
+                <!--Images section-->
+                <section class = "screenshots" align = "center">
+                    <!--Product screenshots section-->
+                    <div class = "product-screenshots">
+                        <!--Left arrow container-->
+                        <div class = "left-arrow"><img src = "./icons/left_arrow.svg" width = "32px" height = "32px" title = "Image précédante."/></div>
+                        <!--Images container-->
+                        <div class = "images-container">
+                            <!--Screenshot image-->
+                            <img src = "./screenshots/screenshot_1.jpeg" class = "product-screenshot" id = "scht-1"/>
+                            <img src = "./screenshots/screenshot_2.jpeg" class = "product-screenshot" id = "scht-2"/>
+                            <img src = "./screenshots/screenshot_3.jpeg" class = "product-screenshot" id = "scht-3"/>
+                            <img src = "./screenshots/screenshot_4.jpeg" class = "product-screenshot" id = "scht-4"/>
+                            <img src = "./screenshots/screenshot_5.jpeg" class = "product-screenshot" id = "scht-5"/>
+                            <img src = "./screenshots/screenshot_6.jpeg" class = "product-screenshot" id = "scht-6"/>
+                            <img src = "./screenshots/screenshot_7.jpeg" class = "product-screenshot" id = "scht-6"/>
+                            <img src = "./screenshots/screenshot_8.jpeg" class = "product-screenshot" id = "scht-6"/>
+                        </div>
+                        <!--Right arrow container-->
+                        <div class = "right-arrow"><img src = "./icons/right_arrow.svg" width = "32px" height = "32px" title = "Image suivante."/></div>
+                    </div>    
+                </section>
             </div><br/><br/><br/>
         </body>
         <!--Controller-->
