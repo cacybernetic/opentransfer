@@ -27,13 +27,15 @@ div.disable-display {
             margin-left: 0 !important;
             justify-content: center;
             display: flex;
+            // Version.
             label {
                 text-align: center;
             }
         }
         // Product details.
         div.product-details {
-            label {
+            // Text details.
+            label#details {
                 text-align: center !important;
             }
         }
@@ -132,6 +134,7 @@ body {
                 margin-right: -40px;
                 position: relative;
                 z-index: 1;
+                // Arrow icon.
                 img {
                     transition: opacity 0.4s;
                     cursor: pointer;
@@ -162,6 +165,7 @@ body {
             // Right arrow.
             div.right-arrow {
                 margin-left: -40px;
+                // Arrow icon.
                 img {
                     transition: opacity 0.4s;
                     cursor: pointer;
@@ -187,6 +191,7 @@ body {
                 animation: 300ms top_translation 300ms forwards;
                 transform: translateY(-25px);
                 opacity: 0;
+                // Name.
                 label {
                     transition: font-size 0.3s;
                     display: inline-block;
@@ -204,12 +209,15 @@ body {
                 transform: translateY(-25px);
                 margin-top: 5px;
                 opacity: 0;
+                // Officialization.
                 label {
-                    span {
-                        font-size: 13px;
-                    }
+                    // Strong texts.
                     strong {
                         color: #707070;
+                    }
+                    // Main tags.
+                    span {
+                        font-size: 13px;
                     }
                 }
             }
@@ -218,18 +226,50 @@ body {
                 animation: 300ms btranslate 500ms forwards;
                 transform: translateY(25px);
                 opacity: 0;
-                label {
+                // Label point.
+                label#details {
                     transition: font-size 0.4s;
                     line-height: 25px;
-                    text-align: left;
                     display: block;
+                    // Responsive details.
                     @include responsive (0, 399px) {
                         font-size: 15px;
+                    }
+                }
+                // Product specifications.
+                div.specifications {
+                    flex-direction: column;
+                    display: flex;
+                    // Specification model.
+                    div.spec {
+                        transition: margin-left 0.4s;
+                        display: inline-flex;
+                        flex-direction: row;
+                        align-items: center;
+                        margin-left: 25px;
+                        margin-top: 5px;
+                        // Responsive specifications.
+                        @include responsive (0, 399px) {
+                            margin-left: 0;
+                        }
+                        // Text specification.
+                        label {
+                            transition: font-size 0.4s;
+                            display: inline-block;
+                            margin-left: 10px;
+                            font-size: 14px;
+                            // Responsive
+                            @include responsive (0, 319px) {
+                                margin-left: 6px;
+                                font-size: 12px;
+                            }
+                        }
                     }
                 }
             }
             // Entity source.
             div.entity-source {
+                // Source text.
                 label {
                     font-size: 13px;
                 }
@@ -277,6 +317,7 @@ body {
                     border-radius: 30px;
                     cursor: pointer;
                     margin-top: 5px;
+                    outline: none;
                     border: none;
                     // Text link.
                     label {
@@ -284,7 +325,7 @@ body {
                         transition-duration: 0.4s; 
                         cursor: pointer;
                         color: #FFF;
-                        // Responsive object.
+                        // Responsive link.
                         @include responsive (0, 825px) {
                             font-size: 13px;
                             padding: 5px;
@@ -293,6 +334,7 @@ body {
                     // Hover.
                     &:hover {
                         background-color: #dd7d29;
+                        // Text glow.
                         label {
                             text-shadow: 0 0 10px white;
                         }

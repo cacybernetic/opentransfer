@@ -107,7 +107,7 @@ div.disable-display {
       display: flex; }
       div.disable-display div.product-infos div.product-version label {
         text-align: center; }
-    div.disable-display div.product-infos div.product-details label {
+    div.disable-display div.product-infos div.product-details label#details {
       text-align: center !important; }
 
 body {
@@ -230,22 +230,43 @@ body {
         transform: translateY(-25px);
         margin-top: 5px;
         opacity: 0; }
-        body div.app-body div.product-infos div.product-version label span {
-          font-size: 13px; }
         body div.app-body div.product-infos div.product-version label strong {
           color: #707070; }
+        body div.app-body div.product-infos div.product-version label span {
+          font-size: 13px; }
       body div.app-body div.product-infos div.product-details {
         animation: 300ms btranslate 500ms forwards;
         transform: translateY(25px);
         opacity: 0; }
-        body div.app-body div.product-infos div.product-details label {
+        body div.app-body div.product-infos div.product-details label#details {
           transition: font-size 0.4s;
           line-height: 25px;
-          text-align: left;
           display: block; }
           @media only screen and (min-width: 0) and (max-width: 399px) {
-            body div.app-body div.product-infos div.product-details label {
+            body div.app-body div.product-infos div.product-details label#details {
               font-size: 15px; } }
+        body div.app-body div.product-infos div.product-details div.specifications {
+          flex-direction: column;
+          display: flex; }
+          body div.app-body div.product-infos div.product-details div.specifications div.spec {
+            transition: margin-left 0.4s;
+            display: inline-flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 25px;
+            margin-top: 5px; }
+            @media only screen and (min-width: 0) and (max-width: 399px) {
+              body div.app-body div.product-infos div.product-details div.specifications div.spec {
+                margin-left: 0; } }
+            body div.app-body div.product-infos div.product-details div.specifications div.spec label {
+              transition: font-size 0.4s;
+              display: inline-block;
+              margin-left: 10px;
+              font-size: 14px; }
+              @media only screen and (min-width: 0) and (max-width: 319px) {
+                body div.app-body div.product-infos div.product-details div.specifications div.spec label {
+                  margin-left: 6px;
+                  font-size: 12px; } }
       body div.app-body div.product-infos div.entity-source label {
         font-size: 13px; }
       body div.app-body div.product-infos div.entity-name {
@@ -281,6 +302,7 @@ body {
           border-radius: 30px;
           cursor: pointer;
           margin-top: 5px;
+          outline: none;
           border: none; }
           body div.app-body div.product-infos div.btn a#download-btn label {
             transition: font-size, text-shadow;

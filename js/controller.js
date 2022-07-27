@@ -1,5 +1,6 @@
 // Attributes.
 const container = document.querySelector ("div.images-container");
+const api_link = "https://cdcnt.herokuapp.com/api/app/1/status/";
 let invert = false;
 
 // Checks whether a variable is not undefined and null.
@@ -60,18 +61,26 @@ function automatic_carrousel (delay, old_direction) {
 function animate_text (parent, text, interval, delay = 0, dir = 1, invert = false, finished = null) {
     // The given text is not empty.
     if (!is_empty (parent) && !is_empty (String (text).trim ())) {
+        // Clears parent text and html content.
         parent.innerHTML = '';
         parent.innerText = '';
+        // Gets the current delay.
         let timeout = delay;
         // Draws each character from the text.
         for (let j = (dir > 0 ? 0 : (text.length - 1)); (dir > 0 ? j < text.length : j >= 0); j += dir) {
             // Generates a label tag for each given character.
             let lb = document.createElement ("label");
+            // Gets the current character.
             lb.innerText = text [j];
+            // Gets the current opacity value.
             lb.style.opacity = (!invert ? 0 : 1);
+            // Loads fadeout css animation to animate the current text character.
             lb.style.animation = (interval + "ms fadeout " + timeout + "ms forwards");
+            // Changes animation direction.
             lb.style.animationDirection = (!invert ? "normal" : "reverse");
+            // Appends the current character to the given parent.
             (dir > 0 ? parent.appendChild (lb) : parent.prepend (lb));
+            // Recalculates the current time interval.
             timeout += interval;
         }
         // Animation is over.
@@ -83,15 +92,15 @@ function animate_text (parent, text, interval, delay = 0, dir = 1, invert = fals
 $ (() => {
     // Listens "Resize" event.
     window.addEventListener ("resize", () => view_adjustement ());
+    // Launches automatic carrousel animation process.
+    automatic_carrousel (5000, invert);
+    // Adjusts view.
+    view_adjustement ();
     // Animates the top text.
     animate_text (document.querySelector ("div.entity-source > label"), "Développé par", 50, 1400, 1, false, () => {
         // Animates the next text.
         animate_text (document.querySelector ("div.entity-name > label > i"), "Console Art Cybernetic", 80);
     });
-    // Launches automatic carrousel animation process.
-    automatic_carrousel (5000, invert);
-    // Adjusts view.
-    view_adjustement ();
     // Fixing "click" event on left arrow icon.
     document.querySelector ("div.left-arrow").addEventListener ("click", () => {
         // Go the preview screenshot.
@@ -107,15 +116,19 @@ $ (() => {
         invert = false;
     });
     // Fetches configurations.
-    const options = new Object ({
-        headers: new Object ({"Content-Type": "application/json"}),
-        body: JSON.stringify (new Object ({downloadc: 1})),
-        method: "POST"
+    const doptions = new Object ({
+        headers: new Object ({"Content-Type": "application/json"}), body: JSON.stringify (new Object ({downloadc: 1})), method: "POST"
     });
     // Makes a POST request with fetch method.
-    $ ("a#download-btn").click (() => fetch ("https://cdcnt.herokuapp.com/api/app/1/status/", options).then (data => {
+    document.querySelector ("a#download-btn").addEventListener ("click", () => fetch (api_link, doptions).then (data => {
         // TODO something here...
-        console.log (`SUCCESS: ${data}`);
+        console.log (`DOWNLOAD SUCCESS: ${data}`);
     // When an error thrown.
     }).catch (error => console.error (error)));
+    // Fetches configurations.
+    const coptions = new Object ({
+        headers: new Object ({"Content-Type": "application/json"}), body: JSON.stringify (new Object ({viewc: 1})), method: "POST"
+    });
+    // Makes a POST request with fetch method.
+    fetch (api_link, coptions).then (data => console.log (`VIEW SUCCESS: ${data}`)).catch (error => console.error (error));
 });
