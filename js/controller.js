@@ -1,6 +1,14 @@
+/*
+* @platforms: MOBILE & PC (DESKTOP || LAPTOP)
+* @organization: Console Art Cybernetic
+* @created: 2022-07-26
+* @updated: 2022-07-28
+* @version: 0.3.1
+*/
+
 // Attributes.
 const container = document.querySelector ("div.images-container");
-const api_link = "https://cdcnt.herokuapp.com/api/app/1/status/";
+const api_link = "https://cdcnt.herokuapp.com/api/app/2/status/";
 let invert = false;
 
 // Checks whether a variable is not undefined and null.
