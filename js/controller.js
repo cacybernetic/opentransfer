@@ -11,7 +11,7 @@ function go_to_next_screenshot () {
     // Go to the next screenshot.
     container.scrollLeft += 250;
     // Locks scrollbar motion.
-    if (container.scrollLeft >= container.scrollWidth) container.scrollLeft = 1742;
+    if (container.scrollLeft >= container.scrollWidth) container.scrollLeft = 2250;
 }
 
 // Go to the preview screenshot.
@@ -37,7 +37,7 @@ function automatic_carrousel (delay, old_direction) {
         // Normal carrousel.
         if (!old_direction) {
             // Go the next screenshot so possible.
-            if (container.scrollLeft < 1742) go_to_next_screenshot ();
+            if (container.scrollLeft < 2250) go_to_next_screenshot ();
             // Changes carrousel animation direction.
             else invert = true;
             // Otherwise.
@@ -47,12 +47,29 @@ function automatic_carrousel (delay, old_direction) {
             // Changes carrousel animation direction.
             else invert = false;
         }
-        // Clears the current timeout.
+        // Clears the current timeout process id.
         window.clearTimeout (pid);
         // Creates another process of the current method.
         if (old_direction == invert) automatic_carrousel (5000, invert);
         // Otherwise.
         else automatic_carrousel (0, invert);
+    // Waiting for the given pass delay.
+    }, delay);
+}
+
+// Automatic image tutorial.
+function automatic_img_tutorial (delay) {
+    // Waiting for a few secondes.
+    let aid = window.setTimeout (() => {
+        console.log (container.scrollLeft);
+        // Go the next screenshot so possible.
+        if (container.scrollLeft < 2250) go_to_next_screenshot ();
+        // Otherwise.
+        else container.scrollLeft = 0;
+        // Clears the current timeout process id.
+        window.clearTimeout (aid);
+        // Creates another process of the current method.
+        automatic_img_tutorial (5000);
     // Waiting for the given pass delay.
     }, delay);
 }
@@ -93,7 +110,7 @@ $ (() => {
     // Listens "Resize" event.
     window.addEventListener ("resize", () => view_adjustement ());
     // Launches automatic carrousel animation process.
-    automatic_carrousel (5000, invert);
+    automatic_img_tutorial (5000);
     // Adjusts view.
     view_adjustement ();
     // Animates the top text.

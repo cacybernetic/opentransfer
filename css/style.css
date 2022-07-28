@@ -154,10 +154,13 @@ body {
         body div.app-bar div.right-logo {
           right: 5%; } }
       body div.app-bar div.right-logo label {
-        transition: font-size 0.4s; }
+        transition: font-size 0.4s;
+        font-size: 18px; }
         @media only screen and (min-width: 0) and (max-width: 285px) {
           body div.app-bar div.right-logo label {
             font-size: 14px; } }
+      body div.app-bar div.right-logo label#philosophie {
+        font-size: 12px; }
   body div.app-body {
     display: inline-flex;
     align-items: center; }
@@ -197,7 +200,7 @@ body {
           width: 250px;
           height: 100%; }
         body div.app-body div.product-screenshots div.images-container img#scht-1 {
-          margin-left: 1742px; }
+          margin-left: 2250px; }
       body div.app-body div.product-screenshots div.right-arrow {
         margin-left: -40px; }
         body div.app-body div.product-screenshots div.right-arrow img {

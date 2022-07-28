@@ -97,10 +97,15 @@ body {
             // Label.
             label {
                 transition: font-size 0.4s;
+                font-size: 18px;
                 // Responsive text.
                 @include responsive (0, 285px) {
                     font-size: 14px;
                 }
+            }
+            // Label philosophie.
+            label#philosophie {
+                font-size: 12px;
             }
         }
     }
@@ -159,7 +164,7 @@ body {
                 }
                 // First image.
                 img#scht-1 {
-                    margin-left: 1742px;
+                    margin-left: 2250px;
                 }
             }
             // Right arrow.
