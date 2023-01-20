@@ -2,13 +2,12 @@
 * @platforms: MOBILE & PC (DESKTOP || LAPTOP)
 * @organization: Console Art Cybernetic
 * @created: 2022-07-26
-* @updated: 2022-07-28
-* @version: 0.3.1
+* @updated: 2023-01-20
+* @version: 0.3.3
 */
 
 // Attributes.
 const container = document.querySelector ("div.images-container");
-const api_link = "https://cdcnt.herokuapp.com/api/app/2/status/";
 let invert = false;
 
 // Checks whether a variable is not undefined and null.
@@ -140,20 +139,4 @@ $ (() => {
         // Changes direction to normal.
         invert = false;
     });
-    // Fetches configurations.
-    const doptions = new Object ({
-        headers: new Object ({"Content-Type": "application/json"}), body: JSON.stringify (new Object ({downloadc: 1})), method: "POST"
-    });
-    // Makes a POST request with fetch method.
-    document.querySelector ("a#download-btn").addEventListener ("click", () => fetch (api_link, doptions).then (data => {
-        // TODO something here...
-        console.log (`DOWNLOAD SUCCESS: ${data}`);
-    // When an error thrown.
-    }).catch (error => console.error (error)));
-    // Fetches configurations.
-    const coptions = new Object ({
-        headers: new Object ({"Content-Type": "application/json"}), body: JSON.stringify (new Object ({viewc: 1})), method: "POST"
-    });
-    // Makes a POST request with fetch method.
-    fetch (api_link, coptions).then (data => console.log (`VIEW SUCCESS: ${data}`)).catch (error => console.error (error));
 });
