@@ -11,7 +11,7 @@
 
 // Dependencies.
 import ReactDOM from "react-dom/client";
-import App from "./shared/app.jsx";
+import App from "./home/app.jsx";
 import React from "react";
 
 // Let's create root node.
