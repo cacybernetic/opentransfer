@@ -1,0 +1,258 @@
+/**
+* @project: Open Transfer - https://cacybernetic.github.io/open_transfer
+* @author: Obrymec - obrymecsprinces@gmail.com
+* @fileoverview: Header section stylesheets.
+* @supported: DESKTOP & MOBILE
+* @created: 2024-03-04
+* @updated: 2024-03-04
+* @file: header.scss
+* @version: 0.0.1
+*/
+
+// Custom dependencies.
+@import "./_variables.scss";
+
+// Active option effect.
+span.header-active {
+  text-shadow: 0 0 10px $header-text-shadow;
+}
+
+// Hook.
+div.header-menu-hook {
+  border: 1px solid $header-border-color;
+  background-color: $header-text-color;
+  transform: rotate(45deg);
+  position: fixed;
+  height: 24px;
+  width: 24px;
+  right: 26px;
+  top: 66px;
+  // From 512 to 0.
+  @media #{$header-512} {
+    right: 20px;
+    top: 52px
+  }
+}
+
+// Header section.
+header {
+  background-color: $header-bg-color;
+  justify-content: space-between;
+  padding: 10px 50px 12px 45px;
+  display: inline-flex;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  left: 0;
+  top: 0;
+  // From 1024 to 512.
+  @media #{$header-1024} {
+    padding: 10px 16px 12px 12px;
+  }
+  // From 512 to 0.
+  @media #{$header-512} {
+    padding: 8px 16px 10px 12px;
+  }
+}
+
+// App section.
+div.app {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 4px;
+  // Logo.
+  img {
+    // From 1024 to 512.
+    @media #{$header-1024} {
+      height: 48px;
+      width: 48px;
+    }
+    // From 512 to 0.
+    @media #{$header-512} {
+      height: 36px;
+      width: 36px;
+    }
+  }
+  // Name.
+  span {
+    font-family: $vadodara-regular-font;
+    color: $header-text-color;
+    font-size: 22px;
+    // From 1024 to 512.
+    @media #{$header-1024} {
+      font-size: 18px;
+    }
+    // From 512 to 300.
+    @media #{$header-512} {
+      font-size: 13px;
+    }
+    // From 512 to 300.
+    @media #{$header-300} {
+      display: none;
+    }
+  }
+}
+
+// Download button.
+a.header-btn {
+  border: 1px solid $header-text-color;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  border-radius: 40px;
+  align-items: center;
+  padding: 12px 24px;
+  margin-left: 12px;
+  column-gap: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  // From 1024 to 512.
+  @media #{$header-1024} {
+    padding: 8px 16px;
+    margin-left: 8px;
+  }
+  // From 512 to 0.
+  @media #{$header-512} {
+    margin-left: 0;
+    padding: 6px;
+  }
+  // Text.
+  span {
+    color: $header-text-color;
+    // From 1024 to 512.
+    @media #{$header-1024} {
+      font-size: 13px;
+    }
+    // From 512 to 0.
+    @media #{$header-512} {
+      display: none;
+    }
+  }
+  // Hover effect.
+  &:hover {
+    background-color: $header-text-color;
+    // Text.
+    span {
+      color: $header-bg-color;
+    }
+    // Icon.
+    img {
+      filter: brightness(1%);
+    }
+  }
+}
+
+// Contextual menu.
+div.header-contextual-menu {
+  box-shadow: 0 0 12px $header-border-color;
+  border: 1px solid $header-border-color;
+  background-color: $header-text-color;
+  flex-direction: column;
+  border-radius: 4px;
+  position: fixed;
+  display: flex;
+  width: 220px;
+  right: 16px;
+  top: 78px;
+  // From 512 to 0.
+  @media #{$header-512} {
+    right: 10px;
+    top: 62px;
+  }
+  // Destroys border top on first option.
+  & > div:first-child {
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top: none;
+  }
+  // Rounded borders on last option.
+  & > div:last-child {
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  // Options container.
+  div {
+    border-top: 1px solid $header-border-color;
+    justify-content: space-between;
+    padding: 12px 4px 12px 12px;
+    display: inline-flex;
+    align-items: center;
+    // Icon.
+    img {
+      filter: brightness(1%);
+    }
+    // Hover effect.
+    &:hover {
+      background-color: $header-bg-color;
+    }
+    // Icon hover.
+    &:hover > img {
+      filter: brightness(100%);
+    }
+    // Text hover.
+    &:hover > span {
+      color: $header-text-color;
+    }
+  }
+}
+
+// Options section.
+div.header-options {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 36px;
+  // From 1024 to 0.
+  @media #{$header-1024} {
+    column-gap: 18px;
+  }
+  // Language options.
+  select > option {
+    color: $header-bg-color;
+  }
+  // Emburger menu.
+  img.emburger-menu {
+    cursor: pointer;
+    display: none;
+    // From 736 to 512.
+    @media #{$header-736} {
+      display: inline-block;
+    }
+    // From 512 to 0.
+    @media #{$header-512} {
+      height: 32px;
+      width: 32px;
+    }
+  }
+  // Language.
+  select {
+    background-color: transparent;
+    color: $header-text-color;
+    cursor: pointer;
+    font-size: 14px;
+    border: none;
+    // From 1024 to 0.
+    @media #{$header-1024} {
+      font-size: 12px;
+    }
+  }
+  // Options.
+  & > span {
+    text-transform: uppercase;
+    color: $header-text-color;
+    cursor: pointer;
+    font-size: 14px;
+    // From 1024 to 736.
+    @media #{$header-1024} {
+      font-size: 12px;
+    }
+    // From 736 to 0.
+    @media #{$header-736} {
+      display: none;
+    }
+    // Hover effect.
+    &:hover {
+      text-shadow: 0 0 10px $header-text-shadow;
+    }
+  }
+}

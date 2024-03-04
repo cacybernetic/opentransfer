@@ -12,10 +12,17 @@
 // React dependencies.
 import React from "react";
 
+// Custom dependencies.
+import Header from "./components/header/header.jsx";
+
 // Open Transfer mobile app landing page.
 export default function OpenTransfer () {
+  // Attributes.
+  const [option, setOption] = React.useState (0);
+
   // Builds final landing page.
   return <React.Fragment>
-    Hello world !
+    {/** Header section */}
+    <Header option = {option} onOptionClicked = {id => setOption (id)}/>
   </React.Fragment>;
 }

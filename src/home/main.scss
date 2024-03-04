@@ -1,0 +1,47 @@
+/**
+* @project: Open Transfer - https://cacybernetic.github.io/open_transfer
+* @author: Obrymec - obrymecsprinces@gmail.com
+* @fileoverview: OTR app global stylesheets.
+* @supported: DESKTOP & MOBILE
+* @created: 2024-03-04
+* @updated: 2024-03-04
+* @file: main.scss
+* @version: 0.0.1
+*/
+
+// Custom dependencies.
+@import "../common/utils/reset/_reset.scss";
+@import "../common/themes/_light.scss";
+@import "./components/header/_header.scss";
+
+// All tags.
+* {
+	transition: all .2s ease-in-out;
+}
+
+// Hides any tag.
+.turn-off {
+	display: none !important;
+}
+
+// Vadodara regular font definition.
+@font-face {
+	font-family: $vadodara-regular-font;
+	src: url($vadodara-regular);
+}
+
+// Ubuntu regular font definition.
+@font-face {
+	font-family: $ubuntu-regular-font;
+	src: url($ubuntu-regular);
+}
+
+// Root.
+body {
+	font-family: $ubuntu-regular-font;
+	color: $primary-900;
+	line-height: 24px;
+	user-select: none;
+	font-weight: 400;
+	font-size: 16px;
+}
