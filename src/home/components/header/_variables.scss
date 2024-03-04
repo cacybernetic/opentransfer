@@ -11,6 +11,8 @@
 
 // Responsive breakpoints.
 $header-1024: "only screen and (max-width: 1024px)" !default;
+$header-736: "only screen and (max-width: 736px)" !default;
+$header-512: "only screen and (max-width: 512px)" !default;
 
 // Colors theme.
 $header-text-shadow: $primary-50 !default;

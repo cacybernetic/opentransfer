@@ -21,16 +21,21 @@ span.header-active {
 header {
   background-color: $header-bg-color;
   justify-content: space-between;
-  padding: 12px 50px 12px 45px;
+  padding: 10px 50px 12px 45px;
   display: inline-flex;
+  align-items: center;
   position: fixed;
   z-index: 1;
   right: 0;
   left: 0;
   top: 0;
-  // From 1024 to 0.
+  // From 1024 to 512.
   @media #{$header-1024} {
-    padding: 8px 16px 8px 12px;
+    padding: 10px 16px 12px 12px;
+  }
+  // From 512 to 0.
+  @media #{$header-512} {
+    padding: 8px 16px 10px 12px;
   }
 }
 
@@ -39,10 +44,31 @@ div.app {
   display: inline-flex;
   align-items: center;
   column-gap: 4px;
+  // Logo.
+  img {
+    // From 1024 to 512.
+    @media #{$header-1024} {
+      height: 48px;
+      width: 48px;
+    }
+    // From 512 to 0.
+    @media #{$header-512} {
+      height: 36px;
+      width: 36px;
+    }
+  }
   // Name.
   span {
     color: $header-text-color;
     font-size: 22px;
+    // From 1024 to 512.
+    @media #{$header-1024} {
+      font-size: 18px;
+    }
+    // From 512 to 0.
+    @media #{$header-512} {
+      display: none;
+    }
   }
 }
 
@@ -59,9 +85,27 @@ a.header-btn {
   column-gap: 12px;
   cursor: pointer;
   font-size: 14px;
+  // From 1024 to 512.
+  @media #{$header-1024} {
+    padding: 8px 16px;
+    margin-left: 8px;
+  }
+  // From 512 to 0.
+  @media #{$header-512} {
+    margin-left: 0;
+    padding: 6px;
+  }
   // Text.
   span {
     color: $header-text-color;
+    // From 1024 to 512.
+    @media #{$header-1024} {
+      font-size: 13px;
+    }
+    // From 512 to 0.
+    @media #{$header-512} {
+      display: none;
+    }
   }
   // Hover effect.
   &:hover {
@@ -82,9 +126,27 @@ div.options {
   display: inline-flex;
   align-items: center;
   column-gap: 36px;
+  // From 1024 to 0.
+  @media #{$header-1024} {
+    column-gap: 18px;
+  }
   // Language options.
   select > option {
     color: $header-bg-color;
+  }
+  // Emburger menu.
+  img.emburger-menu {
+    cursor: pointer;
+    display: none;
+    // From 736 to 512.
+    @media #{$header-736} {
+      display: inline-block;
+    }
+    // From 512 to 0.
+    @media #{$header-512} {
+      height: 32px;
+      width: 32px;
+    }
   }
   // Language.
   select {
@@ -93,6 +155,10 @@ div.options {
     cursor: pointer;
     font-size: 14px;
     border: none;
+    // From 1024 to 0.
+    @media #{$header-1024} {
+      font-size: 12px;
+    }
   }
   // Options.
   & > span {
@@ -100,6 +166,14 @@ div.options {
     color: $header-text-color;
     cursor: pointer;
     font-size: 14px;
+    // From 1024 to 736.
+    @media #{$header-1024} {
+      font-size: 12px;
+    }
+    // From 736 to 0.
+    @media #{$header-736} {
+      display: none;
+    }
     // Hover effect.
     &:hover {
       text-shadow: 0 0 10px $header-text-shadow;

@@ -15,6 +15,7 @@ import React from "react";
 // Custom dependencies.
 import downloadIcon from "../../../../public/assets/icons/download.svg";
 import appLogo from "../../../../public/assets/logos/otr_light.png";
+import menuIcon from "../../../../public/assets/icons/menu.svg";
 import lang from "../../../common/utils/language/language.js";
 
 // Header view section.
@@ -74,6 +75,13 @@ export default function Header ({option, onOptionClicked}) {
         {/** Text */}
         <span>{lang.getText ("tr6")}</span>
       </a>
+      {/** Emburger menu */}
+      <img
+        alt = "Emburger menu icon."
+        className = "emburger-menu"
+        height = {42} width = {42}
+        src = {menuIcon}
+      />
     </div>
   </header>;
 }
