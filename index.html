@@ -1,156 +1,48 @@
-<!--Global index-->
-<!DOCTYPE html>
-    <!--Global structure-->
-    <html lang = "fr">
-        <!--Global head-->
-        <head>
-            <!--Meta configurations-->
-            <meta charset = "utf-8" name = "viewport" content = "width=device-width, initial-scale=1.0"/>
-            <!--App favicon-->
-            <link rel = "shortcut icon" type = "image/ico" href = "./favicon.ico"/>
-            <link rel = "icon" type = "image/ico" href = "./favicon.ico"/>
-            <!--Loads page style-->
-            <link rel = "stylesheet" href = "./css/style.css"/>
-            <!--Site title-->
-            <title>Open Transfer (OTR)</title>
-        </head>
-        <!--Global body-->
-        <body>
-            <!--Website bar-->
-            <div class = "app-bar">
-                <!--Left logo-->
-                <div class = "left-logo"><img src = "./icons/otr.svg" width = "96px" height = "96px"/></div>
-                <!--Right logo-->
-                <div class = "right-logo">
-                    <!--Enterprise name-->
-                    <label><strong>CA Cybernetic</strong></label>
-                    <!--Working philosophie-->
-                    <br/><label id = "philosophie">L'Art, est programmation</label>
-                </div>
-            </div><br/><br/><br/>
-            <!--Big container-->
-            <div class = "app-body">
-                <!--Product information-->
-                <div class = "product-infos">
-                    <!--Product name-->
-                    <div class = "product-name"><label><strong>Open Transfer</strong></label></div>
-                    <!--Product version-->
-                    <div class = "product-version">
-                        <!--Product source-->
-                        <label><span>version</span> <strong>0.0.2</strong>, <span>expire le</span> <strong>24 Janvier 2023</strong></label>
-                    </div><br/>
-                    <!--Product details-->
-                    <div class = "product-details">
-                        <!--Some text-->
-                        <label id = "details">Une alternative pour contourner les pénibles codes USSD (Ex: <strong>*880*1*1*...#, etc...</strong>)
-                        afin de pouvoir envoyer de l'argent facilement et <strong>en toute sécurité</strong> via les Mobiles Money. 
-                        Grâce à cette application qui fonctionne en sans connexion internet, vous ne risquez plus d'entrer 
-                        un mauvais numéro, ni se tromper de bénéficiaire. Il faut juste s'assurer que ce dernier ait un compte Mobile Money (MTN ou Moov).
-                        </label><br/><br/>
-                        <!--Product specifications-->
-                        <div class = "specifications">
-                            <!--No network required-->
-                            <div class = "spec">
-                                <!--Checked icon-->
-                                <img src = "./icons/checked.svg" width = "16px" height = "16px"/>
-                                <!--Point text-->
-                                <label>Fonctionne sans connexion internet;</label>
-                            </div>
-                            <!--No login required-->
-                            <div class = "spec">
-                                <!--Checked icon-->
-                                <img src = "./icons/checked.svg" width = "16px" height = "16px"/>
-                                <!--Point text-->
-                                <label>Pas besoin de s'authentifier;</label>
-                            </div>
-                            <!--Easy to use-->
-                            <div class = "spec">
-                                <!--Checked icon-->
-                                <img src = "./icons/checked.svg" width = "16px" height = "16px"/>
-                                <!--Point text-->
-                                <label>Simple d'utilisation et intuitif;</label>
-                            </div>
-                            <!--Avoid input error-->
-                            <div class = "spec">
-                                <!--Checked icon-->
-                                <img src = "./icons/checked.svg" width = "16px" height = "16px"/>
-                                <!--Point text-->
-                                <label>Évite les erreurs de saisie;</label>
-                            </div>
-                            <!--No internal storage-->
-                            <div class = "spec">
-                                <!--Checked icon-->
-                                <img src = "./icons/checked.svg" width = "16px" height = "16px"/>
-                                <!--Point text-->
-                                <label>Aucun stockage de données;</label>
-                            </div>
-                            <!--Free for any guest-->
-                            <div class = "spec">
-                                <!--Checked icon-->
-                                <img src = "./icons/checked.svg" width = "16px" height = "16px"/>
-                                <!--Point text-->
-                                <label>À part les frais du réseau, c'est <strong>100% gratuit</strong>.</label>
-                            </div>
-                            <!--Product security-->
-                            <div class = "spec">
-                                <!--Checked icon-->
-                                <img src = "./icons/checked.svg" width = "16px" height = "16px"/>
-                                <!--Point text-->
-                                <label>La sécurité de l'application se repose sur celle des réseaux (MTN et Moov);</label>
-                            </div>
-                        </div>
-                    </div><br/><br/>
-                    <!--Enterprise source-->
-                    <div class = "entity-source" align = "center"><label></label></div>
-                    <!--Enterprise name-->
-                    <div class = "entity-name" align = "center">
-                        <!--Entity name-->
-                        <label><i><strong>C</strong>onsole <strong>A</strong>rt <strong>C</strong>ybernetic</i></label>
-                    </div><br/>
-                    <!--Contact-->
-                    <div class = "gmail-contact">
-                        <!--Gmail text and logo-->
-                        <img src = "./icons/gmail.svg" width = "22px" height = "22px"/><label>ca.cybernetic@gmail.com</label>
-                    </div><br/><br/><br/>
-                    <!--Button download-->
-                    <div align = "center" class = "btn">
-                        <a id = "download-btn" title = "Télécharger la nouvelle version de cette application." href = "https://play.google.com/store/apps/details?id=com.ca.cybernetic.otr_client">
-                            <!--Text link-->
-                            <label>Télécharger maintenant</label>
-                        </a>
-                    </div>
-                    <!--Makes a little bottom margins-->
-                    <br/><br/><br/>
-                </div>
-                <!--Makes little middle margin-->
-                <div class = "middle-margin"></div>
-                <!--Images section-->
-                <section class = "screenshots" align = "center">
-                    <!--Product screenshots section-->
-                    <div class = "product-screenshots">
-                        <!--Left arrow container-->
-                        <div class = "left-arrow"><img src = "./icons/left_arrow.svg" width = "32px" height = "32px" title = "Image précédante."/></div>
-                        <!--Images container-->
-                        <div class = "images-container">
-                            <!--Screenshot image-->
-                            <img src = "./screenshots/screenshot_1.jpeg" class = "product-screenshot" id = "scht-1"/>
-                            <img src = "./screenshots/screenshot_2.jpeg" class = "product-screenshot" id = "scht-2"/>
-                            <img src = "./screenshots/screenshot_3.jpeg" class = "product-screenshot" id = "scht-3"/>
-                            <img src = "./screenshots/screenshot_4.jpeg" class = "product-screenshot" id = "scht-4"/>
-                            <img src = "./screenshots/screenshot_5.jpeg" class = "product-screenshot" id = "scht-5"/>
-                            <img src = "./screenshots/screenshot_6.jpeg" class = "product-screenshot" id = "scht-6"/>
-                            <img src = "./screenshots/screenshot_7.jpeg" class = "product-screenshot" id = "scht-7"/>
-                            <img src = "./screenshots/screenshot_8.jpeg" class = "product-screenshot" id = "scht-8"/>
-                            <img src = "./screenshots/screenshot_9.jpeg" class = "product-screenshot" id = "scht-9"/>
-                            <img src = "./screenshots/screenshot_10.jpeg" class = "product-screenshot" id = "scht-10"/>
-                        </div>
-                        <!--Right arrow container-->
-                        <div class = "right-arrow"><img src = "./icons/right_arrow.svg" width = "32px" height = "32px" title = "Image suivante."/></div>
-                    </div>    
-                </section>
-            </div><br/><br/><br/>
-        </body>
-        <!--Controller-->
-        <script type = "text/javascript" src = "./js/jquery.js"></script>
-        <script type = "text/javascript" src = "./js/controller.js"></script>
-    </html>
+<!--
+	@project: Open Transfer - https://cacybernetic.github.io/open_transfer
+	@author: Obrymec - obrymecsprinces@gmail.com
+	@fileoverview: The global html structure.
+  @supported: DESKTOP & MOBILE
+	@created: 2024-03-04
+	@updated: 2024-03-04
+	@file: index.html
+	@version: 0.0.1
+-->
+
+<!--Open Transfer-->
+<!doctype html>
+  <!--HTML structure-->
+  <html lang = "en">
+    <!--Head-->
+    <head>
+      <!--Global title-->
+      <title>Open Transfer</title>
+      <!--Favicon-->
+      <link
+        href = "./favicon.ico"
+        rel = "shortcut icon"
+        type = "image/ico"
+      />
+      <link
+        href = "./favicon.ico"
+        type = "image/ico"
+        rel = "icon"
+      />
+      <!--Meta configs-->
+      <meta
+        content = "width=device-width, initial-scale=1.0"
+        charset = "utf-8"
+        name = "viewport"
+      />
+    </head>
+    <!--Global body-->
+    <body>
+      <!--Root node-->
+      <div id = "root"></div>
+      <!--Controller-->
+      <script
+        src = "./src/main.jsx"
+        type = "module"
+      ></script>
+    </body>
+  </html>
