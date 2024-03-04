@@ -10,8 +10,9 @@
 */
 
 // Responsive breakpoints.
-$header-1170: "only screen and (max-width: 1170px)" !default;
+$header-1024: "only screen and (max-width: 1024px)" !default;
 
 // Colors theme.
+$header-text-shadow: $primary-50 !default;
 $header-bg-color: $primary-600 !default;
-$header-text-color: #fff;
+$header-text-color: #fff !default;

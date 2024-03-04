@@ -32,7 +32,13 @@ const french = {
     "qc"
   ],
   data: {
-    tr1: ""
+    tr1: "Open Transfer",
+    tr2: "Fonctionalités",
+    tr3: "Support",
+    tr4: "FAQs",
+    tr5: "Contactez-nous",
+    tr6: "Télécharger",
+    tr7: "Télécharger la version APK."
   }
 }
 

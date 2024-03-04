@@ -13,11 +13,12 @@
 import React from "react";
 
 // Custom dependencies.
+import downloadIcon from "../../../../public/assets/icons/download.svg";
 import appLogo from "../../../../public/assets/logos/otr_light.png";
 import lang from "../../../common/utils/language/language.js";
 
 // Header view section.
-export default function Header () {
+export default function Header ({option, onOptionClicked}) {
   // Builds jsx elements.
   return <header>
     {/** App section */}
@@ -29,7 +30,50 @@ export default function Header () {
     </div>
     {/** Right options */}
     <div className = "options">
-      
+      {/** Language selection */}
+      <select>
+        <option value = "fr">FR</option>
+        <option value = "en">EN</option>
+      </select>
+      {/** Features */}
+      <span
+        className = {(option === 0 ? "header-active" : '')}
+        onClick = {() => onOptionClicked (0)}
+      >
+        {lang.getText ("tr2")}
+      </span>
+      {/** Support */}
+      <span
+        className = {(option === 1 ? "header-active" : '')}
+        onClick = {() => onOptionClicked (1)}
+      >
+        {lang.getText ("tr3")}
+      </span>
+      {/** FAQs */}
+      <span
+        className = {(option === 2 ? "header-active" : '')}
+        onClick = {() => onOptionClicked (2)}
+      >
+        {lang.getText ("tr4")}
+      </span>
+      {/** Contact us */}
+      <span
+        className = {(option === 3 ? "header-active" : '')}
+        onClick = {() => onOptionClicked (3)}
+      >
+        {lang.getText ("tr5")}
+      </span>
+      {/** Download button */}
+      <a className = "header-btn" href = "#">
+        {/** Icon */}
+        <img
+          alt = "Icon for download button."
+          height = {18} width = {18}
+          src = {downloadIcon}
+        />
+        {/** Text */}
+        <span>{lang.getText ("tr6")}</span>
+      </a>
     </div>
   </header>;
 }

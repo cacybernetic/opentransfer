@@ -32,7 +32,13 @@ const english = {
     "en"
   ],
   data: {
-    tr1: "Open Transfer"
+    tr1: "Open Transfer",
+    tr2: "Features",
+    tr3: "Support",
+    tr4: "FAQs",
+    tr5: "Contact us",
+    tr6: "Download",
+    tr7: "Download APK version."
   }
 };
 
