@@ -17,6 +17,23 @@ span.header-active {
   text-shadow: 0 0 10px $header-text-shadow;
 }
 
+// Hook.
+div.header-menu-hook {
+  border: 1px solid $header-border-color;
+  background-color: $header-text-color;
+  transform: rotate(45deg);
+  position: fixed;
+  height: 24px;
+  width: 24px;
+  right: 26px;
+  top: 66px;
+  // From 512 to 0.
+  @media #{$header-512} {
+    right: 20px;
+    top: 52px
+  }
+}
+
 // Header section.
 header {
   background-color: $header-bg-color;
@@ -59,14 +76,19 @@ div.app {
   }
   // Name.
   span {
+    font-family: $vadodara-regular-font;
     color: $header-text-color;
     font-size: 22px;
     // From 1024 to 512.
     @media #{$header-1024} {
       font-size: 18px;
     }
-    // From 512 to 0.
+    // From 512 to 300.
     @media #{$header-512} {
+      font-size: 13px;
+    }
+    // From 512 to 300.
+    @media #{$header-300} {
       display: none;
     }
   }
@@ -121,8 +143,62 @@ a.header-btn {
   }
 }
 
+// Contextual menu.
+div.header-contextual-menu {
+  box-shadow: 0 0 12px $header-border-color;
+  border: 1px solid $header-border-color;
+  background-color: $header-text-color;
+  flex-direction: column;
+  border-radius: 4px;
+  position: fixed;
+  display: flex;
+  width: 220px;
+  right: 16px;
+  top: 78px;
+  // From 512 to 0.
+  @media #{$header-512} {
+    right: 10px;
+    top: 62px;
+  }
+  // Destroys border top on first option.
+  & > div:first-child {
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top: none;
+  }
+  // Rounded borders on last option.
+  & > div:last-child {
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  // Options container.
+  div {
+    border-top: 1px solid $header-border-color;
+    justify-content: space-between;
+    padding: 12px 4px 12px 12px;
+    display: inline-flex;
+    align-items: center;
+    // Icon.
+    img {
+      filter: brightness(1%);
+    }
+    // Hover effect.
+    &:hover {
+      background-color: $header-bg-color;
+    }
+    // Icon hover.
+    &:hover > img {
+      filter: brightness(100%);
+    }
+    // Text hover.
+    &:hover > span {
+      color: $header-text-color;
+    }
+  }
+}
+
 // Options section.
-div.options {
+div.header-options {
   display: inline-flex;
   align-items: center;
   column-gap: 36px;

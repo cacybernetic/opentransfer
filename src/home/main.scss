@@ -14,6 +14,16 @@
 @import "../common/themes/_light.scss";
 @import "./components/header/_header.scss";
 
+// All tags.
+* {
+	transition: all .2s ease-in-out;
+}
+
+// Hides any tag.
+.turn-off {
+	display: none !important;
+}
+
 // Vadodara regular font definition.
 @font-face {
 	font-family: $vadodara-regular-font;
@@ -24,11 +34,6 @@
 @font-face {
 	font-family: $ubuntu-regular-font;
 	src: url($ubuntu-regular);
-}
-
-// All tags.
-* {
-	transition: all .2s ease-in-out;
 }
 
 // Root.
