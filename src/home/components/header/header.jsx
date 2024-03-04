@@ -13,12 +13,23 @@
 import React from "react";
 
 // Custom dependencies.
+import appLogo from "../../../../public/assets/logos/otr_light.png";
 import lang from "../../../common/utils/language/language.js";
 
 // Header view section.
 export default function Header () {
   // Builds jsx elements.
-  return <React.Fragment>
-    {lang.getText ("tr1")}
-  </React.Fragment>;
+  return <header>
+    {/** App section */}
+    <div className = "app">
+      {/** Logo */}
+      <img src = {appLogo} alt = "App logo." height = {64} width = {64}/>
+      {/** Name */}
+      <span>{lang.getText ("tr1")}</span>
+    </div>
+    {/** Right options */}
+    <div className = "options">
+      
+    </div>
+  </header>;
 }

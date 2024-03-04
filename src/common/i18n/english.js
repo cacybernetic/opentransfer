@@ -32,7 +32,7 @@ const english = {
     "en"
   ],
   data: {
-    tr1: "Hello world !"
+    tr1: "Open Transfer"
   }
 };
 
