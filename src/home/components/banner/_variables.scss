@@ -9,10 +9,14 @@
 * @version: 0.0.1
 */
 
+// Responsive breakpoints.
+$banner-812: "only screen and (max-width: 812px)" !default;
+$banner-620: "only screen and (max-width: 620px)" !default;
+$banner-326: "only screen and (max-width: 326px)" !default;
+
 // Colors theme.
 $banner-right-icon-bg-color: #333a7c !default;
-$banner-btn-border-color: #f2f3f3 !default;
-$banner-btn-text-color: #c5c7ca !default;
+$banner-btn-border-color: #c5c7ca !default;
 $banner-btn-bg-color: #0a0b0d !default;
 $banner-bg-color: $primary-600 !default;
 $banner-text-color: #fff !default;
