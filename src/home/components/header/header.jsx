@@ -4,9 +4,9 @@
 * @fileoverview The header view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-04
-*	@updated 2024-03-04
+*	@updated 2024-03-06
 *	@file header.jsx
-*	@version 0.0.1
+*	@version 0.0.4
 */
 
 // React dependencies.
@@ -16,6 +16,7 @@ import React from "react";
 import rightArrowIcon from "../../../../public/assets/icons/right_arrow.svg";
 import downloadIcon from "../../../../public/assets/icons/download.svg";
 import appLogo from "../../../../public/assets/logos/otr_light.png";
+import closeIcon from "../../../../public/assets/icons/close.svg";
 import menuIcon from "../../../../public/assets/icons/menu.svg";
 import lang from "../../../common/utils/language/language.js";
 
@@ -25,6 +26,12 @@ export default function Header ({option, onOptionClicked}) {
   const [state, setState] = React.useState (false);
   const hook = React.useRef (null);
   const menu = React.useRef (null);
+
+  // Hides contextual menu whether it shown.
+  const closeMenu = () => {
+    // Whether menu is displayed.
+    if (state) toggleMenu ();
+  };
 
   // Called when a contextual menu option get clicked.
   const onMenuOptionClicked = pos => {
@@ -73,6 +80,7 @@ export default function Header ({option, onOptionClicked}) {
     <div className = "app">
       {/** Logo */}
       <img
+        onClick = {() => window.location.reload ()}
         src = {appLogo} alt = "App logo."
         height = {64} width = {64}
       />
@@ -82,7 +90,7 @@ export default function Header ({option, onOptionClicked}) {
     {/** Right options */}
     <div className = "header-options">
       {/** Language selection */}
-      <select>
+      <select onClick = {closeMenu}>
         <option value = "fr">FR</option>
         <option value = "en">EN</option>
       </select>
@@ -115,7 +123,7 @@ export default function Header ({option, onOptionClicked}) {
         {lang.getText ("tr5")}
       </span>
       {/** Download button */}
-      <a className = "header-btn" href = "#">
+      <a className = "header-btn" href = "#" onClick = {closeMenu}>
         {/** Icon */}
         <img
           alt = "Icon for download button."
@@ -127,11 +135,12 @@ export default function Header ({option, onOptionClicked}) {
       </a>
       {/** Emburger menu */}
       <img
+        style = {{transform: `scale(${(!state ? 1.0 : 1.36)})`}}
+        src = {(!state ? menuIcon : closeIcon)}
         alt = "Emburger menu icon."
         className = "emburger-menu"
         height = {42} width = {42}
         onClick = {toggleMenu}
-        src = {menuIcon}
       />
       {/** Hook */}
       <div

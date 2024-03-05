@@ -5,8 +5,8 @@
 * @supported: DESKTOP & MOBILE
 * @file: variables.scss
 * @created: 2024-03-05
-* @updated: 2024-03-05
-* @version: 0.0.1
+* @updated: 2024-03-06
+* @version: 0.0.2
 */
 
 // Responsive breakpoints.
@@ -15,8 +15,8 @@ $banner-620: "only screen and (max-width: 620px)" !default;
 $banner-326: "only screen and (max-width: 326px)" !default;
 
 // Colors theme.
-$banner-right-icon-bg-color: #333a7c !default;
+$banner-bg-color: rgba(26, 86, 48, 0.75) !default;
+$banner-right-icon-bg-color: $primary-900 !default;
 $banner-btn-border-color: #c5c7ca !default;
 $banner-btn-bg-color: #0a0b0d !default;
-$banner-bg-color: $primary-600 !default;
 $banner-text-color: #fff !default;

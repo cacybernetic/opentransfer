@@ -4,7 +4,7 @@
 * @fileoverview: Banner section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-05
-* @updated: 2024-03-05
+* @updated: 2024-03-06
 * @file: banner.scss
 * @version: 0.0.4
 */
@@ -14,9 +14,19 @@
 
 // Banner.
 section.banner {
-  background-image: url("../../../../public/assets/images/background.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
+  transform: translate3d(0, 0, 0);
+  // Background image.
+  & > img {
+    object-fit: cover;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
 }
 
 // Content.
@@ -25,6 +35,8 @@ div.banner-content {
   justify-content: space-between;
   padding: 96px 50px 12px 50px;
   display: inline-flex;
+  position: relative;
+  z-index: 1;
   // From 812 to 620.
   @media #{$banner-812} {
     padding: 96px 25px 12px 25px;
@@ -163,9 +175,10 @@ div.banner-downloads {
   }
   // Center texts container.
   a > div:nth-child(2) {
+    justify-content: center;
     flex-direction: column;
+    padding: 0 2px 2px 2px;
     display: flex;
-    padding: 2px;
     // From 326 to 0.
     @media #{$banner-326} {
       width: 100%;

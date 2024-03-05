@@ -4,7 +4,7 @@
 * @fileoverview The banner view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-05
-*	@updated 2024-03-05
+*	@updated 2024-03-06
 *	@file banner.jsx
 *	@version 0.0.1
 */
@@ -16,6 +16,7 @@ import React from "react";
 import playStoreIcon from "../../../../public/assets/icons/play_store.svg";
 import homeScreen from "../../../../public/assets/images/home_screen.png";
 import arrowIcon from "../../../../public/assets/icons/bottom_arrow.svg";
+import background from "../../../../public/assets/images/background.png";
 import androidIcon from "../../../../public/assets/icons/android.svg";
 import lang from "../../../common/utils/language/language.js";
 
@@ -23,6 +24,8 @@ import lang from "../../../common/utils/language/language.js";
 export default function Banner () {
   // Builds jsx elements.
   return <section className = "banner">
+    {/** Background */}
+    <img alt = "Background image." src = {background}/>
     {/** Banner container */}
     <div className = "banner-content">
       {/** Left part */}
