@@ -14,7 +14,8 @@
 
 // Features.
 section.features {
-  padding: 64px 50px 64px 50px;
+  background-color: $feature-bg-color;
+  padding: 48px 50px 48px 50px;
   flex-direction: column;
   align-items: center;
   display: flex;
@@ -36,5 +37,32 @@ section.features {
     color: $features-text-color;
     text-align: center;
     margin-top: 16px;
+  }
+}
+
+// Content.
+div.features-content {
+  background-color: blue;
+  justify-content: center;
+  display: inline-flex;
+  margin-top: 24px;
+  width: 100%;
+}
+
+// Screenshot.
+div.feature {
+  background-color: red;
+  justify-content: center;
+  display: inline-flex;
+  width: 50%;
+}
+
+// Informations.
+div.features-infos {
+  background-color: green;
+  width: 50%;
+  // Top title.
+  div.top-title {
+   
   }
 }

@@ -13,12 +13,12 @@
 import React from "react";
 
 // Custom dependencies.
-import rightArrowIcon from "../../../../public/assets/icons/right_arrow.svg";
-import downloadIcon from "../../../../public/assets/icons/download.svg";
-import appLogo from "../../../../public/assets/logos/otr_light.png";
-import closeIcon from "../../../../public/assets/icons/close.svg";
-import menuIcon from "../../../../public/assets/icons/menu.svg";
 import lang from "../../../common/utils/language/language.js";
+import rightArrowIcon from "/assets/icons/right_arrow.svg";
+import downloadIcon from "/assets/icons/download.svg";
+import appLogo from "/assets/logos/otr_light.png";
+import closeIcon from "/assets/icons/close.svg";
+import menuIcon from "/assets/icons/menu.svg";
 
 // Header view section.
 export default function Header ({option, onOptionClicked}) {

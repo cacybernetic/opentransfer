@@ -13,12 +13,12 @@
 import React from "react";
 
 // Custom dependencies.
-import playStoreIcon from "../../../../public/assets/icons/play_store.svg";
-import homeScreen from "../../../../public/assets/images/home_screen.png";
-import arrowIcon from "../../../../public/assets/icons/bottom_arrow.svg";
-import background from "../../../../public/assets/images/background.png";
-import androidIcon from "../../../../public/assets/icons/android.svg";
 import lang from "../../../common/utils/language/language.js";
+import playStoreIcon from "/assets/icons/play_store.svg";
+import homeScreen from "/assets/images/home_screen.png";
+import arrowIcon from "/assets/icons/bottom_arrow.svg";
+import background from "/assets/images/background.png";
+import androidIcon from "/assets/icons/android.svg";
 
 // Banner view section.
 export default function Banner () {
