@@ -6,12 +6,15 @@
 * @file: variables.scss
 * @created: 2024-03-06
 * @updated: 2024-03-06
-* @version: 0.0.1
+* @version: 0.0.2
 */
 
 // Responsive breakpoints.
-
+$features-912: "only screen and (max-width: 912px)" !default;
+$features-670: "only screen and (max-width: 670px)" !default;
+$features-592: "only screen and (max-width: 592px)" !default;
 
 // Colors theme.
 $features-text-color: darken($primary-900, 13%) !default;
-$feature-bg-color: rgb(252, 252, 252) !default;
+$features-bg-color: rgb(250, 250, 250) !default;
+$features-shadow-color: silver !default;

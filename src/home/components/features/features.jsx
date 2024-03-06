@@ -6,7 +6,7 @@
 *	@created 2024-03-06
 *	@updated 2024-03-06
 *	@file features.jsx
-*	@version 0.0.1
+*	@version 0.0.2
 */
 
 // React dependencies.
@@ -32,6 +32,13 @@ export default function Features () {
     <div className = "features-content">
       {/** Feature */}
       <div className = "feature">
+        {/** Slider */}
+        <div className = "slider">
+          {/** Vertical line */}
+
+        </div>
+        {/** Shadow effect */}
+        <div className = "shadow-effect"></div>
         {/** Screenshot */}
         <img
           alt = "Mobile app screenshot."
@@ -43,13 +50,13 @@ export default function Features () {
       {/** Informations */}
       <div className = "features-infos">
         {/** Top title */}
-        <div className = "top-title">
+        <div className = "features-top-title">
           {/** Icon */}
           <img
             alt = "Active feature icon."
             src = {balanceIcon}
-            height = {32}
-            width = {32}
+            height = {64}
+            width = {64}
           />
           {/** Text */}
           <h3>{lang.getText ("tr20")}</h3>
@@ -74,8 +81,8 @@ export default function Features () {
           <img
             alt = "Checked list icon."
             src = {checkedIcon}
-            height = {16}
-            width = {16}
+            height = {18}
+            width = {18}
           />
           {/** Label */}
           <span>{lang.getText ("tr27")}</span>

@@ -26,6 +26,11 @@
 	display: none !important;
 }
 
+// Mask any tag.
+.masked {
+	opacity: 0 !important;
+}
+
 // Vadodara regular font definition.
 @font-face {
 	font-family: $vadodara-regular-font;

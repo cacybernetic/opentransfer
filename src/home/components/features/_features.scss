@@ -6,19 +6,73 @@
 * @created: 2024-03-06
 * @updated: 2024-03-06
 * @file: features.scss
-* @version: 0.0.1
+* @version: 0.0.3
 */
 
 // Custom dependencies.
 @import "./_variables.scss";
 
+// Content.
+div.features-content {
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 48px;
+  display: flex;
+  width: 100%;
+  // From 670 to 592.
+  @media #{$features-670} {
+    margin-top: 24px;
+  }
+  // From 592 to 0.
+  @media #{$features-592} {
+    flex-direction: column;
+  }
+}
+
+// Top title.
+div.features-top-title {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 14px;
+  font-size: 32px;
+  // From 912 to 670.
+  @media #{$features-912} {
+    font-size: 24px;
+  }
+  // From 670 to 0.
+  @media #{$features-670} {
+    font-size: 20px;
+  }
+  // Left icon.
+  img {
+    // From 912 to 670.
+    @media #{$features-912} {
+      height: 48px;
+      width: 48px;
+    }
+    // From 670 to 0.
+    @media #{$features-670} {
+      height: 32px;
+      width: 32px;
+    }
+  }
+}
+
 // Features.
 section.features {
-  background-color: $feature-bg-color;
+  background-color: $features-bg-color;
   padding: 48px 50px 48px 50px;
   flex-direction: column;
   align-items: center;
   display: flex;
+  // From 912 to 592.
+  @media #{$features-912} {
+    padding: 48px 25px 48px 25px;
+  }
+  // From 592 to 0.
+  @media #{$features-592} {
+    padding: 48px 16px 48px 16px;
+  }
   // Big title.
   & > h2 {
     color: $features-text-color;
@@ -40,29 +94,103 @@ section.features {
   }
 }
 
-// Content.
-div.features-content {
-  background-color: blue;
-  justify-content: center;
-  display: inline-flex;
-  margin-top: 24px;
-  width: 100%;
-}
-
 // Screenshot.
 div.feature {
-  background-color: red;
+  transform: translate3d(0, 0, 0);
   justify-content: center;
   display: inline-flex;
   width: 50%;
+  // From 670 to 592.
+  @media #{$features-670} {
+    justify-content: flex-start;
+    width: auto;
+  }
+  // From 592 to 0.
+  @media #{$features-592} {
+    justify-content: center;
+    width: 100%;
+  }
+  // Image.
+  img {
+    position: relative;
+    z-index: 1;
+  }
+  // Shadow effect.
+  div.shadow-effect {
+    box-shadow: 0 0 50px $features-shadow-color;
+    transform: translateX(-50%);
+    border-radius: 30px;
+    position: fixed;
+    width: 210px;
+    bottom: 15px;
+    z-index: 0;
+    left: 50%;
+    top: 15px;
+    // From 670 to 592.
+    @media #{$features-670} {
+      box-shadow: 0 0 25px $features-shadow-color;
+      transform: translateX(0);
+      width: 140px;
+      left: 6px;
+    }
+    // From 592 to 0.
+    @media #{$features-592} {
+      transform: translateX(-50%);
+      width: 210px;
+      left: 50%;
+    }
+  }
 }
 
 // Informations.
 div.features-infos {
-  background-color: green;
+  color: $features-text-color;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  row-gap: 8px;
   width: 50%;
-  // Top title.
-  div.top-title {
-   
+  // From 670 to 592.
+  @media #{$features-670} {
+    margin-left: 24px;
+    row-gap: 4px;
+    width: 100%;
+  }
+  // From 592 to 0.
+  @media #{$features-592} {
+    margin-top: 16px;
+    margin-left: 0;
+  }
+  // Desctiption.
+  & > span {
+    margin-bottom: 16px;
+    margin-top: 10px;
+    font-size: 18px;
+    // From 912 to 670.
+    @media #{$features-912} {
+      font-size: 16px;
+    }
+    // From 670 to 0.
+    @media #{$features-670} {
+      margin-bottom: 6px;
+      margin-top: 6px;
+      font-size: 14px;
+    }
+  }
+  // All advantage.
+  div.advantage {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 10px;
+    // From 912 to 670.
+    @media #{$features-912} {
+      column-gap: 8px;
+      font-size: 14px;
+    }
+    // From 670 to 0.
+    @media #{$features-670} {
+      font-size: 12px;
+      column-gap: 6px;
+    }
   }
 }
