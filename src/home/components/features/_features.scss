@@ -1,0 +1,40 @@
+/**
+* @project: Open Transfer - https://cacybernetic.github.io/open_transfer
+* @author: Obrymec - obrymecsprinces@gmail.com
+* @fileoverview: Features section stylesheets.
+* @supported: DESKTOP & MOBILE
+* @created: 2024-03-06
+* @updated: 2024-03-06
+* @file: features.scss
+* @version: 0.0.1
+*/
+
+// Custom dependencies.
+@import "./_variables.scss";
+
+// Features.
+section.features {
+  padding: 64px 50px 64px 50px;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  // Big title.
+  & > h2 {
+    color: $features-text-color;
+    text-transform: uppercase;
+    font-size: 24px;
+  }
+  // Bottom bar.
+  hr {
+    background-color: $primary-900;
+    margin-top: 4px;
+    width: 64px;
+    height: 4px;
+  }
+  // Description.
+  & > span {
+    color: $features-text-color;
+    text-align: center;
+    margin-top: 16px;
+  }
+}

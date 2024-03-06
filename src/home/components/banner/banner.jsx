@@ -6,7 +6,7 @@
 *	@created 2024-03-05
 *	@updated 2024-03-06
 *	@file banner.jsx
-*	@version 0.0.1
+*	@version 0.0.3
 */
 
 // React dependencies.
