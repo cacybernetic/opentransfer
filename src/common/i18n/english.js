@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-04
+* @updated 2024-03-05
 * @file english.js
 * @type {English}
 * @version 0.0.1
@@ -38,7 +38,16 @@ const english = {
     tr4: "FAQs",
     tr5: "Contact us",
     tr6: "Download",
-    tr7: "Download APK version."
+    tr7: "Download APK version.",
+    tr8: "No longer manually enter USSD codes",
+    tr9: `
+      Finally, an alternative solution to painful USSD 
+      codes thanks to modern digital support adapted 
+      to the problems commonly encountered in the field.
+    `,
+    tr10: "Get it on",
+    tr11: "Google Play",
+    tr12: "Android APK"
   }
 };
 

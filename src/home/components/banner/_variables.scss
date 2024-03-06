@@ -1,0 +1,22 @@
+/**
+* @project: Open Transfer - https://cacybernetic.github.io/open_transfer
+* @fileoverview: OTR banner variables stylesheet.
+* @author: Obrymec - obrymecsprinces@gmail.com
+* @supported: DESKTOP & MOBILE
+* @file: variables.scss
+* @created: 2024-03-05
+* @updated: 2024-03-06
+* @version: 0.0.2
+*/
+
+// Responsive breakpoints.
+$banner-812: "only screen and (max-width: 812px)" !default;
+$banner-620: "only screen and (max-width: 620px)" !default;
+$banner-326: "only screen and (max-width: 326px)" !default;
+
+// Colors theme.
+$banner-bg-color: rgba(26, 86, 48, 0.75) !default;
+$banner-right-icon-bg-color: $primary-900 !default;
+$banner-btn-border-color: #c5c7ca !default;
+$banner-btn-bg-color: #0a0b0d !default;
+$banner-text-color: #fff !default;

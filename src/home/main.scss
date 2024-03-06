@@ -4,7 +4,7 @@
 * @fileoverview: OTR app global stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-04
-* @updated: 2024-03-04
+* @updated: 2024-03-05
 * @file: main.scss
 * @version: 0.0.1
 */
@@ -13,6 +13,7 @@
 @import "../common/utils/reset/_reset.scss";
 @import "../common/themes/_light.scss";
 @import "./components/header/_header.scss";
+@import "./components/banner/_banner.scss";
 
 // All tags.
 * {
