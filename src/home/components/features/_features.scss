@@ -4,7 +4,7 @@
 * @fileoverview: Features section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-06
-* @updated: 2024-03-06
+* @updated: 2024-03-07
 * @file: features.scss
 * @version: 0.0.3
 */
@@ -26,6 +26,80 @@ div.features-content {
   // From 592 to 0.
   @media #{$features-592} {
     flex-direction: column;
+  }
+}
+
+// Screenshot.
+div.feature {
+  transform: translate3d(0, 0, 0);
+  justify-content: center;
+  display: inline-flex;
+  width: 50%;
+  // From 670 to 592.
+  @media #{$features-670} {
+    justify-content: flex-start;
+    width: auto;
+  }
+  // From 592 to 0.
+  @media #{$features-592} {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+// Selected slider feature.
+div.features-selected {
+  cursor: auto !important;
+  // Content.
+  div.content {
+    justify-content: space-between;
+    height: 26px !important;
+    width: 26px !important;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    // Arrows.
+    img {
+      cursor: pointer;
+    }
+    // Bottom arrow.
+    img:last-child {
+      transform: scale(1.2);
+    }
+  }
+}
+
+// Slider.
+div.features-slider {
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  display: flex;
+  left: 24px;
+  bottom: 0;
+  top: 0;
+  // Vertical line.
+  div.vline {
+    background-color: $primary-100;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 32px;
+    display: flex;
+    height: 60%;
+    width: 3px;
+  }
+  // Feature container.
+  div.vline > div.container {
+    background-color: $primary-100;
+    border-radius: 40px;
+    cursor: pointer;
+    padding: 8px;
+  }
+  // Hides theme.
+  div.vline > div.container > div.content {
+    height: 0;
+    width: 0;
   }
 }
 
@@ -54,6 +128,41 @@ div.features-top-title {
     @media #{$features-670} {
       height: 32px;
       width: 32px;
+    }
+  }
+}
+
+// Matrix.
+div.features-matrix {
+  transform: translate3d(0, 0, 0);
+  // Image.
+  img {
+    position: relative;
+    z-index: 1;
+  }
+  // Shadow effect.
+  div.shadow-effect {
+    box-shadow: 0 0 50px $features-shadow-color;
+    transform: translateX(-50%);
+    border-radius: 30px;
+    position: fixed;
+    width: 210px;
+    bottom: 15px;
+    z-index: 0;
+    left: 50%;
+    top: 15px;
+    // From 670 to 592.
+    @media #{$features-670} {
+      box-shadow: 0 0 25px $features-shadow-color;
+      transform: translateX(0);
+      width: 140px;
+      left: 6px;
+    }
+    // From 592 to 0.
+    @media #{$features-592} {
+      transform: translateX(-50%);
+      width: 210px;
+      left: 50%;
     }
   }
 }
@@ -89,56 +198,9 @@ section.features {
   // Description.
   & > span {
     color: $features-text-color;
-    text-align: center;
+    line-height: 32px;
     margin-top: 16px;
-  }
-}
-
-// Screenshot.
-div.feature {
-  transform: translate3d(0, 0, 0);
-  justify-content: center;
-  display: inline-flex;
-  width: 50%;
-  // From 670 to 592.
-  @media #{$features-670} {
-    justify-content: flex-start;
-    width: auto;
-  }
-  // From 592 to 0.
-  @media #{$features-592} {
-    justify-content: center;
-    width: 100%;
-  }
-  // Image.
-  img {
-    position: relative;
-    z-index: 1;
-  }
-  // Shadow effect.
-  div.shadow-effect {
-    box-shadow: 0 0 50px $features-shadow-color;
-    transform: translateX(-50%);
-    border-radius: 30px;
-    position: fixed;
-    width: 210px;
-    bottom: 15px;
-    z-index: 0;
-    left: 50%;
-    top: 15px;
-    // From 670 to 592.
-    @media #{$features-670} {
-      box-shadow: 0 0 25px $features-shadow-color;
-      transform: translateX(0);
-      width: 140px;
-      left: 6px;
-    }
-    // From 592 to 0.
-    @media #{$features-592} {
-      transform: translateX(-50%);
-      width: 210px;
-      left: 50%;
-    }
+    font-size: 20px;
   }
 }
 
