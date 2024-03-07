@@ -331,6 +331,10 @@ div.horizontal-carousel {
     display: inline-block;
     margin-top: 24px;
   }
+  // Slider.
+  div.features-slider {
+    flex-direction: row;
+  }
   // Content.
   div.content {
     transform: scale(1.0) translateX(-3.4px);
@@ -339,10 +343,6 @@ div.horizontal-carousel {
     @media #{$features-670} {
       transform: scale(0.8) translateX(-3.4px);
     }
-  }
-  // Slider.
-  div.features-slider {
-    flex-direction: row;
   }
   // Line.
   div.line {
