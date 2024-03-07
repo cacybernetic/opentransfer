@@ -6,11 +6,26 @@
 * @created: 2024-03-06
 * @updated: 2024-03-07
 * @file: features.scss
-* @version: 0.0.3
+* @version: 0.0.4
 */
 
 // Custom dependencies.
+@import "./_animations.scss";
 @import "./_variables.scss";
+
+// Selected slider feature.
+div.features-selected {
+  animation: 3s containerBloom 1s backwards;
+  animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+  cursor: auto !important;
+  // Content.
+  div.content {
+    visibility: visible !important;
+    height: 26px !important;
+    width: 26px !important;
+  }
+}
 
 // Content.
 div.features-content {
@@ -29,8 +44,8 @@ div.features-content {
   }
 }
 
-// Screenshot.
-div.feature {
+// Active feature screenshot.
+div.active-feature {
   transform: translate3d(0, 0, 0);
   justify-content: center;
   display: inline-flex;
@@ -44,28 +59,6 @@ div.feature {
   @media #{$features-592} {
     justify-content: center;
     width: 100%;
-  }
-}
-
-// Selected slider feature.
-div.features-selected {
-  cursor: auto !important;
-  // Content.
-  div.content {
-    justify-content: space-between;
-    height: 26px !important;
-    width: 26px !important;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    // Arrows.
-    img {
-      cursor: pointer;
-    }
-    // Bottom arrow.
-    img:last-child {
-      transform: scale(1.2);
-    }
   }
 }
 
@@ -95,40 +88,6 @@ div.features-top-title {
       height: 32px;
       width: 32px;
     }
-  }
-}
-
-// Slider.
-div.features-slider {
-  justify-content: center;
-  flex-direction: column;
-  position: fixed;
-  display: flex;
-  left: 24px;
-  bottom: 0;
-  top: 0;
-  // Vertical line.
-  div.vline {
-    background-color: $primary-100;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 32px;
-    display: flex;
-    height: 60%;
-    width: 3px;
-  }
-  // Feature container.
-  div.vline > div.container {
-    background-color: $primary-100;
-    border-radius: 40px;
-    cursor: pointer;
-    padding: 8px;
-  }
-  // Hides theme.
-  div.vline > div.container > div.content {
-    height: 0;
-    width: 0;
   }
 }
 
@@ -265,5 +224,65 @@ div.features-infos {
       font-size: 12px;
       column-gap: 6px;
     }
+  }
+}
+
+// Slider.
+div.features-slider {
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  display: flex;
+  z-index: 1;
+  left: 24px;
+  bottom: 0;
+  top: 0;
+  // Feature container.
+  div.container {
+    background-color: $primary-100;
+    border-radius: 40px;
+    cursor: pointer;
+    padding: 8px;
+  }
+  // Top arrow.
+  img:first-child {
+    transform: scale(1.0) translateY(0);
+    cursor: pointer;
+    // Hover effect.
+    &:hover {
+      transform: scale(1.0) translateY(-3px);
+    }
+  }
+  // Bottom arrow.
+  img:last-child {
+    transform: scale(1.2) translateY(0);
+    cursor: pointer;
+    // Hover effect.
+    &:hover {
+      transform: scale(1.2) translateY(3px);
+    }
+  }
+  // Hides content.
+  div.content {
+    justify-content: space-between;
+    transition: all 0.1s linear;
+    flex-direction: column;
+    align-items: center;
+    visibility: hidden;
+    display: flex;
+    height: 0;
+    width: 0;
+  }
+  // Vertical line.
+  div.line {
+    background-color: $primary-100;
+    transition: all 0.1s linear;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 32px;
+    display: flex;
+    height: 60%;
+    width: 3px;
   }
 }

@@ -28,6 +28,7 @@ import payIcon from "/assets/icons/pay.svg";
 export default function Features () {
   // Attributes.
   const [index, setIndex] = React.useState (0);
+  const featuresLine = React.useRef (null);
   const matrix = React.useRef (null);
   const infos = React.useRef (null);
   const features = [
@@ -51,10 +52,26 @@ export default function Features () {
     }
   ];
 
+  // Generates an advantage.
+  const buildAdvantage = React.useCallback (text => (
+    <div className = "advantage">
+      {/** Checked icon */}
+      <img
+        alt = "Checked list icon."
+        src = {checkedIcon}
+        height = {16}
+        width = {16}
+      />
+      {/** Label */}
+      <span>{lang.getText (text)}</span>
+    </div>
+  // Dependencies.
+  ), [checkedIcon, lang]);
+
   // Overrides active index to the given position.
   const setFeature = React.useCallback (position => {
-    // Whether passed position is not equal to active index.
-    if (position !== index) {
+    // Whether passed position isn't equal to active index.
+    if (position !== index && featuresLine != null) {
       // Corrects passed position index.
       position = (
         position < 0 ? (features.length - 1) :
@@ -64,17 +81,57 @@ export default function Features () {
       if (matrix != null) matrix.current.classList.add ("masked");
       // Adds `masked` class to infos.
       if (infos != null) infos.current.classList.add ("masked");
+      // Removes `selected` class from old active feature.
+      featuresLine.current.children[index].classList.remove (
+        "features-selected"
+      );
       // Waits for 200ms.
       window.setTimeout (() => {
         // Destroys `masked` class to matrix.
         if (matrix != null) matrix.current.classList.remove ("masked");
         // Destroys `masked` class to infos.
         if (infos != null) infos.current.classList.remove ("masked");
+        // Adds `selected` class to new active feature.
+        featuresLine.current.children[position].classList.add (
+          "features-selected"
+        );
         // Sets active index.
         setIndex (position);
       }, 200);
     }
-  }, [index, features, matrix, infos]);
+  // Dependencies.
+  }, [index, features, matrix, infos, featuresLine]);
+
+  // Generates feature point selection.
+  const buildFeature = React.useCallback ((pos, active) => (
+    <div
+      className = {`container${(active ? " features-selected" : '')}`}
+      onClick = {() => setFeature (pos)}
+      aria-label = {features[pos].title}
+      data-tts = "right"
+    >
+      {/** Arrows hoster */}
+      <div className = "content">
+        {/** Top arrow icon */}
+        <img
+          onClick = {() => setFeature (index - 1)}
+          alt = "Up arrow icon"
+          src = {upArrowIcon}
+          height = {8}
+          width = {16}
+        />
+        {/** Bottom arrow icon */}
+        <img
+          onClick = {() => setFeature (index + 1)}
+          alt = "Down arrow icon"
+          src = {downArrowIcon}
+          height = {8}
+          width = {16}
+        />
+      </div>
+    </div>
+  // Dependencies.
+  ), [downArrowIcon, upArrowIcon, features, setFeature]);
 
   // Builds jsx elements.
   return <section className = "features">
@@ -86,72 +143,18 @@ export default function Features () {
     <span>{lang.getText ("tr13")}</span>
     {/** Content */}
     <div className = "features-content">
-      {/** Feature */}
-      <div className = "feature">
+      {/** Active feature */}
+      <div className = "active-feature">
         {/** Slider */}
         <div className = "features-slider">
-          {/** Vertical line */}
-          <div className = "vline">
-            {/** Feature 1 */}
-            <div
-              className = "container features-selected"
-              title = {features[0].title}
-            >
-              <div className = "content">
-                <img
-                  alt = "Up arrow icon"
-                  src = {upArrowIcon}
-                  height = {8}
-                  width = {16}
-                />
-                <img
-                  alt = "Down arrow icon"
-                  src = {downArrowIcon}
-                  height = {8}
-                  width = {16}
-                />
-              </div>
-            </div>
-            {/** Feature 2 */}
-            <div
-              title = {features[1].title}
-              className = "container"
-            >
-              <div className = "content">
-                <img
-                  alt = "Up arrow icon"
-                  src = {upArrowIcon}
-                  height = {8}
-                  width = {16}
-                />
-                <img
-                  alt = "Down arrow icon"
-                  src = {downArrowIcon}
-                  height = {8}
-                  width = {16}
-                />
-              </div>
-            </div>
-            {/** Feature 3 */}
-            <div
-              title = {features[1].title}
-              className = "container"
-            >
-              <div className = "content">
-                <img
-                  alt = "Up arrow icon"
-                  src = {upArrowIcon}
-                  height = {8}
-                  width = {16}
-                />
-                <img
-                  alt = "Down arrow icon"
-                  src = {downArrowIcon}
-                  height = {8}
-                  width = {16}
-                />
-              </div>
-            </div>
+          {/** Line */}
+          <div className = "line" ref = {featuresLine}>
+            {/** Balance consultation */}
+            {buildFeature (0, true)}
+            {/** Money transfer */}
+            {buildFeature (1)}
+            {/** Shop payment */}
+            {buildFeature (2)}
           </div>
         </div>
         {/** Feature image */}
@@ -184,77 +187,17 @@ export default function Features () {
         {/** Description */}
         <span>{features[index].description}</span>
         {/** Advantage 1 */}
-        <div className = "advantage">
-          {/** Checked icon */}
-          <img
-            alt = "Checked list icon."
-            src = {checkedIcon}
-            height = {16}
-            width = {16}
-          />
-          {/** Label */}
-          <span>{lang.getText ("tr26")}</span>
-        </div>
+        {buildAdvantage ("tr26")}
         {/** Advantage 2 */}
-        <div className = "advantage">
-          {/** Checked icon */}
-          <img
-            alt = "Checked list icon."
-            src = {checkedIcon}
-            height = {16}
-            width = {16}
-          />
-          {/** Label */}
-          <span>{lang.getText ("tr27")}</span>
-        </div>
+        {buildAdvantage ("tr27")}
         {/** Advantage 3 */}
-        <div className = "advantage">
-          {/** Checked icon */}
-          <img
-            alt = "Checked list icon."
-            src = {checkedIcon}
-            height = {16}
-            width = {16}
-          />
-          {/** Label */}
-          <span>{lang.getText ("tr28")}</span>
-        </div>
+        {buildAdvantage ("tr28")}
         {/** Advantage 4 */}
-        <div className = "advantage">
-          {/** Checked icon */}
-          <img
-            alt = "Checked list icon."
-            src = {checkedIcon}
-            height = {16}
-            width = {16}
-          />
-          {/** Label */}
-          <span>{lang.getText ("tr29")}</span>
-        </div>
+        {buildAdvantage ("tr29")}
         {/** Advantage 5 */}
-        <div className = "advantage">
-          {/** Checked icon */}
-          <img
-            alt = "Checked list icon."
-            src = {checkedIcon}
-            height = {16}
-            width = {16}
-          />
-          {/** Label */}
-          <span>{lang.getText ("tr30")}</span>
-        </div>
+        {buildAdvantage ("tr30")}
         {/** Advantage 6 */}
-        <div className = "advantage">
-          {/** Checked icon */}
-          <img
-            alt = "Checked list icon."
-            src = {checkedIcon}
-            height = {16}
-            width = {16}
-          />
-          {/** Label */}
-          <span>{lang.getText ("tr31")}</span>
-        </div>
+        {buildAdvantage ("tr31")}
       </div>
     </div>
   </section>;
