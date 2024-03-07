@@ -15,9 +15,14 @@ $ubuntu-regular: "./assets/fonts/ubuntu-regular.ttf" !default;
 $vadodara-regular-font: "VadodaraRegular" !default;
 $ubuntu-regular-font: "UbuntuRegular" !default;
 
+// Responsive breakpoints.
+$otr-920: "only screen and (max-width: 920px)" !default;
+
 // Colors theme.
 $secondary-900: #eccb63 !default;
 $primary-900: #1a5630 !default;
 $primary-400: #2ece6d !default;
 $primary-100: #68cb8d !default;
+$error-color: #ff3333 !default;
 $primary-50: #e6e6ef !default;
+$white-color: #fff !default;

@@ -89,7 +89,17 @@ const english = {
     tr28: "Without having to contact a merchant.",
     tr29: "Without internet connection or mobile data.",
     tr30: "No additional network charges.",
-    tr31: "With preferred network operator."
+    tr31: "With preferred network operator.",
+    tr32: "Network error",
+    tr33: `
+      It appears that your browser has just been set 
+      off the internet. Check your network accessories 
+      (WiFi, router, etc...) and make sure you are 
+      correctly connected to the internet.
+    `,
+    tr34: `
+      Your browser has just connected to the internet.
+    `
   }
 };
 

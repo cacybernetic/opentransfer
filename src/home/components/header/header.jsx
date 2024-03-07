@@ -21,42 +21,42 @@ import closeIcon from "/assets/icons/close.svg";
 import menuIcon from "/assets/icons/menu.svg";
 
 // Header view section.
-export default function Header ({option, onOptionClicked}) {
+export default function Header({option, onOptionClicked}) {
   // Attributes.
-  const [state, setState] = React.useState (false);
-  const hook = React.useRef (null);
-  const menu = React.useRef (null);
+  const [state, setState] = React.useState(false);
+  const hook = React.useRef(null);
+  const menu = React.useRef(null);
 
   // Hides contextual menu whether it shown.
   const closeMenu = () => {
     // Whether menu is displayed.
-    if (state) toggleMenu ();
+    if (state) toggleMenu();
   };
 
   // Called when a contextual menu option get clicked.
   const onMenuOptionClicked = pos => {
     // Throws `onOptionClicked` event.
-    onOptionClicked (pos);
+    onOptionClicked(pos);
     // Hides contextual menu.
-    window.setTimeout (toggleMenu, 200); 
+    window.setTimeout(toggleMenu, 200); 
   };
 
   // Generates menu option for large screens.
-  const buildOption = React.useCallback ((index, text) => (
+  const buildOption = React.useCallback((index, text) => (
     <span
       className = {(option === index ? "header-active" : '')}
-      onClick = {() => onOptionClicked (index)}
+      onClick = {() => onOptionClicked(index)}
     >
-      {lang.getText (text)}
+      {lang.getText(text)}
     </span>
   // Dependencies.
   ), [onOptionClicked, option, lang]);
 
   // Generates contextual menu option for small screens.
-  const buildContextualOption = React.useCallback ((index, text) => (
-    <div onClick = {() => onMenuOptionClicked (index)}>
+  const buildContextualOption = React.useCallback((index, text) => (
+    <div onClick = {() => onMenuOptionClicked(index)}>
     {/** Label */}
-    <span>{lang.getText (text)}</span>
+    <span>{lang.getText(text)}</span>
     {/** Right arrow */}
     <img
       alt = "Option menu right arrow."
@@ -73,28 +73,28 @@ export default function Header ({option, onOptionClicked}) {
     // Whether we must show it.
     if (!state) {
       // Destroys `turn-off` class from hook.
-      if (hook != null) hook.current.classList.remove ("turn-off");
+      if (hook != null) hook.current.classList.remove("turn-off");
       // Destroys `turn-off` class from menu.
-      if (menu != null) menu.current.classList.remove ("turn-off");
+      if (menu != null) menu.current.classList.remove("turn-off");
       // Changes state.
-      setState (true);
+      setState(true);
     // Otherwise.
     } else {
       // Adds `turn-off` class from hook.
-      if (hook != null) hook.current.classList.add ("turn-off");
+      if (hook != null) hook.current.classList.add("turn-off");
       // Adds `turn-off` class from menu.
-      if (menu != null) menu.current.classList.add ("turn-off");
+      if (menu != null) menu.current.classList.add("turn-off");
       // Changes state.
-      setState (false);
+      setState(false);
     }
   };
 
   // Called when component is mounted.
-  React.useEffect (() => {
+  React.useEffect(() => {
     // Listens window resizement.
-    window.addEventListener ("resize", () => {
+    window.addEventListener("resize", () => {
       // Whether current is bigger than 736.
-      if (window.innerWidth > 736 && state) toggleMenu ();
+      if (window.innerWidth > 736 && state) toggleMenu();
     });
   });
 
@@ -104,12 +104,12 @@ export default function Header ({option, onOptionClicked}) {
     <div className = "app">
       {/** Logo */}
       <img
-        onClick = {() => window.location.reload ()}
+        onClick = {() => window.location.reload()}
         src = {appLogo} alt = "App logo."
         height = {64} width = {64}
       />
       {/** Name */}
-      <span>{lang.getText ("tr1")}</span>
+      <span>{lang.getText("tr1")}</span>
     </div>
     {/** Right options */}
     <div className = "header-options">
@@ -119,13 +119,13 @@ export default function Header ({option, onOptionClicked}) {
         <option value = "en">EN</option>
       </select>
       {/** Features */}
-      {buildOption (0, "tr2")}
+      {buildOption(0, "tr2")}
       {/** Support */}
-      {buildOption (1, "tr3")}
+      {buildOption(1, "tr3")}
       {/** FAQs */}
-      {buildOption (2, "tr4")}
+      {buildOption(2, "tr4")}
       {/** Contact us */}
-      {buildOption (3, "tr5")}
+      {buildOption(3, "tr5")}
       {/** Download button */}
       <a className = "header-btn" href = '#' onClick = {closeMenu}>
         {/** Icon */}
@@ -135,7 +135,7 @@ export default function Header ({option, onOptionClicked}) {
           src = {downloadIcon}
         />
         {/** Text */}
-        <span>{lang.getText ("tr6")}</span>
+        <span>{lang.getText("tr6")}</span>
       </a>
       {/** Emburger menu */}
       <img
@@ -147,24 +147,18 @@ export default function Header ({option, onOptionClicked}) {
         onClick = {toggleMenu}
       />
       {/** Hook */}
-      <div
-        className = "header-menu-hook turn-off"
-        ref = {hook}
-      ></div>
+      <div className = "header-menu-hook turn-off" ref = {hook}></div>
     </div>
     {/** Contextual menu */}
-    <div
-      className = "header-contextual-menu turn-off"
-      ref = {menu}
-    >
+    <div className = "header-contextual-menu turn-off" ref = {menu}>
       {/** Features */}
-      {buildContextualOption (0, "tr2")}
+      {buildContextualOption(0, "tr2")}
       {/** Support */}
-      {buildContextualOption (1, "tr3")}
+      {buildContextualOption(1, "tr3")}
       {/** FAQs */}
-      {buildContextualOption (2, "tr4")}
+      {buildContextualOption(2, "tr4")}
       {/** Contact us */}
-      {buildContextualOption (3, "tr5")}
+      {buildContextualOption(3, "tr5")}
     </div>
   </header>;
 }

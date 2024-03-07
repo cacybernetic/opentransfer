@@ -14,6 +14,7 @@
 @import "../common/themes/_light.scss";
 @import "../common/utils/tooltip/_tooltip.scss";
 @import "./components/features/_features.scss";
+@import "../common/utils/toast/_toast.scss";
 @import "./components/header/_header.scss";
 @import "./components/banner/_banner.scss";
 
@@ -44,6 +45,16 @@
 	src: url($ubuntu-regular);
 }
 
+// Message box cancel button.
+button.swal2-cancel {
+  box-shadow: 0 0 0 transparent !important;
+  font-family: $ubuntu-regular-font;
+  // From 920 to 0.
+  @media #{$otr-920} {
+    font-size: 0.92rem !important;
+  }
+}
+
 // Root.
 body {
 	font-family: $ubuntu-regular-font;
@@ -52,4 +63,109 @@ body {
 	user-select: none;
 	font-weight: 400;
 	font-size: 16px;
+}
+
+// Message box title.
+h2.swal2-title {
+  font-family: $ubuntu-regular-font;
+  color: darken($primary-900, 10%);
+  // From 920 to 0.
+  @media #{$otr-920} {
+    font-size: 1.5rem !important;
+  }
+}
+
+// Message box confirm button.
+button.swal2-confirm {
+  background-color: $primary-900 !important;
+  box-shadow: 0 0 0 transparent !important;
+  font-family: $ubuntu-regular-font;
+  // Hover effect.
+  &:hover {
+    background-color: $primary-100 !important;
+  }
+  // From 920 to 0.
+  @media #{$otr-920} {
+    font-size: 0.92rem !important;
+  }
+}
+
+// Toast message.
+div.toast {
+  width: 250px !important;
+  // Inner.
+  div.toast-inner {
+    background-color: $primary-900 !important;
+    padding: 14px !important;
+  }
+  // Text.
+  div.toast-text {
+    font-family: $ubuntu-regular-font;
+    font-size: 16px !important;
+    color: $white-color;
+    // From 920 to 0.
+    @media #{$otr-920} {
+      font-size: 14px !important;
+    }
+  }
+}
+
+// Message box icon.
+div.swal2-icon {
+  border-color: $error-color !important;
+  // Content.
+  div.swal2-icon-content {
+    color: $error-color;
+  }
+  // Left and right cross.
+  span.swal2-x-mark-line-right,
+  span.swal2-x-mark-line-left {
+    background-color: $error-color;
+  }
+  // From 920 to 0.
+  @media #{$otr-920} {
+    height: 4rem;
+    width: 4rem;
+    // Inner text.
+    div.swal2-icon-content {
+      font-size: 3rem;
+    }
+    // Cross.
+    span.swal2-x-mark {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+// Message box html content.
+div.swal2-html-container {
+  color: darken($primary-900, 10%) !important;
+  font-family: $ubuntu-regular-font;
+  line-height: 26px !important;
+  // More details.
+  details {
+    text-align: left;
+    // Title.
+    summary {
+      cursor: pointer;
+      font-size: 15px;
+    }
+    // Text.
+    p {
+      font-size: 13px;
+    }
+  }
+  // From 920 to 0.
+  @media #{$otr-920} {
+    line-height: 23px !important;
+    font-size: 1rem !important;
+    // Summary.
+    details > summary {
+      font-size: 14px;
+    }
+    // Description.
+    details > p {
+      font-size: 12px;
+    }
+  }
 }

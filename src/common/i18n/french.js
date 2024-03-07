@@ -93,7 +93,17 @@ const french = {
     tr28: "Sans devoir se rapprocher d'un marchand.",
     tr29: "Sans connexion internet, ni données mobile.",
     tr30: "Aucun frais réseau supplémentaire.",
-    tr31: "Avec opérateur réseau préféré."
+    tr31: "Avec opérateur réseau préféré.",
+    tr32: "Erreur réseau",
+    tr33: `
+      Il semble que votre navigateur vient d'être mis 
+      hors internet. Vérifiez vos accessoires réseau 
+      (Wifi, router, etc...) et assurez d'être 
+      correctement connecté à internet.
+    `,
+    tr34: `
+      Votre navigateur vient de se connecter à internet.
+    `
   }
 }
 
