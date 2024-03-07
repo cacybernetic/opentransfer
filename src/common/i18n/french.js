@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-05
+* @updated 2024-03-06
 * @file french.js
 * @version 0.0.1
 * @type {French}
@@ -47,7 +47,53 @@ const french = {
     `,
     tr10: "L’obtenir sur",
     tr11: "Google Play",
-    tr12: "Android APK"
+    tr12: "Android APK",
+    tr13: `
+      Open Transfer (OTR) fournit des fonctionnalités 
+      précise ne ciblant que les usage quotidiennent 
+      de la population sur les opérateurs réseau et 
+      nécessitant l'emploi de code USSD.
+    `,
+
+    tr14: "Transfert d'argent",
+    tr15: `
+      Transférez de l'argent à vos proches, amis et 
+      familles.
+    `,
+    tr16: "Payement dans une boutique",
+    tr17: `
+      Effectuez vos achats auprès de toute entité légale 
+      qui accepte des paiements par le biais d'opérateurs 
+      réseau.
+    `,
+    tr18: "Achat & Transfert de crédit/forfait",
+    tr19: `
+      Achetez du crédit et/ou forfait pour vous même 
+      ainsi qu'a un destinataire de votre choix.
+    `,
+    tr20: "Consultation de solde",
+    tr21: `
+      Accédez au montant actuel ou restant dans votre 
+      compte en fonction de votre opérateur réseau.
+    `,
+    tr22: "Transfert autonome",
+    tr23: `
+      Automatisez vos transferts en les programmants
+      à l'avance aux destinataires de votre choix 
+      pour des objectifs précis.
+    `,
+    tr24: "Historiques des activités",
+    tr25: `
+      Accédez à vos transactions, paiements, achat et 
+      transfert de crédit(s)/forfait(s) les plus 
+      récents afin de prendre des décisions future.
+    `,
+    tr26: "Facilement et rapidement.",
+    tr27: "Librement et en toute sécurité.",
+    tr28: "Sans devoir se rapprocher d'un marchand.",
+    tr29: "Sans connexion internet, ni données mobile.",
+    tr30: "Aucun frais réseau supplémentaire.",
+    tr31: "Avec opérateur réseau préféré."
   }
 }
 

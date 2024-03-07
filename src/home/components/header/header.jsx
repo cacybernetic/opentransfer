@@ -4,7 +4,7 @@
 * @fileoverview The header view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-04
-*	@updated 2024-03-06
+*	@updated 2024-03-07
 *	@file header.jsx
 *	@version 0.0.4
 */
@@ -13,12 +13,12 @@
 import React from "react";
 
 // Custom dependencies.
-import rightArrowIcon from "../../../../public/assets/icons/right_arrow.svg";
-import downloadIcon from "../../../../public/assets/icons/download.svg";
-import appLogo from "../../../../public/assets/logos/otr_light.png";
-import closeIcon from "../../../../public/assets/icons/close.svg";
-import menuIcon from "../../../../public/assets/icons/menu.svg";
 import lang from "../../../common/utils/language/language.js";
+import rightArrowIcon from "/assets/icons/right_arrow.svg";
+import downloadIcon from "/assets/icons/download.svg";
+import appLogo from "/assets/logos/otr_light.png";
+import closeIcon from "/assets/icons/close.svg";
+import menuIcon from "/assets/icons/menu.svg";
 
 // Header view section.
 export default function Header ({option, onOptionClicked}) {
@@ -40,6 +40,33 @@ export default function Header ({option, onOptionClicked}) {
     // Hides contextual menu.
     window.setTimeout (toggleMenu, 200); 
   };
+
+  // Generates menu option for large screens.
+  const buildOption = React.useCallback ((index, text) => (
+    <span
+      className = {(option === index ? "header-active" : '')}
+      onClick = {() => onOptionClicked (index)}
+    >
+      {lang.getText (text)}
+    </span>
+  // Dependencies.
+  ), [onOptionClicked, option, lang]);
+
+  // Generates contextual menu option for small screens.
+  const buildContextualOption = React.useCallback ((index, text) => (
+    <div onClick = {() => onMenuOptionClicked (index)}>
+    {/** Label */}
+    <span>{lang.getText (text)}</span>
+    {/** Right arrow */}
+    <img
+      alt = "Option menu right arrow."
+      className = "emburger-menu"
+      height = {24} width = {24}
+      src = {rightArrowIcon}
+    />
+    </div>
+  // Dependencies.
+  ), [onMenuOptionClicked, rightArrowIcon, lang]);
 
   // Shows/Hides contextual menu.
   const toggleMenu = () => {
@@ -67,10 +94,7 @@ export default function Header ({option, onOptionClicked}) {
     // Listens window resizement.
     window.addEventListener ("resize", () => {
       // Whether current is bigger than 736.
-      if (window.innerWidth > 736 && state) {
-        // Hides contextual menu.
-        toggleMenu ();
-      }
+      if (window.innerWidth > 736 && state) toggleMenu ();
     });
   });
 
@@ -95,35 +119,15 @@ export default function Header ({option, onOptionClicked}) {
         <option value = "en">EN</option>
       </select>
       {/** Features */}
-      <span
-        className = {(option === 0 ? "header-active" : '')}
-        onClick = {() => onOptionClicked (0)}
-      >
-        {lang.getText ("tr2")}
-      </span>
+      {buildOption (0, "tr2")}
       {/** Support */}
-      <span
-        className = {(option === 1 ? "header-active" : '')}
-        onClick = {() => onOptionClicked (1)}
-      >
-        {lang.getText ("tr3")}
-      </span>
+      {buildOption (1, "tr3")}
       {/** FAQs */}
-      <span
-        className = {(option === 2 ? "header-active" : '')}
-        onClick = {() => onOptionClicked (2)}
-      >
-        {lang.getText ("tr4")}
-      </span>
+      {buildOption (2, "tr4")}
       {/** Contact us */}
-      <span
-        className = {(option === 3 ? "header-active" : '')}
-        onClick = {() => onOptionClicked (3)}
-      >
-        {lang.getText ("tr5")}
-      </span>
+      {buildOption (3, "tr5")}
       {/** Download button */}
-      <a className = "header-btn" href = "#" onClick = {closeMenu}>
+      <a className = "header-btn" href = '#' onClick = {closeMenu}>
         {/** Icon */}
         <img
           alt = "Icon for download button."
@@ -154,53 +158,13 @@ export default function Header ({option, onOptionClicked}) {
       ref = {menu}
     >
       {/** Features */}
-      <div onClick = {() => onMenuOptionClicked (0)}>
-        {/** Label */}
-        <span>{lang.getText ("tr2")}</span>
-        {/** Right arrow */}
-        <img
-          alt = "Option menu right arrow."
-          className = "emburger-menu"
-          height = {24} width = {24}
-          src = {rightArrowIcon}
-        />
-      </div>
+      {buildContextualOption (0, "tr2")}
       {/** Support */}
-      <div onClick = {() => onMenuOptionClicked (1)}>
-        {/** Label */}
-        <span>{lang.getText ("tr3")}</span>
-        {/** Right arrow */}
-        <img
-          alt = "Option menu right arrow."
-          className = "emburger-menu"
-          height = {24} width = {24}
-          src = {rightArrowIcon}
-        />
-      </div>
+      {buildContextualOption (1, "tr3")}
       {/** FAQs */}
-      <div onClick = {() => onMenuOptionClicked (2)}>
-        {/** Label */}
-        <span>{lang.getText ("tr4")}</span>
-        {/** Right arrow */}
-        <img
-          alt = "Option menu right arrow."
-          className = "emburger-menu"
-          height = {24} width = {24}
-          src = {rightArrowIcon}
-        />
-      </div>
+      {buildContextualOption (2, "tr4")}
       {/** Contact us */}
-      <div onClick = {() => onMenuOptionClicked (3)}>
-        {/** Label */}
-        <span>{lang.getText ("tr5")}</span>
-        {/** Right arrow */}
-        <img
-          alt = "Option menu right arrow."
-          className = "emburger-menu"
-          height = {24} width = {24}
-          src = {rightArrowIcon}
-        />
-      </div>
+      {buildContextualOption (3, "tr5")}
     </div>
   </header>;
 }

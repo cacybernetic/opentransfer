@@ -1,0 +1,385 @@
+/**
+* @project: Open Transfer - https://cacybernetic.github.io/open_transfer
+* @author: Obrymec - obrymecsprinces@gmail.com
+* @fileoverview: Features section stylesheets.
+* @supported: DESKTOP & MOBILE
+* @created: 2024-03-06
+* @updated: 2024-03-07
+* @file: features.scss
+* @version: 0.0.5
+*/
+
+// Custom dependencies.
+@import "./_animations.scss";
+@import "./_variables.scss";
+
+// Content.
+div.features-content {
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 48px;
+  display: flex;
+  width: 100%;
+  // From 670 to 592.
+  @media #{$features-670} {
+    margin-top: 24px;
+  }
+  // From 592 to 0.
+  @media #{$features-592} {
+    flex-direction: column;
+  }
+}
+
+// Selected slider feature.
+div.features-selected {
+  animation: 3s containerBloom 1s backwards;
+  animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+  cursor: auto !important;
+  // Content.
+  div.content {
+    visibility: visible !important;
+    height: 26px !important;
+    width: 26px !important;
+    // From 670 to 0.
+    @media #{$features-670} {
+      height: 18px !important;
+      width: 18px !important;
+    }
+  }
+}
+
+// Active feature screenshot.
+div.active-feature {
+  transform: translate3d(0, 0, 0);
+  justify-content: center;
+  display: inline-flex;
+  width: 50%;
+  // From 800 to 670.
+  @media #{$features-800} {
+    justify-content: flex-end;
+    padding-right: 32px;
+  }
+  // From 670 to 592.
+  @media #{$features-670} {
+    justify-content: flex-start;
+    padding-right: 0;
+    width: auto;
+  }
+  // From 592 to 0.
+  @media #{$features-592} {
+    justify-content: center;
+    padding-right: 0;
+    width: 100%;
+  }
+}
+
+// Top title.
+div.features-top-title {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 14px;
+  font-size: 32px;
+  // From 912 to 670.
+  @media #{$features-912} {
+    font-size: 24px;
+  }
+  // From 670 to 0.
+  @media #{$features-670} {
+    font-size: 20px;
+  }
+  // Left icon.
+  img {
+    // From 912 to 670.
+    @media #{$features-912} {
+      height: 48px;
+      width: 48px;
+    }
+    // From 670 to 0.
+    @media #{$features-670} {
+      height: 32px;
+      width: 32px;
+    }
+  }
+}
+
+// Slider.
+div.features-slider {
+  justify-content: center;
+  display: flex;
+  // Arrows.
+  img {
+    cursor: pointer;
+  }
+  // Line.
+  div.line {
+    background-color: $primary-100;
+    transition: all 0.1s linear;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  // Content.
+  div.content {
+    justify-content: space-between;
+    transition: all 0.1s linear;
+    align-items: center;
+    visibility: hidden;
+    display: flex;
+    height: 0;
+    width: 0;
+  }
+  // Container.
+  div.container {
+    background-color: $primary-100;
+    border-radius: 40px;
+    cursor: pointer;
+    padding: 8px;
+    // From 670 to 0.
+    @media #{$features-670} {
+      padding: 6px;
+    }
+  }
+}
+
+// Matrix.
+div.features-matrix {
+  transform: translate3d(0, 0, 0);
+  // Image.
+  img {
+    position: relative;
+    z-index: 1;
+  }
+  // Shadow effect.
+  div.shadow-effect {
+    box-shadow: 0 0 50px $features-shadow-color;
+    transform: translateX(-50%);
+    border-radius: 30px;
+    position: fixed;
+    width: 210px;
+    bottom: 15px;
+    z-index: 0;
+    left: 50%;
+    top: 15px;
+    // From 670 to 592.
+    @media #{$features-670} {
+      box-shadow: 0 0 25px $features-shadow-color;
+      transform: translateX(0);
+      width: 140px;
+      left: 6px;
+    }
+    // From 592 to 0.
+    @media #{$features-592} {
+      transform: translateX(-50%);
+      width: 210px;
+      left: 50%;
+    }
+  }
+}
+
+// Vertical carousel slider.
+div.vertical-carousel {
+  // From 670 to 0.
+  @media #{$features-670} {
+    display: none;
+  }
+  // Content.
+  div.content {
+    flex-direction: column;
+  }
+  // Line.
+  div.line {
+    flex-direction: column;
+    row-gap: 32px;
+    height: 60%;
+    width: 3px;
+  }
+  // Top arrow.
+  img:first-child {
+    transform: scale(1.0) translateY(0);
+    // Hover effect.
+    &:hover {
+      transform: scale(1.0) translateY(-3px);
+    }
+  }
+  // Bottom arrow.
+  img:last-child {
+    transform: scale(1.2) translateY(0);
+    // Hover effect.
+    &:hover {
+      transform: scale(1.2) translateY(3px);
+    }
+  }
+  // Slider.
+  div.features-slider {
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    left: 24px;
+    bottom: 0;
+    top: 0;
+  }
+}
+
+// Features.
+section.features {
+  background-color: $features-bg-color;
+  padding: 48px 50px 48px 50px;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  // From 912 to 592.
+  @media #{$features-912} {
+    padding: 48px 25px 48px 25px;
+  }
+  // From 592 to 0.
+  @media #{$features-592} {
+    padding: 48px 16px 48px 16px;
+  }
+  // Big title.
+  & > h2 {
+    color: $features-text-color;
+    text-transform: uppercase;
+    font-size: 24px;
+  }
+  // Bottom bar.
+  hr {
+    background-color: $primary-900;
+    margin-top: 4px;
+    width: 64px;
+    height: 4px;
+  }
+  // Description.
+  & > span {
+    color: $features-text-color;
+    line-height: 32px;
+    margin-top: 16px;
+    font-size: 20px;
+    // From 670 to 592.
+    @media #{$features-670} {
+      line-height: 24px;
+      font-size: 16px;
+    }
+    // From 592 to 0.
+    @media #{$features-592} {
+      font-size: 14px;
+    }
+  }
+}
+
+// Informations.
+div.features-infos {
+  color: $features-text-color;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  row-gap: 8px;
+  width: 50%;
+  // From 670 to 592.
+  @media #{$features-670} {
+    margin-left: 24px;
+    row-gap: 4px;
+    width: 100%;
+  }
+  // From 592 to 0.
+  @media #{$features-592} {
+    margin-top: 16px;
+    margin-left: 0;
+  }
+  // Desctiption.
+  & > span {
+    margin-bottom: 16px;
+    margin-top: 10px;
+    font-size: 18px;
+    // From 912 to 670.
+    @media #{$features-912} {
+      font-size: 16px;
+    }
+    // From 670 to 0.
+    @media #{$features-670} {
+      margin-bottom: 6px;
+      margin-top: 6px;
+      font-size: 14px;
+    }
+  }
+  // All advantage.
+  div.advantage {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 6px;
+    line-height: 18px;
+    column-gap: 10px;
+    // From 912 to 670.
+    @media #{$features-912} {
+      column-gap: 8px;
+      font-size: 14px;
+    }
+    // From 670 to 0.
+    @media #{$features-670} {
+      font-size: 12px;
+      column-gap: 6px;
+    }
+  }
+}
+
+// Horizontal carousel.
+div.horizontal-carousel {
+  margin-top: 64px;
+  display: none;
+  // From 670 to 0.
+  @media #{$features-670} {
+    display: inline-block;
+    margin-top: 24px;
+  }
+  // Slider.
+  div.features-slider {
+    flex-direction: row;
+  }
+  // Content.
+  div.content {
+    transform: scale(1.0) translateX(-3.4px);
+    flex-direction: row;
+    // From 670 to 0.
+    @media #{$features-670} {
+      transform: scale(0.8) translateX(-3.4px);
+    }
+  }
+  // Line.
+  div.line {
+    flex-direction: row;
+    column-gap: 32px;
+    height: 3px;
+    width: 60%;
+    // From 670 to 0.
+    @media #{$features-670} {
+      column-gap: 16px;
+      width: 70%;
+    }
+  }
+  // Left arrow.
+  img:first-child {
+    transform: scale(1.0) translateX(-2px);
+    // Hover effect.
+    &:hover {
+      transform: scale(1.0) translateX(-4px);
+    }
+    // From 670 to 0.
+    @media #{$features-670} {
+      height: 12px;
+      width: 12px;
+    }
+  }
+  // Right arrow.
+  img:last-child {
+    transform: scale(1.0) translateX(2px);
+    // Hover effect.
+    &:hover {
+      transform: scale(1.0) translateX(4px);
+    }
+    // From 670 to 0.
+    @media #{$features-670} {
+      height: 12px;
+      width: 12px;
+    }
+  }
+}
