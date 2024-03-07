@@ -4,9 +4,9 @@
 	@fileoverview: The global html structure.
   @supported: DESKTOP & MOBILE
 	@created: 2024-03-04
-	@updated: 2024-03-04
+	@updated: 2024-03-07
 	@file: index.html
-	@version: 0.0.1
+	@version: 0.0.2
 -->
 
 <!--Open Transfer-->
@@ -44,10 +44,10 @@
     <body>
       <!--Root node-->
       <div id = "root"></div>
+      <!--External dependencies-->
+      <script src = "./widgets/msgbox.js" type = "text/javascript"></script>
+      <script src = "./widgets/toast.js" type = "text/javascript"></script>
       <!--Controller-->
-      <script
-        src = "./src/main.jsx"
-        type = "module"
-      ></script>
+      <script src = "./src/main.jsx" type = "module"></script>
     </body>
   </html>

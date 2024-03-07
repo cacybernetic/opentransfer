@@ -4,7 +4,7 @@
 * @fileoverview The banner view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-05
-*	@updated 2024-03-06
+*	@updated 2024-03-07
 *	@file banner.jsx
 *	@version 0.0.3
 */
@@ -21,7 +21,7 @@ import background from "/assets/images/background.png";
 import androidIcon from "/assets/icons/android.svg";
 
 // Banner view section.
-export default function Banner () {
+export default function Banner() {
   // Builds jsx elements.
   return <section className = "banner">
     {/** Background */}
@@ -31,9 +31,9 @@ export default function Banner () {
       {/** Left part */}
       <div className = "banner-left-part">
         {/** Text */}
-        <span>{lang.getText ("tr8")}</span>
+        <span>{lang.getText("tr8")}</span>
         {/** Description */}
-        <span>{lang.getText ("tr9")}</span>
+        <span>{lang.getText("tr9")}</span>
         {/** Downloads */}
         <div className = "banner-downloads">
           {/** Google play */}
@@ -46,8 +46,8 @@ export default function Banner () {
               />
             </div>
             <div>
-              <span>{lang.getText ("tr10")}</span>
-              <span>{lang.getText ("tr11")}</span>
+              <span>{lang.getText("tr10")}</span>
+              <span>{lang.getText("tr11")}</span>
             </div>
             <div>
               <img
@@ -67,8 +67,8 @@ export default function Banner () {
               />
             </div>
             <div>
-              <span>{lang.getText ("tr6")}</span>
-              <span>{lang.getText ("tr12")}</span>
+              <span>{lang.getText("tr6")}</span>
+              <span>{lang.getText("tr12")}</span>
             </div>
             <div>
               <img
