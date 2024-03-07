@@ -120,12 +120,10 @@ export default function Header({option, onOptionClicked}) {
       </select>
       {/** Features */}
       {buildOption(0, "tr2")}
-      {/** Support */}
-      {buildOption(1, "tr3")}
       {/** FAQs */}
-      {buildOption(2, "tr4")}
+      {buildOption(1, "tr4")}
       {/** Contact us */}
-      {buildOption(3, "tr5")}
+      {buildOption(2, "tr5")}
       {/** Download button */}
       <a className = "header-btn" href = '#' onClick = {closeMenu}>
         {/** Icon */}
@@ -153,12 +151,10 @@ export default function Header({option, onOptionClicked}) {
     <div className = "header-contextual-menu turn-off" ref = {menu}>
       {/** Features */}
       {buildContextualOption(0, "tr2")}
-      {/** Support */}
-      {buildContextualOption(1, "tr3")}
       {/** FAQs */}
-      {buildContextualOption(2, "tr4")}
+      {buildContextualOption(1, "tr4")}
       {/** Contact us */}
-      {buildContextualOption(3, "tr5")}
+      {buildContextualOption(2, "tr5")}
     </div>
   </header>;
 }

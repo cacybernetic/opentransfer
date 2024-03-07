@@ -4,10 +4,10 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-06
+* @updated 2024-03-07
 * @file english.js
 * @type {English}
-* @version 0.0.1
+* @version 0.0.2
 */
 
 /**
