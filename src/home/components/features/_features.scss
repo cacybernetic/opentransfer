@@ -69,6 +69,35 @@ div.features-selected {
   }
 }
 
+// Top title.
+div.features-top-title {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 14px;
+  font-size: 32px;
+  // From 912 to 670.
+  @media #{$features-912} {
+    font-size: 24px;
+  }
+  // From 670 to 0.
+  @media #{$features-670} {
+    font-size: 20px;
+  }
+  // Left icon.
+  img {
+    // From 912 to 670.
+    @media #{$features-912} {
+      height: 48px;
+      width: 48px;
+    }
+    // From 670 to 0.
+    @media #{$features-670} {
+      height: 32px;
+      width: 32px;
+    }
+  }
+}
+
 // Slider.
 div.features-slider {
   justify-content: center;
@@ -100,35 +129,6 @@ div.features-slider {
   div.vline > div.container > div.content {
     height: 0;
     width: 0;
-  }
-}
-
-// Top title.
-div.features-top-title {
-  display: inline-flex;
-  align-items: center;
-  column-gap: 14px;
-  font-size: 32px;
-  // From 912 to 670.
-  @media #{$features-912} {
-    font-size: 24px;
-  }
-  // From 670 to 0.
-  @media #{$features-670} {
-    font-size: 20px;
-  }
-  // Left icon.
-  img {
-    // From 912 to 670.
-    @media #{$features-912} {
-      height: 48px;
-      width: 48px;
-    }
-    // From 670 to 0.
-    @media #{$features-670} {
-      height: 32px;
-      width: 32px;
-    }
   }
 }
 
@@ -201,6 +201,15 @@ section.features {
     line-height: 32px;
     margin-top: 16px;
     font-size: 20px;
+    // From 670 to 592.
+    @media #{$features-670} {
+      line-height: 24px;
+      font-size: 16px;
+    }
+    // From 592 to 0.
+    @media #{$features-592} {
+      font-size: 14px;
+    }
   }
 }
 
@@ -243,6 +252,8 @@ div.features-infos {
   div.advantage {
     display: inline-flex;
     align-items: center;
+    margin-bottom: 6px;
+    line-height: 18px;
     column-gap: 10px;
     // From 912 to 670.
     @media #{$features-912} {
