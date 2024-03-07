@@ -6,26 +6,12 @@
 * @created: 2024-03-06
 * @updated: 2024-03-07
 * @file: features.scss
-* @version: 0.0.4
+* @version: 0.0.5
 */
 
 // Custom dependencies.
 @import "./_animations.scss";
 @import "./_variables.scss";
-
-// Selected slider feature.
-div.features-selected {
-  animation: 3s containerBloom 1s backwards;
-  animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-  cursor: auto !important;
-  // Content.
-  div.content {
-    visibility: visible !important;
-    height: 26px !important;
-    width: 26px !important;
-  }
-}
 
 // Content.
 div.features-content {
@@ -44,20 +30,46 @@ div.features-content {
   }
 }
 
+// Selected slider feature.
+div.features-selected {
+  animation: 3s containerBloom 1s backwards;
+  animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+  cursor: auto !important;
+  // Content.
+  div.content {
+    visibility: visible !important;
+    height: 26px !important;
+    width: 26px !important;
+    // From 670 to 0.
+    @media #{$features-670} {
+      height: 18px !important;
+      width: 18px !important;
+    }
+  }
+}
+
 // Active feature screenshot.
 div.active-feature {
   transform: translate3d(0, 0, 0);
   justify-content: center;
   display: inline-flex;
   width: 50%;
+  // From 800 to 670.
+  @media #{$features-800} {
+    justify-content: flex-end;
+    padding-right: 32px;
+  }
   // From 670 to 592.
   @media #{$features-670} {
     justify-content: flex-start;
+    padding-right: 0;
     width: auto;
   }
   // From 592 to 0.
   @media #{$features-592} {
     justify-content: center;
+    padding-right: 0;
     width: 100%;
   }
 }
@@ -87,6 +99,45 @@ div.features-top-title {
     @media #{$features-670} {
       height: 32px;
       width: 32px;
+    }
+  }
+}
+
+// Slider.
+div.features-slider {
+  justify-content: center;
+  display: flex;
+  // Arrows.
+  img {
+    cursor: pointer;
+  }
+  // Line.
+  div.line {
+    background-color: $primary-100;
+    transition: all 0.1s linear;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  // Content.
+  div.content {
+    justify-content: space-between;
+    transition: all 0.1s linear;
+    align-items: center;
+    visibility: hidden;
+    display: flex;
+    height: 0;
+    width: 0;
+  }
+  // Container.
+  div.container {
+    background-color: $primary-100;
+    border-radius: 40px;
+    cursor: pointer;
+    padding: 8px;
+    // From 670 to 0.
+    @media #{$features-670} {
+      padding: 6px;
     }
   }
 }
@@ -123,6 +174,50 @@ div.features-matrix {
       width: 210px;
       left: 50%;
     }
+  }
+}
+
+// Vertical carousel slider.
+div.vertical-carousel {
+  // From 670 to 0.
+  @media #{$features-670} {
+    display: none;
+  }
+  // Content.
+  div.content {
+    flex-direction: column;
+  }
+  // Line.
+  div.line {
+    flex-direction: column;
+    row-gap: 32px;
+    height: 60%;
+    width: 3px;
+  }
+  // Top arrow.
+  img:first-child {
+    transform: scale(1.0) translateY(0);
+    // Hover effect.
+    &:hover {
+      transform: scale(1.0) translateY(-3px);
+    }
+  }
+  // Bottom arrow.
+  img:last-child {
+    transform: scale(1.2) translateY(0);
+    // Hover effect.
+    &:hover {
+      transform: scale(1.2) translateY(3px);
+    }
+  }
+  // Slider.
+  div.features-slider {
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    left: 24px;
+    bottom: 0;
+    top: 0;
   }
 }
 
@@ -227,62 +322,64 @@ div.features-infos {
   }
 }
 
-// Slider.
-div.features-slider {
-  justify-content: center;
-  flex-direction: column;
-  position: fixed;
-  display: flex;
-  z-index: 1;
-  left: 24px;
-  bottom: 0;
-  top: 0;
-  // Feature container.
-  div.container {
-    background-color: $primary-100;
-    border-radius: 40px;
-    cursor: pointer;
-    padding: 8px;
+// Horizontal carousel.
+div.horizontal-carousel {
+  margin-top: 64px;
+  display: none;
+  // From 670 to 0.
+  @media #{$features-670} {
+    display: inline-block;
+    margin-top: 24px;
   }
-  // Top arrow.
-  img:first-child {
-    transform: scale(1.0) translateY(0);
-    cursor: pointer;
-    // Hover effect.
-    &:hover {
-      transform: scale(1.0) translateY(-3px);
-    }
-  }
-  // Bottom arrow.
-  img:last-child {
-    transform: scale(1.2) translateY(0);
-    cursor: pointer;
-    // Hover effect.
-    &:hover {
-      transform: scale(1.2) translateY(3px);
-    }
-  }
-  // Hides content.
+  // Content.
   div.content {
-    justify-content: space-between;
-    transition: all 0.1s linear;
-    flex-direction: column;
-    align-items: center;
-    visibility: hidden;
-    display: flex;
-    height: 0;
-    width: 0;
+    transform: scale(1.0) translateX(-3.4px);
+    flex-direction: row;
+    // From 670 to 0.
+    @media #{$features-670} {
+      transform: scale(0.8) translateX(-3.4px);
+    }
   }
-  // Vertical line.
+  // Slider.
+  div.features-slider {
+    flex-direction: row;
+  }
+  // Line.
   div.line {
-    background-color: $primary-100;
-    transition: all 0.1s linear;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 32px;
-    display: flex;
-    height: 60%;
-    width: 3px;
+    flex-direction: row;
+    column-gap: 32px;
+    height: 3px;
+    width: 60%;
+    // From 670 to 0.
+    @media #{$features-670} {
+      column-gap: 16px;
+      width: 70%;
+    }
+  }
+  // Left arrow.
+  img:first-child {
+    transform: scale(1.0) translateX(-2px);
+    // Hover effect.
+    &:hover {
+      transform: scale(1.0) translateX(-4px);
+    }
+    // From 670 to 0.
+    @media #{$features-670} {
+      height: 12px;
+      width: 12px;
+    }
+  }
+  // Right arrow.
+  img:last-child {
+    transform: scale(1.0) translateX(2px);
+    // Hover effect.
+    &:hover {
+      transform: scale(1.0) translateX(4px);
+    }
+    // From 670 to 0.
+    @media #{$features-670} {
+      height: 12px;
+      width: 12px;
+    }
   }
 }

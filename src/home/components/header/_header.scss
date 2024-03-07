@@ -63,6 +63,7 @@ div.app {
   column-gap: 4px;
   // Logo.
   img {
+    cursor: pointer;
     // From 1024 to 512.
     @media #{$header-1024} {
       height: 48px;

@@ -14,9 +14,11 @@ import React from "react";
 
 // Custom dependencies.
 import lang from "../../../common/utils/language/language.js";
+import rightArrowIcon from "/assets/icons/arrow_right.svg";
 import screenshot1 from "/assets/images/screenshot_1.png";
 import screenshot2 from "/assets/images/screenshot_2.png";
 import screenshot3 from "/assets/images/screenshot_3.png";
+import leftArrowIcon from "/assets/icons/left_arrow.svg";
 import downArrowIcon from "/assets/icons/down_arrow.svg";
 import transferIcon from "/assets/icons/exchange.svg";
 import upArrowIcon from "/assets/icons/up_arrow.svg";
@@ -25,35 +27,34 @@ import balanceIcon from "/assets/icons/money.svg";
 import payIcon from "/assets/icons/pay.svg";
 
 // Features view section.
-export default function Features () {
+export default function Features() {
   // Attributes.
-  const [index, setIndex] = React.useState (0);
-  const featuresLine = React.useRef (null);
-  const matrix = React.useRef (null);
-  const infos = React.useRef (null);
+  const [index, setIndex] = React.useState(0);
+  const matrix = React.useRef(null);
+  const infos = React.useRef(null);
   const features = [
     {
-      description: lang.getText ("tr21"),
-      title: lang.getText ("tr20"),
+      description: lang.getText("tr21"),
+      title: lang.getText("tr20"),
       screenshot: screenshot1,
       icon: balanceIcon
     },
     {
-      description: lang.getText ("tr15"),
-      title: lang.getText ("tr14"),
+      description: lang.getText("tr15"),
+      title: lang.getText("tr14"),
       screenshot: screenshot2,
       icon: transferIcon
     },
     {
-      description: lang.getText ("tr17"),
-      title: lang.getText ("tr16"),
+      description: lang.getText("tr17"),
+      title: lang.getText("tr16"),
       screenshot: screenshot3,
       icon: payIcon
     }
   ];
 
   // Generates an advantage.
-  const buildAdvantage = React.useCallback (text => (
+  const buildAdvantage = React.useCallback(text => (
     <div className = "advantage">
       {/** Checked icon */}
       <img
@@ -63,99 +64,117 @@ export default function Features () {
         width = {16}
       />
       {/** Label */}
-      <span>{lang.getText (text)}</span>
+      <span>{lang.getText(text)}</span>
     </div>
   // Dependencies.
   ), [checkedIcon, lang]);
 
   // Overrides active index to the given position.
-  const setFeature = React.useCallback (position => {
+  const setFeature = React.useCallback(position => {
     // Whether passed position isn't equal to active index.
-    if (position !== index && featuresLine != null) {
+    if (position !== index) {
+      // Adds `masked` class to matrix.
+      if (matrix != null) matrix.current.classList.add("masked");
+      // Adds `masked` class to infos.
+      if (infos != null) infos.current.classList.add("masked");
+      // Gets lines.
+      const lines = document.querySelectorAll (
+        "div.features-slider > div.line"
+      );
       // Corrects passed position index.
       position = (
         position < 0 ? (features.length - 1) :
         (position >= features.length ? 0 : position)
       );
-      // Adds `masked` class to matrix.
-      if (matrix != null) matrix.current.classList.add ("masked");
-      // Adds `masked` class to infos.
-      if (infos != null) infos.current.classList.add ("masked");
-      // Removes `selected` class from old active feature.
-      featuresLine.current.children[index].classList.remove (
-        "features-selected"
-      );
+      // Removing `selected` class from old active feature line.
+      for (let line of lines) {
+        // Destroys it.
+        line.children[index].classList.remove("features-selected");
+      }
       // Waits for 200ms.
-      window.setTimeout (() => {
+      window.setTimeout(() => {
         // Destroys `masked` class to matrix.
-        if (matrix != null) matrix.current.classList.remove ("masked");
+        if (matrix != null) matrix.current.classList.remove("masked");
         // Destroys `masked` class to infos.
-        if (infos != null) infos.current.classList.remove ("masked");
-        // Adds `selected` class to new active feature.
-        featuresLine.current.children[position].classList.add (
-          "features-selected"
-        );
+        if (infos != null) infos.current.classList.remove("masked");
+        // Adding `selected` class to new active feature.
+        for (let line of lines) {
+          // Adds it.
+          line.children[position].classList.add("features-selected");
+        }
         // Sets active index.
-        setIndex (position);
+        setIndex(position);
       }, 200);
     }
   // Dependencies.
-  }, [index, features, matrix, infos, featuresLine]);
+  }, [index, features, matrix, infos]);
 
   // Generates feature point selection.
-  const buildFeature = React.useCallback ((pos, active) => (
+  const buildFeature = React.useCallback((pos, active, tooltip, turn) => (
     <div
       className = {`container${(active ? " features-selected" : '')}`}
-      onClick = {() => setFeature (pos)}
       aria-label = {features[pos].title}
-      data-tts = "right"
+      onClick = {() => setFeature(pos)}
+      data-tts = {tooltip}
     >
       {/** Arrows hoster */}
       <div className = "content">
         {/** Top arrow icon */}
         <img
-          onClick = {() => setFeature (index - 1)}
+          src = {(turn ? leftArrowIcon : upArrowIcon)}
+          onClick = {() => setFeature(index - 1)}
           alt = "Up arrow icon"
-          src = {upArrowIcon}
           height = {8}
           width = {16}
         />
         {/** Bottom arrow icon */}
         <img
-          onClick = {() => setFeature (index + 1)}
+          src = {(turn ? rightArrowIcon : downArrowIcon)}
+          onClick = {() => setFeature(index + 1)}
           alt = "Down arrow icon"
-          src = {downArrowIcon}
           height = {8}
           width = {16}
         />
       </div>
     </div>
   // Dependencies.
-  ), [downArrowIcon, upArrowIcon, features, setFeature]);
+  ), [
+    rightArrowIcon, leftArrowIcon, downArrowIcon,
+    upArrowIcon, features, setFeature
+  ]);
+
+  // Generates carousel slider.
+  const buildCarouselSlider = React.useCallback((tooltip, turn) => (
+    <div className = "features-slider">
+      {/** Line */}
+      <div className = "line">
+        {/** Balance consultation */}
+        {buildFeature(0, true, tooltip, turn)}
+        {/** Money transfer */}
+        {buildFeature(1, false, tooltip, turn)}
+        {/** Shop payment */}
+        {buildFeature(2, false, tooltip, turn)}
+      </div>
+    </div>
+  // Dependencies.
+  ), [buildFeature]);
 
   // Builds jsx elements.
   return <section className = "features">
     {/** Big title */}
-    <h2>{lang.getText ("tr2")}</h2>
+    <h2>{lang.getText("tr2")}</h2>
     {/** Bottom bar */}
     <hr/>
     {/** Short description */}
-    <span>{lang.getText ("tr13")}</span>
+    <span>{lang.getText("tr13")}</span>
     {/** Content */}
     <div className = "features-content">
       {/** Active feature */}
       <div className = "active-feature">
         {/** Slider */}
-        <div className = "features-slider">
-          {/** Line */}
-          <div className = "line" ref = {featuresLine}>
-            {/** Balance consultation */}
-            {buildFeature (0, true)}
-            {/** Money transfer */}
-            {buildFeature (1)}
-            {/** Shop payment */}
-            {buildFeature (2)}
-          </div>
+        <div className = "vertical-carousel">
+          {/** Carousel slider */}
+          {buildCarouselSlider("right", false)}
         </div>
         {/** Feature image */}
         <div className = "features-matrix" ref = {matrix}>
@@ -187,17 +206,22 @@ export default function Features () {
         {/** Description */}
         <span>{features[index].description}</span>
         {/** Advantage 1 */}
-        {buildAdvantage ("tr26")}
+        {buildAdvantage("tr26")}
         {/** Advantage 2 */}
-        {buildAdvantage ("tr27")}
+        {buildAdvantage("tr27")}
         {/** Advantage 3 */}
-        {buildAdvantage ("tr28")}
+        {buildAdvantage("tr28")}
         {/** Advantage 4 */}
-        {buildAdvantage ("tr29")}
+        {buildAdvantage("tr29")}
         {/** Advantage 5 */}
-        {buildAdvantage ("tr30")}
+        {buildAdvantage("tr30")}
         {/** Advantage 6 */}
-        {buildAdvantage ("tr31")}
+        {buildAdvantage("tr31")}
+        {/** Slider */}
+        <div className = "horizontal-carousel">
+          {/** Carousel slider */}
+          {buildCarouselSlider("up", true)}
+        </div>
       </div>
     </div>
   </section>;
