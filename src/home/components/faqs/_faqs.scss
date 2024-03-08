@@ -6,15 +6,130 @@
 * @created: 2024-03-08
 * @updated: 2024-03-08
 * @file: faqs.scss
-* @version: 0.0.1
+* @version: 0.0.2
 */
 
 // Custom dependencies.
 @import "./_variables.scss";
 
+// Question deployed.
+div.faqs-qst-deployed {
+  background-color: $faqs-question-bg-color;
+  box-shadow: 0 0 4px $faqs-shadow-color;
+}
+
 // Content.
 div.faqs-content {
   margin-top: 48px;
+}
+
+// Question.
+div.faqs-question {
+  border: 1px solid $faqs-border-color;
+  color: $faqs-text-color;
+  border-radius: 4px;
+  width: 100%;
+}
+
+// Deployed question.
+div.faqs-deployed {
+  padding: 0 16px 16px 16px !important;
+  height: auto !important;
+  // From 912 to 670.
+  @media #{$faqs-912} {
+    padding: 0 14px 14px 14px !important;
+  }
+  // From 670 to 592.
+  @media #{$faqs-670} {
+    padding: 0 12px 12px 12px !important;
+  }
+  // From 592 to 0.
+  @media #{$faqs-592} {
+    padding: 0 10px 10px 10px !important;
+  }
+}
+
+// Question header.
+div.faqs-qst-header {
+  justify-content: space-between;
+  display: inline-flex;
+  align-items: center;
+  font-size: 24px;
+  padding: 16px;
+  width: 100%;
+  // From 912 to 670.
+  @media #{$faqs-912} {
+    font-size: 20px;
+    padding: 14px;
+  }
+  // From 670 to 592.
+  @media #{$faqs-670} {
+    font-size: 18px;
+    padding: 12px;
+  }
+  // From 592 to 0.
+  @media #{$faqs-592} {
+    font-size: 16px;
+    padding: 10px;
+  }
+  // Right icon.
+  img {
+    cursor: pointer;
+    // From 912 to 0.
+    @media #{$faqs-912} {
+      height: 22px;
+      width: 22px;
+    }
+    // From 670 to 0.
+    @media #{$faqs-670} {
+      height: 18px;
+      width: 18px;
+    }
+  }
+}
+
+// Question content.
+div.faqs-qst-content {
+  padding: 0 16px 0 16px;
+  line-height: 32px;
+  overflow: hidden;
+  font-size: 20px;
+  height: 0;
+  // From 912 to 670.
+  @media #{$faqs-912} {
+    padding: 0 14px 0 14px;
+    line-height: 26px;
+    font-size: 18px;
+  }
+  // From 670 to 592.
+  @media #{$faqs-670} {
+    padding: 0 12px 0 12px;
+    line-height: 24px;
+    font-size: 16px;
+  }
+  // From 592 to 0.
+  @media #{$faqs-592} {
+    padding: 0 10px 0 10px;
+    line-height: 20px;
+    font-size: 14px;
+  }
+  // Separator.
+  & > hr {
+    background-color: $faqs-shadow-color;
+    margin-bottom: 16px;
+    // From 912 to 670.
+    @media #{$faqs-912} {
+      margin-bottom: 14px;
+    }
+    // From 670 to 592.
+    @media #{$faqs-670} {
+      margin-bottom: 12px;
+    }
+    // From 592 to 0.
+    @media #{$faqs-592} {
+      margin-bottom: 10px;
+    }
+  }
 }
 
 // Faqs.
@@ -39,7 +154,7 @@ section.faqs {
     font-size: 24px;
   }
   // Bottom bar.
-  hr {
+  & > hr {
     background-color: $primary-900;
     margin-top: 4px;
     width: 64px;

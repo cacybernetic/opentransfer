@@ -177,7 +177,7 @@ const english = {
     `,
     tr48: `
       Do we have to create an account on Open Transfer
-      before its use?
+      before its use ?
     `,
     tr49: `
       Open Transfer was originally created to assist you
@@ -281,8 +281,8 @@ const english = {
     tr68: `
       Find the answers to all your questions here or
       pre-aucupations. If you are not always satisfied,
-      then contact us for more information and
-      clarification.
+      then <span class = "faqs-contact-us">contact us
+      </span> for more information and clarification.
     `,
     tr70: "Back",
     tr71: "Visit at the same time"
