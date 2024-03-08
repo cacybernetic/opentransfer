@@ -1,0 +1,64 @@
+/**
+* @project: Open Transfer - https://cacybernetic.github.io/open_transfer
+* @author: Obrymec - obrymecsprinces@gmail.com
+* @fileoverview: Faqs section stylesheets.
+* @supported: DESKTOP & MOBILE
+* @created: 2024-03-08
+* @updated: 2024-03-08
+* @file: faqs.scss
+* @version: 0.0.1
+*/
+
+// Custom dependencies.
+@import "./_variables.scss";
+
+// Content.
+div.faqs-content {
+  margin-top: 48px;
+}
+
+// Faqs.
+section.faqs {
+  background-color: $faqs-bg-color;
+  padding: 48px 50px 48px 50px;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  // From 912 to 592.
+  @media #{$faqs-912} {
+    padding: 48px 25px 48px 25px;
+  }
+  // From 592 to 0.
+  @media #{$faqs-592} {
+    padding: 48px 16px 48px 16px;
+  }
+  // Big title.
+  & > h2 {
+    color: $faqs-text-color;
+    text-transform: uppercase;
+    font-size: 24px;
+  }
+  // Bottom bar.
+  hr {
+    background-color: $primary-900;
+    margin-top: 4px;
+    width: 64px;
+    height: 4px;
+  }
+  // Description.
+  & > span {
+    color: $faqs-text-color;
+    line-height: 32px;
+    margin-top: 16px;
+    font-size: 20px;
+    // From 670 to 592.
+    @media #{$faqs-670} {
+      line-height: 24px;
+      font-size: 16px;
+    }
+    // From 592 to 0.
+    @media #{$faqs-592} {
+      font-size: 14px;
+    }
+  }
+}
