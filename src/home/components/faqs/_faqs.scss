@@ -6,21 +6,34 @@
 * @created: 2024-03-08
 * @updated: 2024-03-09
 * @file: faqs.scss
-* @version: 0.0.3
+* @version: 0.0.4
 */
 
 // Custom dependencies.
 @import "./_variables.scss";
 
-// Content.
-div.faqs-content {
-  margin-top: 48px;
+// FAQ popup displayed.
+aside.faqs-popup-displayed {
+  transform: translate3d(0, 0, 0) translateY(0) !important;
 }
 
 // Question deployed.
 div.faqs-qst-deployed {
-  background-color: $faqs-question-bg-color;
+  background-color: $faqs-question-bg-color !important;
   box-shadow: 0 0 4px $faqs-shadow-color;
+}
+
+// Full questions.
+div.faqs-full-qst {
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  display: grid;
+  gap: 32px;
+  // From 670 to 592.
+  @media #{$faqs-670} {
+    grid-template-columns: auto;
+    gap: 16px;
+  }
 }
 
 // Contact us link.
@@ -39,8 +52,12 @@ span.faqs-contact-us {
 // Question.
 div.faqs-question {
   border: 1px solid $faqs-border-color;
+  background-color: $faqs-bg-color;
   color: $faqs-text-color;
+  justify-content: center;
+  flex-direction: column;
   border-radius: 4px;
+  display: flex;
   width: 100%;
   // Hover effect.
   &:hover {
@@ -112,6 +129,59 @@ div.faqs-qst-content {
   }
 }
 
+// Content.
+div.faqs-content {
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 48px;
+  display: flex;
+  // Button text.
+  & > button > span {
+    color: $faqs-text-color;
+    font-size: 18px;
+    // From 670 to 592.
+    @media #{$faqs-670} {
+      font-size: 16px;
+    }
+    // From 592 to 0.
+    @media #{$faqs-592} {
+      font-size: 14px;
+    }
+  }
+  // Learn more button.
+  & > button {
+    background-color: $primary-100;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    padding: 16px;
+    border: none;
+    // From 912 to 670.
+    @media #{$faqs-912} {
+      font-size: 14px;
+      padding: 14px;
+    }
+    // From 670 to 592.
+    @media #{$faqs-670} {
+      font-size: 12px;
+      padding: 12px;
+    }
+    // From 592 to 0.
+    @media #{$faqs-592} {
+      padding: 10px;
+    }
+  }
+  // Button hover effect.
+  & > button:hover {
+    background-color: $primary-400;
+    // Text.
+    & > span {
+      text-shadow: 0 0 8px $faqs-bg-color;
+      color: $faqs-bg-color;
+    }
+  }
+}
+
 // Question header.
 div.faqs-qst-header {
   justify-content: space-between;
@@ -119,6 +189,7 @@ div.faqs-qst-header {
   border-top-left-radius: 4px;
   display: inline-flex;
   align-items: center;
+  line-height: 32px;
   column-gap: 12px;
   cursor: pointer;
   font-size: 24px;
@@ -126,16 +197,19 @@ div.faqs-qst-header {
   width: 100%;
   // From 912 to 670.
   @media #{$faqs-912} {
+    line-height: 26px;
     font-size: 20px;
     padding: 14px;
   }
   // From 670 to 592.
   @media #{$faqs-670} {
+    line-height: 24px;
     font-size: 18px;
     padding: 12px;
   }
   // From 592 to 0.
   @media #{$faqs-592} {
+    line-height: 22px;
     font-size: 16px;
     padding: 10px;
   }
@@ -223,6 +297,7 @@ section.faqs {
 // Input container.
 div.faqs-input {
   display: inline-flex;
+  margin-bottom: 48px;
   width: 100%;
   // Search vector.
   div.search > img {
@@ -282,9 +357,9 @@ div.faqs-input {
 
 // Popup.
 aside.faqs-popup {
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0) translateY(100%);
   background-color: $primary-900;
-  padding: 64px 96px 64px 96px;
+  padding: 64px 96px 48px 96px;
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
@@ -298,15 +373,15 @@ aside.faqs-popup {
   top: 0;
   // From 912 to 670.
   @media #{$faqs-912} {
-    padding: 64px 48px 64px 48px;
+    padding: 64px 48px 48px 48px;
   }
   // From 670 to 592.
   @media #{$faqs-670} {
-    padding: 64px 32px 64px 32px;
+    padding: 64px 32px 32px 32px;
   }
   // From 592 to 0.
   @media #{$faqs-592} {
-    padding: 64px 16px 64px 16px;
+    padding: 64px 16px 16px 16px;
   }
   // Back icon.
   & > img {

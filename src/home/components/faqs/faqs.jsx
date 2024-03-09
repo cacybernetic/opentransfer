@@ -23,7 +23,7 @@ import addIcon from "/assets/icons/add.svg";
 // Question view.
 function Question({data}) {
   // Attributes.
-  const {show, question, answer} = data;
+  const {show, question, answer, useHTML} = data;
   const [isHidden, hide] = React.useState(!show);
 
   // Sends his jsx code.
@@ -60,7 +60,9 @@ function Question({data}) {
       {/** Separator */}
       <hr/>
       {/** Answer text */}
-      <span>{answer}</span>
+      {(!useHTML ? <span>{answer}</span> : <span
+        dangerouslySetInnerHTML = {{__html: answer}}
+      ></span>)}
     </div>
   </div>;
 }
@@ -68,12 +70,15 @@ function Question({data}) {
 // Frequently asked questions view section.
 export default function FAQs() {
   // Attributes.
+  const [tag, setTag] = React.useState('');
+  const popup = React.useRef(null);
   const input = React.useRef(null);
   const clear = React.useRef(null);
   const faqsList = [
     {
       question: lang.getText("tr36"),
       answer: lang.getText("tr37"),
+      useHTML: false,
       show: false,
     },
     {
@@ -84,90 +89,137 @@ export default function FAQs() {
     {
       question: lang.getText("tr40"),
       answer: lang.getText("tr41"),
+      useHTML: true,
       show: false,
     },
     {
       question: lang.getText("tr42"),
       answer: lang.getText("tr43"),
+      useHTML: false,
       show: false,
     },
     {
       question: lang.getText("tr44"),
       answer: lang.getText("tr45"),
+      useHTML: false,
       show: false,
     },
     {
       question: lang.getText("tr46"),
       answer: lang.getText("tr47"),
+      useHTML: false,
       show: false,
     },
     {
       question: lang.getText("tr48"),
       answer: lang.getText("tr49"),
+      useHTML: false,
       show: false,
     },
     {
       question: lang.getText("tr50"),
       answer: lang.getText("tr51"),
+      useHTML: false,
       show: false,
     },
     {
       question: lang.getText("tr52"),
       answer: lang.getText("tr53"),
+      useHTML: false,
       show: false,
     },
     {
       question: lang.getText("tr54"),
       answer: lang.getText("tr55"),
+      useHTML: false,
       show: false,
     },
     {
       question: lang.getText("tr56"),
       answer: lang.getText("tr57"),
+      useHTML: true,
       show: false,
     },
     {
       question: lang.getText("tr58"),
       answer: lang.getText("tr59"),
+      useHTML: false,
       show: false,
     },
     {
       question: lang.getText("tr60"),
       answer: lang.getText("tr61"),
+      useHTML: false,
       show: false,
     },
     {
       question: lang.getText("tr62"),
       answer: lang.getText("tr63"),
+      useHTML: false,
       show: false,
     }
   ];
+  
+  // Filters questions list regardless search tag.
+  const filtered = React.useMemo(() => (
+    tag.length <= 0 ? [...faqsList] : faqsList.filter(
+      ({question, answer}) => (
+        question.toLowerCase().includes(tag.toLowerCase()) ||
+        answer.toLowerCase().includes(tag.toLowerCase())
+      )
+    )
+  // Dependencies.
+  ), [faqsList, tag]);
 
   // Clears search input content.
-  const clearInput = () => {
+  const clearInput = React.useCallback(() => {
     // Whether input exists.
     if (input != null) {
       // Clears input text.
       input.current.value = '';
       // Hides clear button.
       clear?.current?.classList?.add("turn-off");
+      // Sets search tag.
+      setTag('');
     }
-  }
+  // Dependencies.
+  }, [setTag, input, clear]);
+
+  // Toggles visibiity of faqs full questions popup.
+  const toggleFaqsPopup = React.useCallback(() => {
+    // Whether popup isn't displayed yet.
+    if (popup?.current?.classList?.contains("faqs-popup-displayed")) {
+      // Hides it.
+      popup?.current?.classList?.remove("faqs-popup-displayed");
+      // Hides body scrollbar. 
+      document.body.style.overflowY = '';
+    // Otherwise.
+    } else {
+      // Shows it.
+      popup?.current?.classList?.add("faqs-popup-displayed");
+      // Shows body scrollbar.
+      document.body.style.overflowY = "hidden";
+    }
+  // Dependencies.
+  }, [popup]);
 
   // Called when input text value changed.
-  const onInputValueChanged = () => {
+  const onInputValueChanged = React.useCallback(() => {
     // The current input value.
     const value = input?.current?.value?.trim();
     // Whether value exists.
     if (value != null && value.length > 0) {
       // Shows clear button.
       clear?.current?.classList?.remove("turn-off");
+      // Sets search tag.
+      setTag(value);
     // Otherwise.
     } else {
       // Hides clear button.
       clear?.current?.classList?.add("turn-off");
     }
-  }
+  // Dependencies.
+  }, [setTag, input, clear]);
 
   // Builds jsx elements.
   return <section className = "faqs">
@@ -192,12 +244,21 @@ export default function FAQs() {
       {/** Question 5 */}
       <Question data = {faqsList[4]}/><br/>
       {/** Question 6 */}
-      <Question data = {faqsList[6]}/>
+      <Question data = {faqsList[6]}/><br/>
+      {/** Learn more */}
+      <button
+        onClick = {() => toggleFaqsPopup()}
+        title = {lang.getText("tr75")}
+      >
+        {/** Text content */}
+        <span>{lang.getText("tr76")}</span>
+      </button>
     </div>
     {/** Popup */}
-    <aside className = "faqs-popup">
+    <aside className = "faqs-popup" ref = {popup}>
       {/** Back icon */}
       <img
+        onClick = {() => toggleFaqsPopup()}
         height = {32} width = {32}
         alt = "Back icon"
         src = {backIcon}
@@ -217,7 +278,7 @@ export default function FAQs() {
         </div>
         {/** Input */}
         <input
-          onChange = {() => onInputValueChanged ()}
+          onChange = {() => onInputValueChanged()}
           placeholder = {lang.getText("tr74")}
           type = "text" ref = {input}
         />
@@ -225,12 +286,18 @@ export default function FAQs() {
         <div className = "clear turn-off" ref = {clear}>
           {/** Clear icon */}
           <img
-            onClick = {() => clearInput ()}
+            onClick = {() => clearInput()}
             height = {24} width = {24}
             alt = "Clear icon"
             src = {clearIcon}
           />
         </div>
+      </div>
+      {/** Full questions */}
+      <div className = "faqs-full-qst">
+        {filtered.map((faq, index) => (
+          <Question data = {faq} key = {index}/>
+        ))}
       </div>
     </aside>
   </section>;

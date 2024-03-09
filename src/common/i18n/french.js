@@ -125,7 +125,7 @@ const french = {
     tr40: "Pourquoi créer un tel service ?",
     tr41: `
       Suite à de nombreux études et interviews sur le sujet, 
-      force est de constater que :
+      force est de constater que :<br//>
       - L'utilisateur doit avoir en mémoire le code associé 
       à l'opération dont-il souhaite effectuée. Cela 
       représente un handicape pour les vieilles personnes ou 
@@ -134,14 +134,14 @@ const french = {
       quel moment, pénalisant ainsi l'utilisateur qui s'est 
       déjà habitué à l'emploi des anciens codes. C'est encore 
       pire pour les personnes qui sont peu présent sur les 
-      opérateurs réseau.
+      opérateurs réseau.<br/>
       - L'utilisateur se fatigue rapidement à cause du nombre 
       et de la longueur époustouflante des codes USSD à 
       composer sans parlé des erreurs de frappe au cours de la 
       composition ainsi que celles du réseau par moment ou à des 
       périodes données, obligeant ainsi ce dernier à recomposer 
       le code encore et encore. Cela est fâcheux à l'utilisateur 
-      d'autant plus que ça lui perd inutilement du temps.
+      d'autant plus que ça lui perd inutilement du temps.<br/>
       - Les opérateurs ont tenté de résoudre le problème en 
       mettant à la disposition de leurs clientelles, une 
       application imprégnée de leurs services. Le problème est 
@@ -235,18 +235,18 @@ const french = {
       précise la ou les cause(s) de l'erreur survenue et donne 
       des directives de base pour y remédier. Néanmoins, si 
       vous voulez faire une opération et que cela ne marche pas, 
-      voici ce qui pourrait être à la cause de l'erreur :
+      voici ce qui pourrait être à la cause de l'erreur :<br/>
       - Le réseau de votre opérateur est instable ou présente 
       des tubulences. Dans ces cas, soit vous essayez avec un 
       autre opérateur réseau, soit vous attendez afin de 
-      reéssayer plus tard.
+      reéssayer plus tard.<br/>
       - La deuxième cause pourrait être due à un code USSD erroné 
       généré par Open Transfer en arrière-plan. Dans ce cas, il
       est recommandé de mettre à jour l'application afin de 
       bénéficier des nouvelles configurations et changements 
       faite sur cette dernière. L'hypothèse du code erroné est 
       due au changement de celui-ci au sein de votre opérateur 
-      réseau.
+      réseau.<br/>
       - Votre sim est trop vieille; a été mise hors service ou 
       bloquée par votre propre opérateur réseau. Dans ce cas 
       de figure, il est fortement recommandé de changer votre 
@@ -318,7 +318,9 @@ const french = {
     tr71: "Visitez qu'en même",
     tr72: "Déplier",
     tr73: "Plier",
-    tr74: "Comment pouvons-nous vous aidez ?"
+    tr74: "Comment pouvons-nous vous aidez ?",
+    tr75: "Apprendre plus sur l'application Open Transfer.",
+    tr76: "En lire plus"
   }
 }
 
