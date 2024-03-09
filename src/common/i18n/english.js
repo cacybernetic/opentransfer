@@ -287,7 +287,8 @@ const english = {
     tr70: "Back",
     tr71: "Visit at the same time",
     tr72: "Unfold",
-    tr73: "Bend"
+    tr73: "Bend",
+    tr74: "Hi, how can we help you ?"
   }
 };
 

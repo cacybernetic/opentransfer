@@ -317,7 +317,8 @@ const french = {
     tr70: "Retour",
     tr71: "Visitez qu'en même",
     tr72: "Déplier",
-    tr73: "Plier"
+    tr73: "Plier",
+    tr74: "Comment pouvons-nous vous aidez ?"
   }
 }
 

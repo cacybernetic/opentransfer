@@ -6,7 +6,7 @@
 * @created: 2024-03-08
 * @updated: 2024-03-09
 * @file: faqs.scss
-* @version: 0.0.2
+* @version: 0.0.3
 */
 
 // Custom dependencies.
@@ -216,6 +216,135 @@ section.faqs {
     // From 592 to 0.
     @media #{$faqs-592} {
       font-size: 14px;
+    }
+  }
+}
+
+// Input container.
+div.faqs-input {
+  display: inline-flex;
+  width: 100%;
+  // Search vector.
+  div.search > img {
+    transform: translate(5px, 10px);
+    position: absolute;
+    // From 670 to 592.
+    @media #{$faqs-670} {
+      height: 22px;
+      width: 22px;
+    }
+    // From 592 to 0.
+    @media #{$faqs-592} {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  // Clear vector.
+  div.clear > img {
+    transform: translate(-30px, 10px);
+    filter: brightness(20%);
+    position: absolute;
+    cursor: pointer;
+    // From 670 to 592.
+    @media #{$faqs-670} {
+      transform: translate(-28px, 10px);
+      height: 22px;
+      width: 22px;
+    }
+    // From 592 to 0.
+    @media #{$faqs-592} {
+      transform: translate(-26px, 10px);
+      height: 20px;
+      width: 20px;
+    }
+  }
+  // Input field.
+  input {
+    box-shadow: 0 2px 3px $faqs-shadow-color inset;
+    background-color: $faqs-bg-color;
+    padding: 12px 36px 12px 36px;
+    color: $primary-900;
+    border-radius: 4px;
+    font-size: 18px;
+    border: none;
+    width: 100%;
+    // From 670 to 592.
+    @media #{$faqs-670} {
+      font-size: 16px;
+    }
+    // From 592 to 0.
+    @media #{$faqs-592} {
+      padding: 12px 32px 12px 32px;
+      font-size: 14px;
+    }
+  }
+}
+
+// Popup.
+aside.faqs-popup {
+  transform: translate3d(0, 0, 0);
+  background-color: $primary-900;
+  padding: 64px 96px 64px 96px;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  display: flex;
+  z-index: 2;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  // From 912 to 670.
+  @media #{$faqs-912} {
+    padding: 64px 48px 64px 48px;
+  }
+  // From 670 to 592.
+  @media #{$faqs-670} {
+    padding: 64px 32px 64px 32px;
+  }
+  // From 592 to 0.
+  @media #{$faqs-592} {
+    padding: 64px 16px 64px 16px;
+  }
+  // Back icon.
+  & > img {
+    cursor: pointer;
+    position: fixed;
+    left: 92px;
+    top: 24px;
+    // From 912 to 670.
+    @media #{$faqs-912} {
+      left: 48px;
+    }
+    // From 670 to 592.
+    @media #{$faqs-670} {
+      left: 32px;
+    }
+    // From 592 to 0.
+    @media #{$faqs-592} {
+      height: 24px;
+      width: 24px;
+      left: 16px;
+      top: 16px;
+    }
+  }
+  // Title.
+  & > span {
+    color: $primary-400;
+    margin-bottom: 72px;
+    font-weight: bold;
+    font-size: 96px;
+    // From 670 to 592.
+    @media #{$faqs-670} {
+      margin-bottom: 48px;
+      font-size: 64px;
+    }
+    // From 592 to 0.
+    @media #{$faqs-592} {
+      margin-bottom: 32px;
+      font-size: 48px;
     }
   }
 }

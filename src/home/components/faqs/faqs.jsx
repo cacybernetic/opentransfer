@@ -15,6 +15,9 @@ import React from "react";
 // Custom dependencies.
 import lang from "../../../common/utils/language/language.js";
 import substractIcon from "/assets/icons/sustract.svg";
+import searchIcon from "/assets/icons/search.svg";
+import clearIcon from "/assets/icons/close.svg";
+import backIcon from "/assets/icons/back.svg";
 import addIcon from "/assets/icons/add.svg";
 
 // Question view.
@@ -65,6 +68,8 @@ function Question({data}) {
 // Frequently asked questions view section.
 export default function FAQs() {
   // Attributes.
+  const input = React.useRef(null);
+  const clear = React.useRef(null);
   const faqsList = [
     {
       question: lang.getText("tr36"),
@@ -138,6 +143,32 @@ export default function FAQs() {
     }
   ];
 
+  // Clears search input content.
+  const clearInput = () => {
+    // Whether input exists.
+    if (input != null) {
+      // Clears input text.
+      input.current.value = '';
+      // Hides clear button.
+      clear?.current?.classList?.add("turn-off");
+    }
+  }
+
+  // Called when input text value changed.
+  const onInputValueChanged = () => {
+    // The current input value.
+    const value = input?.current?.value?.trim();
+    // Whether value exists.
+    if (value != null && value.length > 0) {
+      // Shows clear button.
+      clear?.current?.classList?.remove("turn-off");
+    // Otherwise.
+    } else {
+      // Hides clear button.
+      clear?.current?.classList?.add("turn-off");
+    }
+  }
+
   // Builds jsx elements.
   return <section className = "faqs">
     {/** Big title */}
@@ -163,5 +194,44 @@ export default function FAQs() {
       {/** Question 6 */}
       <Question data = {faqsList[6]}/>
     </div>
+    {/** Popup */}
+    <aside className = "faqs-popup">
+      {/** Back icon */}
+      <img
+        height = {32} width = {32}
+        alt = "Back icon"
+        src = {backIcon}
+      />
+      {/** Text */}
+      <span>{lang.getText("tr4")}</span>
+      {/** Input container */}
+      <div className = "faqs-input">
+        {/** Search container */}
+        <div className = "search">
+          {/** Vector icon */}
+          <img
+            height = {24} width = {24}
+            alt = "Search icon"
+            src = {searchIcon}
+          />
+        </div>
+        {/** Input */}
+        <input
+          onChange = {() => onInputValueChanged ()}
+          placeholder = {lang.getText("tr74")}
+          type = "text" ref = {input}
+        />
+        {/** Clear container */}
+        <div className = "clear turn-off" ref = {clear}>
+          {/** Clear icon */}
+          <img
+            onClick = {() => clearInput ()}
+            height = {24} width = {24}
+            alt = "Clear icon"
+            src = {clearIcon}
+          />
+        </div>
+      </div>
+    </aside>
   </section>;
 }
