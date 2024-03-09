@@ -320,7 +320,11 @@ const french = {
     tr73: "Plier",
     tr74: "Comment pouvons-nous vous aidez ?",
     tr75: "Apprendre plus sur l'application Open Transfer.",
-    tr76: "En lire plus"
+    tr76: "En lire plus",
+    tr77: `
+      Souhaitez-vous entrer en contact avec nous ? 
+      Nous serons ravis de vous aidez😇.
+    `
   }
 }
 

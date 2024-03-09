@@ -290,7 +290,11 @@ const english = {
     tr73: "Bend",
     tr74: "Hi, how can we help you ?",
     tr75: "Learn more about Open Transfer app.",
-    tr76: "Read more"
+    tr76: "Read more",
+    tr77: `
+      Would you like to get in touch with us? 
+      We will be happy to help you😇.
+    `
   }
 };
 
