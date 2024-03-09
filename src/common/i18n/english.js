@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-08
+* @updated 2024-03-09
 * @file english.js
 * @type {English}
 * @version 0.0.2
@@ -285,7 +285,9 @@ const english = {
       </span> for more information and clarification.
     `,
     tr70: "Back",
-    tr71: "Visit at the same time"
+    tr71: "Visit at the same time",
+    tr72: "Unfold",
+    tr73: "Bend"
   }
 };
 

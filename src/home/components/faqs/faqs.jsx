@@ -4,9 +4,9 @@
 * @fileoverview The faqs view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-08
-*	@updated 2024-03-08
+*	@updated 2024-03-09
 *	@file faqs.jsx
-*	@version 0.0.1
+*	@version 0.0.3
 */
 
 // React dependencies.
@@ -28,16 +28,27 @@ function Question({data}) {
     `faqs-question${(!isHidden ? " faqs-qst-deployed" : '')}`
   }>
     {/** Header */}
-    <div className = "faqs-qst-header">
+    <div
+      onClick = {() => hide(!isHidden)}
+      className = "faqs-qst-header"
+    >
       {/** Question */}
       <h3>{question}</h3>
-      {/** icon */}
-      <img
-        src = {isHidden ? addIcon : substractIcon}
-        onClick = {() => hide (!isHidden)}
-        height = {26} width = {26}
-        alt = "Right icon."
-      />
+      {/** Icon container */}
+      <span
+        data-tts = "up"
+        aria-label = {
+          (isHidden ? lang.getText("tr72") : lang.getText("tr73"))
+        }
+      >
+        {/** Vector icon */}
+        <img
+          src = {(isHidden ? addIcon : substractIcon)}
+          onClick = {() => hide(!isHidden)}
+          height = {26} width = {26}
+          alt = "Right icon."
+        />
+      </span>
     </div>
     {/** Content*/}
     <div className = {
@@ -134,7 +145,9 @@ export default function FAQs() {
     {/** Bottom bar */}
     <hr/>
     {/** Short description */}
-    <span>{lang.getText("tr68")}</span>
+    <span dangerouslySetInnerHTML = {{
+      __html: lang.getText("tr68")
+    }}></span>
     {/** Content */}
     <div className = "faqs-content">
       {/** Question 1 */}

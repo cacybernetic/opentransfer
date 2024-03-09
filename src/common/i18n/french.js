@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-08
+* @updated 2024-03-09
 * @file french.js
 * @version 0.0.2
 * @type {French}
@@ -302,8 +302,8 @@ const french = {
     tr68: `
       Trouvez ici les réponses à toutes vos questions ou 
       préaucupations. Si vous n'êtes pas toujours satisfait(e), 
-      alors contactez-nous pour plus de renseignement et 
-      d'éclaircissement.
+      alors <span class = "faqs-contact-us">contactez-nous
+      </span> pour plus de renseignement et d'éclaircissement.
     `,
     tr69: `
       Attention, nous vous informons que la version (0.3.4) 
@@ -315,7 +315,9 @@ const french = {
       disponible sur Google Play.
     `,
     tr70: "Retour",
-    tr71: "Visitez qu'en même"
+    tr71: "Visitez qu'en même",
+    tr72: "Déplier",
+    tr73: "Plier"
   }
 }
 
