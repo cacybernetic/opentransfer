@@ -1,0 +1,22 @@
+/**
+* @project: Open Transfer - https://cacybernetic.github.io/open_transfer
+* @fileoverview: OTR faqs variables stylesheet.
+* @author: Obrymec - obrymecsprinces@gmail.com
+* @supported: DESKTOP & MOBILE
+* @file: variables.scss
+* @created: 2024-03-08
+* @updated: 2024-03-08
+* @version: 0.0.1
+*/
+
+// Responsive breakpoints.
+$faqs-912: "only screen and (max-width: 912px)" !default;
+$faqs-670: "only screen and (max-width: 670px)" !default;
+$faqs-592: "only screen and (max-width: 592px)" !default;
+
+// Colors theme.
+$faqs-question-bg-color: lighten($primary-900, 72%) !default;
+$faqs-text-color: darken($primary-900, 13%) !default;
+$faqs-bg-color: rgb(255, 255, 255) !default;
+$faqs-shadow-color: silver !default;
+$faqs-border-color: #ddd !default;

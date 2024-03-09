@@ -4,8 +4,8 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-04
-*	@updated 2024-03-04
-*	@version 0.0.1
+*	@updated 2024-03-08
+*	@version 0.0.2
 *	@file main.jsx
 */
 
@@ -18,7 +18,5 @@ import React from "react";
 ReactDOM.createRoot (
   document.getElementById ("root")
 ).render (
-  <React.StrictMode>
-    <App/>
-  </React.StrictMode>
+  <React.StrictMode><App/></React.StrictMode>
 );

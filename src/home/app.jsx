@@ -4,7 +4,7 @@
 * @fileoverview The main application entry.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-04
-*	@updated 2024-03-07
+*	@updated 2024-03-08
 *	@version 0.0.2
 *	@file app.jsx
 */
@@ -17,6 +17,7 @@ import language from "../common/utils/language/language.js";
 import Features from "./components/features/features.jsx";
 import Header from "./components/header/header.jsx";
 import Banner from "./components/banner/banner.jsx";
+import FAQs from "./components/faqs/faqs.jsx";
 
 // Open Transfer mobile app landing page.
 export default function OpenTransfer() {
@@ -65,11 +66,13 @@ export default function OpenTransfer() {
 
   // Builds final landing page.
   return <React.Fragment>
-    {/** Header section */}
+    {/** Header */}
     <Header option = {option} onOptionClicked = {id => setOption(id)}/>
-    {/** Banner section */}
+    {/** Banner */}
     <Banner/>
-    {/** Features section */}
+    {/** Features */}
     <Features/>
+    {/** FAQs */}
+    <FAQs/>
   </React.Fragment>;
 }
