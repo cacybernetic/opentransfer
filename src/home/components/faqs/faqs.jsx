@@ -281,6 +281,7 @@ export default function FAQs() {
           onChange = {() => onInputValueChanged()}
           placeholder = {lang.getText("tr74")}
           type = "text" ref = {input}
+          name = "searcher"
         />
         {/** Clear container */}
         <div className = "clear turn-off" ref = {clear}>

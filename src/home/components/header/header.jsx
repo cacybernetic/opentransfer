@@ -4,7 +4,7 @@
 * @fileoverview The header view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-04
-*	@updated 2024-03-07
+*	@updated 2024-03-09
 *	@file header.jsx
 *	@version 0.0.4
 */
@@ -114,7 +114,7 @@ export default function Header({option, onOptionClicked}) {
     {/** Right options */}
     <div className = "header-options">
       {/** Language selection */}
-      <select onClick = {closeMenu}>
+      <select onClick = {closeMenu} name = "language">
         <option value = "fr">FR</option>
         <option value = "en">EN</option>
       </select>
