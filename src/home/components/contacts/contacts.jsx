@@ -4,9 +4,9 @@
 * @fileoverview The contacts view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-09
-*	@updated 2024-03-09
+*	@updated 2024-03-10
 *	@file contacts.jsx
-*	@version 0.0.1
+*	@version 0.0.3
 */
 
 // React dependencies.
@@ -15,13 +15,33 @@ import React from "react";
 // Custom dependencies.
 import lang from "../../../common/utils/language/language.js";
 import whatsapp from "/assets/logos/whatsapp.svg";
-import facebook from "/assets/logos/facebook.svg";
 import closeIcon from "/assets/icons/close.svg";
 import backIcon from "/assets/icons/back.svg";
 import gmail from "/assets/logos/gmail.svg";
 
 // Possible contact links view section.
-export default function Contacts() {
+export default React.forwardRef(({}, ref) => {
+  // Attributes.
+  const popup = React.useRef(null);
+
+  // Toggles visibiity of faqs full questions popup.
+  const togglePopup = React.useCallback(() => {
+    // Whether popup isn't displayed yet.
+    if (popup?.current?.classList?.contains("cts-displayed")) {
+      // Hides it.
+      popup?.current?.classList?.remove("cts-displayed");
+      // Hides body scrollbar. 
+      document.body.style.overflowY = '';
+    // Otherwise.
+    } else {
+      // Shows it.
+      popup?.current?.classList?.add("cts-displayed");
+      // Shows body scrollbar.
+      document.body.style.overflowY = "hidden";
+    }
+  // Dependencies.
+  }, [popup]);
+
   // Builds a network contact for customers.
   const buildNetworkContact = (text, logo) => (
     <div className = "network">
@@ -39,13 +59,19 @@ export default function Contacts() {
     </div>
   );
 
+  // Called when component get mounted.
+  React.useEffect(() => {
+    // Exports public methods.
+    ref.current = {togglePopup};
+  });
+
   // Sends his jsx code.
-  return <aside className = "contacts">
+  return <aside className = "contacts" ref = {popup}>
     {/** Back icon */}
     <img
+      alt = "Back icon." src = {backIcon}
+      onClick = {() => togglePopup()}
       height = {32} width = {32}
-      alt = "Back icon."
-      src = {backIcon}
     />
     {/** Main content */}
     <div className = "cts-content">
@@ -60,9 +86,9 @@ export default function Contacts() {
         <div className = "close">
           {/** Vector image */}
           <img
+            alt = "Close icon." src = {closeIcon}
+            onClick = {() => togglePopup()}
             height = {32} width = {32}
-            alt = "Close icon."
-            src = {closeIcon}
           />
         </div>
         {/** Description */}
@@ -73,10 +99,8 @@ export default function Contacts() {
           {buildNetworkContact("Whatsapp", whatsapp)}
           {/** Google mail */}
           {buildNetworkContact("Gmail", gmail)}
-          {/** Facebook */}
-          {buildNetworkContact("Facebook", facebook)}
         </div>
       </div>
     </div>
   </aside>;
-}
+});

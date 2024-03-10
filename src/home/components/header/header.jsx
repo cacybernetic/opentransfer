@@ -4,7 +4,7 @@
 * @fileoverview The header view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-04
-*	@updated 2024-03-09
+*	@updated 2024-03-10
 *	@file header.jsx
 *	@version 0.0.4
 */
@@ -21,36 +21,70 @@ import closeIcon from "/assets/icons/close.svg";
 import menuIcon from "/assets/icons/menu.svg";
 
 // Header view section.
-export default function Header({option, onOptionClicked}) {
+export default function Header({onOptionClicked}) {
   // Attributes.
   const [state, setState] = React.useState(false);
+  const [option, setOption] = React.useState(-1);
   const hook = React.useRef(null);
   const menu = React.useRef(null);
 
-  // Hides contextual menu whether it shown.
-  const closeMenu = () => {
-    // Whether menu is displayed.
-    if (state) toggleMenu();
-  };
-
-  // Called when a contextual menu option get clicked.
-  const onMenuOptionClicked = pos => {
+  // Overrides active menu option to anoter option.
+  const changeOption = React.useCallback(pos => {
     // Throws `onOptionClicked` event.
     onOptionClicked(pos);
-    // Hides contextual menu.
-    window.setTimeout(toggleMenu, 200); 
-  };
+    // Sets active option.
+    setOption(pos);
+  // Dependencies.
+  }, [onOptionClicked, setOption]);
 
   // Generates menu option for large screens.
   const buildOption = React.useCallback((index, text) => (
     <span
       className = {(option === index ? "header-active" : '')}
-      onClick = {() => onOptionClicked(index)}
+      onClick = {() => changeOption(index)}
     >
       {lang.getText(text)}
     </span>
   // Dependencies.
-  ), [onOptionClicked, option, lang]);
+  ), [changeOption, option, lang]);
+
+  // Shows/Hides contextual menu.
+  const toggleMenu = React.useCallback(() => {
+    // Whether we must show it.
+    if (!state) {
+      // Destroys `turn-off` class from hook.
+      hook?.current?.classList.remove("turn-off");
+      // Destroys `turn-off` class from menu.
+      menu?.current?.classList.remove("turn-off");
+      // Changes state.
+      setState(true);
+    // Otherwise.
+    } else {
+      // Adds `turn-off` class from hook.
+      hook?.current?.classList.add("turn-off");
+      // Adds `turn-off` class from menu.
+      menu?.current?.classList.add("turn-off");
+      // Changes state.
+      setState(false);
+    }
+  // Dependencies.
+  }, [setState, state, hook, menu]);
+
+  // Hides contextual menu whether it shown.
+  const closeMenu = React.useCallback(() => {
+    // Whether menu is displayed.
+    if (state) toggleMenu();
+  // Dependencies.
+  }, [toggleMenu]);
+
+  // Called when a contextual menu option get clicked.
+  const onMenuOptionClicked = React.useCallback(pos => {
+    // Hides contextual menu.
+    window.setTimeout(toggleMenu, 200);
+    // Overrides active menu option.
+    changeOption(pos);
+  // Dependencies.
+  }, [changeOption, toggleMenu]);
 
   // Generates contextual menu option for small screens.
   const buildContextualOption = React.useCallback((index, text) => (
@@ -67,27 +101,6 @@ export default function Header({option, onOptionClicked}) {
     </div>
   // Dependencies.
   ), [onMenuOptionClicked, rightArrowIcon, lang]);
-
-  // Shows/Hides contextual menu.
-  const toggleMenu = () => {
-    // Whether we must show it.
-    if (!state) {
-      // Destroys `turn-off` class from hook.
-      if (hook != null) hook.current.classList.remove("turn-off");
-      // Destroys `turn-off` class from menu.
-      if (menu != null) menu.current.classList.remove("turn-off");
-      // Changes state.
-      setState(true);
-    // Otherwise.
-    } else {
-      // Adds `turn-off` class from hook.
-      if (hook != null) hook.current.classList.add("turn-off");
-      // Adds `turn-off` class from menu.
-      if (menu != null) menu.current.classList.add("turn-off");
-      // Changes state.
-      setState(false);
-    }
-  };
 
   // Called when component is mounted.
   React.useEffect(() => {

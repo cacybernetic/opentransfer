@@ -4,7 +4,7 @@
 * @fileoverview The banner view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-05
-*	@updated 2024-03-07
+*	@updated 2024-03-10
 *	@file banner.jsx
 *	@version 0.0.3
 */
@@ -14,7 +14,6 @@ import React from "react";
 
 // Custom dependencies.
 import lang from "../../../common/utils/language/language.js";
-import playStoreIcon from "/assets/icons/play_store.svg";
 import homeScreen from "/assets/images/home_screen.png";
 import arrowIcon from "/assets/icons/bottom_arrow.svg";
 import background from "/assets/images/background.png";
@@ -36,27 +35,6 @@ export default function Banner() {
         <span>{lang.getText("tr9")}</span>
         {/** Downloads */}
         <div className = "banner-downloads">
-          {/** Google play */}
-          <a href = '#'>
-            <div>
-              <img
-                src = {playStoreIcon} height = {24}
-                alt = "Google play store icon."
-                width = {24}
-              />
-            </div>
-            <div>
-              <span>{lang.getText("tr10")}</span>
-              <span>{lang.getText("tr11")}</span>
-            </div>
-            <div>
-              <img
-                src = {arrowIcon} height = {24}
-                alt = "Download icon."
-                width = {24}
-              />
-            </div>
-          </a>
           {/** Android apk */}
           <a href = '#'>
             <div>
