@@ -260,7 +260,7 @@ export default function FAQs() {
       <img
         onClick = {() => toggleFaqsPopup()}
         height = {32} width = {32}
-        alt = "Back icon"
+        alt = "Back icon."
         src = {backIcon}
       />
       {/** Text */}
@@ -272,7 +272,7 @@ export default function FAQs() {
           {/** Vector icon */}
           <img
             height = {24} width = {24}
-            alt = "Search icon"
+            alt = "Search icon."
             src = {searchIcon}
           />
         </div>
@@ -289,7 +289,7 @@ export default function FAQs() {
           <img
             onClick = {() => clearInput()}
             height = {24} width = {24}
-            alt = "Clear icon"
+            alt = "Clear icon."
             src = {clearIcon}
           />
         </div>

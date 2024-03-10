@@ -10,8 +10,13 @@
 */
 
 // Responsive breakpoints.
-$contacts-812: "only screen and (max-width: 812px)" !default;
-$contacts-620: "only screen and (max-width: 620px)" !default;
-$contacts-326: "only screen and (max-width: 326px)" !default;
+$contacts-912: "only screen and (max-width: 912px)" !default;
+$contacts-670: "only screen and (max-width: 670px)" !default;
+$contacts-592: "only screen and (max-width: 592px)" !default;
 
 // Colors theme.
+$contacts-logo-bg-color-opaque: rgba(104, 203, 141, 0.6) !default;
+$contacts-logo-bg-color-opacity: rgba(104, 203, 141, 0) !default;
+$contacts-text-color: darken($primary-900, 13%) !default;
+$contacts-dissible-color: rgba(0, 0, 0, 0.6) !default;
+$contacts-border-color: silver !default;
