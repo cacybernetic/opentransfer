@@ -1,0 +1,156 @@
+/**
+* @project: Open Transfer - https://cacybernetic.github.io/open_transfer
+* @author: Obrymec - obrymecsprinces@gmail.com
+* @fileoverview: Footer section stylesheets.
+* @supported: DESKTOP & MOBILE
+* @created: 2024-03-10
+* @updated: 2024-03-10
+* @file: footer.scss
+* @version: 0.0.2
+*/
+
+// Custom dependencies.
+@import "./_variables.scss";
+
+// Bottom.
+div.foot-bottom {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  // Separator.
+  hr {
+    background-color: $footer-border-color;
+  }
+  // Copyright.
+  span {
+    transform: translateX(-7px);
+    font-style: italic;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+}
+
+// Footer.
+footer.footer {
+  transform: translate3d(0, 0, 0);
+  background-color: $primary-900;
+  padding: 10px 50px 10px 50px;
+  color: $white-color;
+  margin-top: 48px;
+  // From 912 to 670.
+  @media #{$footer-912} {
+    padding: 10px 25px 10px 25px;
+  }
+  // From 670 to 592.
+  @media #{$footer-670} {
+    padding: 10px 20px 10px 20px;
+  }
+  // From 592 to 0.
+  @media #{$footer-592} {
+    padding: 10px 16px 10px 16px;
+  }
+}
+
+// Right tags.
+div.foot-top > div.right-tags {
+  transform: translateX(-6px);
+  display: inline-flex;
+  align-items: center;
+  column-gap: 12px;
+  cursor: pointer;
+  // From 912 to 0.
+  @media #{$footer-912} {
+    transform: translateX(0);
+  }
+  // Network hover.
+  img:hover {
+    box-shadow: 0 0 10px $primary-400;
+  }
+  // Network.
+  img {
+    border-radius: 48px;
+    // From 912 to 670.
+    @media #{$footer-912} {
+      min-height: 26px;
+      min-width: 26px;
+      height: 26px;
+      width: 26px;
+    }
+    // From 670 to 0.
+    @media #{$footer-670} {
+      min-height: 22px;
+      min-width: 22px;
+      height: 22px;
+      width: 22px;
+    }
+  }
+}
+
+// Top.
+div.foot-top {
+  justify-content: space-between;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  // App logo.
+  & > img:nth-child(1) {
+    transform: translateX(-3px);
+    cursor: pointer;
+    // From 912 to 670.
+    @media #{$footer-912} {
+      min-height: 32px;
+      min-width: 32px;
+      height: 32px;
+      width: 32px;
+    }
+    // From 670 to 0.
+    @media #{$footer-670} {
+      min-height: 28px;
+      min-width: 28px;
+      height: 28px;
+      width: 28px;
+    }
+  }
+  // Global options.
+  div.global-options {
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 32px;
+    font-size: 18px;
+    width: 100%;
+    // From 912 to 670.
+    @media #{$footer-912} {
+      column-gap: 24px;
+      font-size: 16px;
+    }
+    // From 670 to 592.
+    @media #{$footer-670} {
+      column-gap: 20px;
+      font-size: 14px;
+    }
+    // From 592 to 320.
+    @media #{$footer-592} {
+      column-gap: 16px;
+      font-size: 12px;
+    }
+    // From 320 to 0.
+    @media #{$footer-320} {
+      visibility: hidden;
+      column-gap: 0;
+      font-size: 0;
+    }
+  }
+  // Options.
+  div.global-options > span {
+    cursor: pointer;
+    // Hover effect.
+    &:hover {
+      text-shadow: 0 0 8px $white-color;
+      text-underline-offset: 4px;
+      text-decoration: underline;
+    }
+  }
+}

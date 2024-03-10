@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-09
+* @updated 2024-03-10
 * @file english.js
 * @type {English}
 * @version 0.0.2
@@ -294,7 +294,37 @@ const english = {
     tr77: `
       Would you like to get in touch with us? 
       We will be happy to help you😇.
-    `
+    `,
+    tr78: "Subscribe",
+    tr79: "Follow us on",
+    tr80: "Copyright © 2023 - 2024 Console Art Cybernetic",
+    tr81: `
+      Subscribe to our publication journal to don't 
+      miss any of our next announcements on digital 
+      solutions that we provide of everyone.
+    `,
+    tr82: `
+      An organization focused on technology information 
+      which depending on the problems encountered in the 
+      field, makes its contribution through the proposal 
+      of digital solutions without forgetting full 
+      assistance and follow-up available to its 
+      customers in order to help them carry out 
+      their digital projects.
+    `,
+    tr83: "About us",
+    tr84: "A short brief",
+    tr85: `
+      We are an organization called Console Art Cybernetic, 
+      the contracted version is CAcybernetic. Founded in 2022, 
+      we excel in everything directly or indirectly related 
+      to the digital sector. We create digital solutions 
+      of impeccable quality, especially since we support 
+      our clients (natural or legal persons) to achieve 
+      their digital goals. We invite you to visit our 
+      site official website to find out more.
+    `,
+    tr86: "Ours services"
   }
 };
 
