@@ -51,7 +51,7 @@ span.faqs-contact-us {
 
 // Question.
 div.faqs-question {
-  border: 1px solid $faqs-border-color;
+  border: 1px solid $faqs-shadow-color;
   background-color: $faqs-bg-color;
   color: $faqs-text-color;
   justify-content: center;
@@ -301,7 +301,7 @@ div.faqs-input {
   width: 100%;
   // Search vector.
   div.search > img {
-    transform: translate(5px, 10px);
+    transform: translate(8px, 10px);
     position: absolute;
     // From 670 to 592.
     @media #{$faqs-670} {

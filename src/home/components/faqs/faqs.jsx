@@ -4,7 +4,7 @@
 * @fileoverview The faqs view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-08
-*	@updated 2024-03-09
+*	@updated 2024-03-10
 *	@file faqs.jsx
 *	@version 0.0.3
 */
@@ -68,7 +68,7 @@ function Question({data}) {
 }
 
 // Frequently asked questions view section.
-export default function FAQs() {
+export default function FAQs({onContactUsClicked}) {
   // Attributes.
   const [tag, setTag] = React.useState('');
   const popup = React.useRef(null);
@@ -221,6 +221,16 @@ export default function FAQs() {
   // Dependencies.
   }, [setTag, input, clear]);
 
+  // Called when component get mounted.
+  React.useEffect(() => {
+    // The contact us link.
+    const contactUsLink = document.querySelector ("span.faqs-contact-us");
+    // Removes old `click` listener.
+    contactUsLink.removeEventListener ("click", onContactUsClicked);
+    // Listens `click` event on contact us link.
+    contactUsLink.addEventListener ("click", onContactUsClicked);
+  });
+
   // Builds jsx elements.
   return <section className = "faqs">
     {/** Big title */}
@@ -260,7 +270,7 @@ export default function FAQs() {
       <img
         onClick = {() => toggleFaqsPopup()}
         height = {32} width = {32}
-        alt = "Back icon"
+        alt = "Back icon."
         src = {backIcon}
       />
       {/** Text */}
@@ -272,7 +282,7 @@ export default function FAQs() {
           {/** Vector icon */}
           <img
             height = {24} width = {24}
-            alt = "Search icon"
+            alt = "Search icon."
             src = {searchIcon}
           />
         </div>
@@ -281,6 +291,7 @@ export default function FAQs() {
           onChange = {() => onInputValueChanged()}
           placeholder = {lang.getText("tr74")}
           type = "text" ref = {input}
+          name = "searcher"
         />
         {/** Clear container */}
         <div className = "clear turn-off" ref = {clear}>
@@ -288,7 +299,7 @@ export default function FAQs() {
           <img
             onClick = {() => clearInput()}
             height = {24} width = {24}
-            alt = "Clear icon"
+            alt = "Clear icon."
             src = {clearIcon}
           />
         </div>
