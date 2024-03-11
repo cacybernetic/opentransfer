@@ -329,7 +329,10 @@ const english = {
       their digital goals. We invite you to visit our 
       site official website to find out more.
     `,
-    tr86: "Ours services"
+    tr86: "Ours services",
+    tr87: "Decline",
+    tr88: "Download Open Transfer | v0.5.0",
+    tr89: "I've read and agree above terms and conditions"
   }
 };
 

@@ -20,6 +20,7 @@ import {scrollTo} from "../common/utils/scroll/scroll.js";
 import Header from "./components/header/header.jsx";
 import Banner from "./components/banner/banner.jsx";
 import Footer from "./components/footer/footer.jsx";
+import Terms from "./components/terms/terms.jsx";
 import FAQs from "./components/faqs/faqs.jsx";
 
 // Open Transfer mobile app landing page.
@@ -96,5 +97,7 @@ export default function OpenTransfer() {
     <Contacts ref = {contacts}/>
     {/** Footer */}
     <Footer onOptionClicked = {id => overrideOption(id)}/>
+    {/** Terms and conditions */}
+    <Terms/>
   </React.Fragment>;
 }

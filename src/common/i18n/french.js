@@ -359,7 +359,10 @@ const french = {
       objectifs digital. Nous vous invitons à consulter notre site 
       web officiel pour en savoir plus.
     `,
-    tr86: "Nos services"
+    tr86: "Nos services",
+    tr87: "Décliner",
+    tr88: "Télécharger Open Transfert | v0.5.0",
+    tr89: "J'ai lu et j'accepte les termes et conditions ci-dessus"
   }
 };
 
