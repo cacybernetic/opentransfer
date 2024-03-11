@@ -4,7 +4,7 @@
 * @fileoverview The contacts view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-09
-*	@updated 2024-03-10
+*	@updated 2024-03-11
 *	@file contacts.jsx
 *	@version 0.0.3
 */
@@ -66,15 +66,20 @@ export default React.forwardRef(({}, ref) => {
   });
 
   // Sends his jsx code.
-  return <aside className = "contacts" ref = {popup}>
+  return <aside
+    className = "contacts" ref = {popup}
+    onClick = {togglePopup}
+  >
     {/** Back icon */}
     <img
       alt = "Back icon." src = {backIcon}
-      onClick = {() => togglePopup()}
       height = {32} width = {32}
     />
     {/** Main content */}
-    <div className = "cts-content">
+    <div
+      onClick = {e => e.stopPropagation()}
+      className = "cts-content"
+    >
       {/** Title */}
       <div className = "cts-title">
         {/** Text */}
@@ -87,8 +92,8 @@ export default React.forwardRef(({}, ref) => {
           {/** Vector image */}
           <img
             alt = "Close icon." src = {closeIcon}
-            onClick = {() => togglePopup()}
             height = {32} width = {32}
+            onClick = {togglePopup}
           />
         </div>
         {/** Description */}
@@ -96,9 +101,17 @@ export default React.forwardRef(({}, ref) => {
         {/** Networks */}
         <div className = "cts-networks">
           {/** Whatsapp */}
-          {buildNetworkContact("Whatsapp", whatsapp)}
+          <a
+            href = "https://chat.whatsapp.com/InLJpXa5Z4IBwFoVpM1e78"
+            onClick = {togglePopup}
+            target = "_blank"
+          >{buildNetworkContact("Whatsapp", whatsapp)}</a>
           {/** Google mail */}
-          {buildNetworkContact("Gmail", gmail)}
+          <a
+            href = "mailto:ca.cybernetic@gmail.com"
+            onClick = {togglePopup}
+            target = "_blank"
+          >{buildNetworkContact("Gmail", gmail)}</a>
         </div>
       </div>
     </div>

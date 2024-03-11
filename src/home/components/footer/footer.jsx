@@ -4,7 +4,7 @@
 * @fileoverview The footer view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-10
-*	@updated 2024-03-10
+*	@updated 2024-03-11
 *	@file footer.jsx
 *	@version 0.0.3
 */
@@ -20,6 +20,9 @@ import appLogo from "/assets/logos/otr_light.png";
 
 // Footer view section.
 export default function Footer({onOptionClicked}) {
+  // Attributes.
+  const newYear = new Date(Date.now()).getFullYear();
+
   // Builds jsx elements.
   return <footer className = "footer">
     {/** Top container */}
@@ -48,17 +51,23 @@ export default function Footer({onOptionClicked}) {
       {/** Right elements */}
       <div className = "right-tags">
         {/** Whatsapp logo */}
-        <img
+        <a
+          href = "https://chat.whatsapp.com/InLJpXa5Z4IBwFoVpM1e78"
+          target = "_blank"
+        ><img
           alt = "Whatsapp light logo."
           height = {28} width = {28}
           src = {whatsapp}
-        />
+        /></a>
         {/** Gmail logo */}
-        <img
+        <a
+          href = "mailto:ca.cybernetic@gmail.com"
+          target = "_blank"
+        ><img
           height = {28} width = {28}
           alt = "Gmail light logo."
           src = {gmail}
-        />
+        /></a>
       </div>
     </div>
     {/** Bottom container */}
@@ -66,7 +75,11 @@ export default function Footer({onOptionClicked}) {
       {/** Separator */}
       <hr/>
       {/** Copyright */}
-      <span>{lang.getText("tr80")}</span>
+      <span>{
+        lang.getText("tr80").replace(
+          "{old}", (newYear - 1).toString()
+        ).replace("{new}", newYear.toString())
+      }</span>
     </div>
   </footer>;
 }

@@ -4,15 +4,16 @@
 * @fileoverview The features view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-06
-*	@updated 2024-03-07
+*	@updated 2024-03-11
 *	@file features.jsx
-*	@version 0.0.2
+*	@version 0.0.4
 */
 
 // React dependencies.
 import React from "react";
 
 // Custom dependencies.
+import {ScrollManager} from "../../../common/utils/scroll/scroll.js";
 import lang from "../../../common/utils/language/language.js";
 import rightArrowIcon from "/assets/icons/arrow_right.svg";
 import screenshot1 from "/assets/images/screenshot_1.png";
@@ -27,9 +28,10 @@ import balanceIcon from "/assets/icons/money.svg";
 import payIcon from "/assets/icons/pay.svg";
 
 // Features view section.
-export default function Features() {
+export default function Features({onEnter}) {
   // Attributes.
   const [index, setIndex] = React.useState(0);
+  const feature = React.useRef(null);
   const matrix = React.useRef(null);
   const infos = React.useRef(null);
   const features = [
@@ -123,7 +125,7 @@ export default function Features() {
         <img
           src = {(turn ? leftArrowIcon : upArrowIcon)}
           onClick = {() => setFeature(index - 1)}
-          alt = "Up arrow icon"
+          alt = "Up arrow icon."
           height = {8}
           width = {16}
         />
@@ -131,7 +133,7 @@ export default function Features() {
         <img
           src = {(turn ? rightArrowIcon : downArrowIcon)}
           onClick = {() => setFeature(index + 1)}
-          alt = "Down arrow icon"
+          alt = "Down arrow icon."
           height = {8}
           width = {16}
         />
@@ -159,14 +161,29 @@ export default function Features() {
   // Dependencies.
   ), [buildFeature]);
 
+  // Called when component get mounted.
+  React.useEffect(() => {
+    // Focus on the current section for scrolling.
+    new ScrollManager({
+      root: document.querySelector("div#root"),
+      target: feature.current,
+      offsetBottom: 240,
+      onEnter: onEnter,
+      offsetTop: 240,
+      scope: window
+    });
+  });
+
   // Builds jsx elements.
-  return <section className = "features">
+  return <section className = "features" ref = {feature}>
     {/** Big title */}
     <h2>{lang.getText("tr2")}</h2>
     {/** Bottom bar */}
     <hr/>
     {/** Short description */}
-    <span>{lang.getText("tr13")}</span>
+    <span dangerouslySetInnerHTML = {{
+      __html: lang.getText("tr13")
+    }}></span>
     {/** Content */}
     <div className = "features-content">
       {/** Active feature */}

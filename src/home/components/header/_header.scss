@@ -4,9 +4,9 @@
 * @fileoverview: Header section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-04
-* @updated: 2024-03-05
+* @updated: 2024-03-11
 * @file: header.scss
-* @version: 0.0.1
+* @version: 0.0.4
 */
 
 // Custom dependencies.
@@ -79,6 +79,7 @@ div.app {
   span {
     font-family: $vadodara-regular-font;
     color: $header-text-color;
+    cursor: pointer;
     font-size: 22px;
     // From 1024 to 512.
     @media #{$header-1024} {

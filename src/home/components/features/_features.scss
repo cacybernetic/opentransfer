@@ -4,7 +4,7 @@
 * @fileoverview: Features section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-06
-* @updated: 2024-03-09
+* @updated: 2024-03-11
 * @file: features.scss
 * @version: 0.0.5
 */
@@ -12,6 +12,19 @@
 // Custom dependencies.
 @import "./_animations.scss";
 @import "./_variables.scss";
+
+// Youtube tutorial video link.
+a.feats-video-link {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: $primary-900;
+  font-style: italic;
+  cursor: pointer;
+  // Hover effect.
+  &:hover {
+    color: $primary-400;
+  }
+}
 
 // Content.
 div.features-content {
@@ -33,9 +46,14 @@ div.features-content {
 // Selected slider feature.
 div.features-selected {
   animation: 3s containerBloom 1s backwards;
+  background-color: $primary-400 !important;
   animation-timing-function: ease-in-out;
 	animation-iteration-count: infinite;
   cursor: auto !important;
+  // Hover effect.
+  &:hover {
+    background-color: $primary-400 !important;
+  }
   // Content.
   div.content {
     visibility: visible !important;
@@ -103,6 +121,41 @@ div.features-top-title {
   }
 }
 
+// Matrix.
+div.features-matrix {
+  transform: translate3d(0, 0, 0);
+  // Image.
+  img {
+    position: relative;
+    z-index: 1;
+  }
+  // Shadow effect.
+  div.shadow-effect {
+    box-shadow: 0 0 50px $features-shadow-color;
+    transform: translateX(-50%);
+    border-radius: 30px;
+    position: fixed;
+    width: 210px;
+    bottom: 15px;
+    z-index: 0;
+    left: 50%;
+    top: 15px;
+    // From 670 to 592.
+    @media #{$features-670} {
+      box-shadow: 0 0 25px $features-shadow-color;
+      transform: translateX(0);
+      width: 140px;
+      left: 6px;
+    }
+    // From 592 to 0.
+    @media #{$features-592} {
+      transform: translateX(-50%);
+      width: 210px;
+      left: 50%;
+    }
+  }
+}
+
 // Slider.
 div.features-slider {
   justify-content: center;
@@ -135,44 +188,13 @@ div.features-slider {
     border-radius: 40px;
     cursor: pointer;
     padding: 8px;
+    // Hover effect.
+    &:hover {
+      background-color: $primary-900;
+    }
     // From 670 to 0.
     @media #{$features-670} {
       padding: 6px;
-    }
-  }
-}
-
-// Matrix.
-div.features-matrix {
-  transform: translate3d(0, 0, 0);
-  // Image.
-  img {
-    position: relative;
-    z-index: 1;
-  }
-  // Shadow effect.
-  div.shadow-effect {
-    box-shadow: 0 0 50px $features-shadow-color;
-    transform: translateX(-50%);
-    border-radius: 30px;
-    position: fixed;
-    width: 210px;
-    bottom: 15px;
-    z-index: 0;
-    left: 50%;
-    top: 15px;
-    // From 670 to 592.
-    @media #{$features-670} {
-      box-shadow: 0 0 25px $features-shadow-color;
-      transform: translateX(0);
-      width: 140px;
-      left: 6px;
-    }
-    // From 592 to 0.
-    @media #{$features-592} {
-      transform: translateX(-50%);
-      width: 210px;
-      left: 50%;
     }
   }
 }
