@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-10
+* @updated 2024-03-11
 * @file english.js
 * @type {English}
 * @version 0.0.2
@@ -51,7 +51,11 @@ const english = {
     tr13: `
       Open Transfer (OTR) provides specific functionalities 
       targeting only the daily use of the population on 
-      network operators and requiring the use of USSD code.
+      network operators and requiring the use of USSD code. 
+      If you wish have a more extensive overview of the 
+      application, this <a href = "https://www.youtube.com/watch?v=_Q57Z8QLJdU"
+      target = "_blank" class = "feats-video-link">
+      video tutorial</a> can help you.
     `,
     tr14: "Money transfer",
     tr15: `
@@ -279,10 +283,11 @@ const english = {
       among us. Thank you very much and have a good day.
     `,
     tr68: `
-      Find the answers to all your questions here or
-      pre-aucupations. If you are not always satisfied,
-      then <span class = "faqs-contact-us">contact us
-      </span> for more information and clarification.
+      Find the answers to all yours questions or 
+      pre-aucupations here. If you are not always 
+      satisfied, <span class = "faqs-contact-us">
+      contact us</span> for more information and 
+      clarification.
     `,
     tr70: "Back",
     tr71: "Visit at the same time",
@@ -297,7 +302,7 @@ const english = {
     `,
     tr78: "Subscribe",
     tr79: "Follow us on",
-    tr80: "Copyright © 2023 - 2024 Console Art Cybernetic",
+    tr80: "Copyright © {old} - {new} Console Art Cybernetic",
     tr81: `
       Subscribe to our publication journal to don't 
       miss any of our next announcements on digital 

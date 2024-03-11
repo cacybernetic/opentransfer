@@ -4,8 +4,8 @@
 * @fileoverview The main application entry.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-04
-*	@updated 2024-03-10
-*	@version 0.0.3
+*	@updated 2024-03-11
+*	@version 0.0.4
 *	@file app.jsx
 */
 
@@ -26,6 +26,7 @@ import FAQs from "./components/faqs/faqs.jsx";
 export default function OpenTransfer() {
   // Attributes.
   const contacts = React.useRef(null);
+  const header = React.useRef(null);
 
   // Overrides active header menu option to another.
   const overrideOption = React.useCallback(position => {
@@ -79,13 +80,18 @@ export default function OpenTransfer() {
   // Builds final landing page.
   return <React.Fragment>
     {/** Header */}
-    <Header onOptionClicked = {id => overrideOption(id)}/>
+    <Header
+      onOptionClicked = {id => overrideOption(id)} ref = {header}
+    />
     {/** Banner */}
-    <Banner/>
+    <Banner onEnter = {() => header?.current?.setOption(-1)}/>
     {/** Features */}
-    <Features/>
+    <Features onEnter = {() => header?.current?.setOption(0)}/>
     {/** FAQs */}
-    <FAQs onContactUsClicked = {() => overrideOption(2)}/>
+    <FAQs
+      onEnter = {() => header?.current?.setOption(1)}
+      onContactUsClicked = {() => overrideOption(2)}
+    />
     {/** Contacts */}
     <Contacts ref = {contacts}/>
     {/** Footer */}

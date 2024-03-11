@@ -4,7 +4,7 @@
 * @fileoverview The banner view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-05
-*	@updated 2024-03-10
+*	@updated 2024-03-11
 *	@file banner.jsx
 *	@version 0.0.3
 */
@@ -13,6 +13,7 @@
 import React from "react";
 
 // Custom dependencies.
+import {ScrollManager} from "../../../common/utils/scroll/scroll.js";
 import lang from "../../../common/utils/language/language.js";
 import homeScreen from "/assets/images/home_screen.png";
 import arrowIcon from "/assets/icons/bottom_arrow.svg";
@@ -20,9 +21,25 @@ import background from "/assets/images/background.png";
 import androidIcon from "/assets/icons/android.svg";
 
 // Banner view section.
-export default function Banner() {
+export default function Banner({onEnter}) {
+  // Attributes.
+  const banner = React.useRef(null);
+
+  // Called when component get mounted.
+  React.useEffect(() => {
+    // Focus on the current section for scrolling.
+    new ScrollManager({
+      root: document.querySelector("div#root"),
+      target: banner.current,
+      offsetBottom: 240,
+      onEnter: onEnter,
+      offsetTop: 240,
+      scope: window
+    });
+  });
+
   // Builds jsx elements.
-  return <section className = "banner">
+  return <section className = "banner" ref = {banner}>
     {/** Background */}
     <img alt = "Background image." src = {background}/>
     {/** Banner container */}

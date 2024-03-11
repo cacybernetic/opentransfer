@@ -4,7 +4,7 @@
 * @fileoverview The faqs view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-08
-*	@updated 2024-03-10
+*	@updated 2024-03-11
 *	@file faqs.jsx
 *	@version 0.0.3
 */
@@ -13,6 +13,7 @@
 import React from "react";
 
 // Custom dependencies.
+import {ScrollManager} from "../../../common/utils/scroll/scroll.js";
 import lang from "../../../common/utils/language/language.js";
 import substractIcon from "/assets/icons/sustract.svg";
 import searchIcon from "/assets/icons/search.svg";
@@ -68,12 +69,13 @@ function Question({data}) {
 }
 
 // Frequently asked questions view section.
-export default function FAQs({onContactUsClicked}) {
+export default function FAQs({onContactUsClicked, onEnter}) {
   // Attributes.
   const [tag, setTag] = React.useState('');
   const popup = React.useRef(null);
   const input = React.useRef(null);
   const clear = React.useRef(null);
+  const faqs = React.useRef(null);
   const faqsList = [
     {
       question: lang.getText("tr36"),
@@ -229,10 +231,18 @@ export default function FAQs({onContactUsClicked}) {
     contactUsLink.removeEventListener ("click", onContactUsClicked);
     // Listens `click` event on contact us link.
     contactUsLink.addEventListener ("click", onContactUsClicked);
+    // Focus on the current section for scrolling.
+    new ScrollManager({
+      root: document.querySelector("div#root"),
+      target: faqs.current,
+      onEnter: onEnter,
+      offsetTop: 240,
+      scope: window
+    });
   });
 
   // Builds jsx elements.
-  return <section className = "faqs">
+  return <section className = "faqs" ref = {faqs}>
     {/** Big title */}
     <h2>{lang.getText("tr35")}</h2>
     {/** Bottom bar */}
