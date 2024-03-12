@@ -365,12 +365,12 @@ const french = {
     tr89: `
       J'ai lu et j'accepte les <a target = "_blank" class = "terms"
       href = "https://www.termsfeed.com/live/7320699f-80dd-4375-8d3f-22cc7a79b945"
-      >termes et conditions</a> ci-dessus.
+      >termes et conditions</a>.
     `,
     tr90: `
       J'ai lu et j'accepte les <a target = "_blank" class = "terms"
       href = "https://www.privacypolicies.com/live/0ffbcaf6-fd21-449f-b807-b13c45f73429"
-      >politiques de confidentialité</a> ci-dessus.
+      >politiques de confidentialité</a>.
     `
   }
 };
