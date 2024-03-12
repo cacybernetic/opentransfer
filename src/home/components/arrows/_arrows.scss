@@ -1,0 +1,96 @@
+/**
+* @project: Open Transfer - https://cacybernetic.github.io/open_transfer
+* @author: Obrymec - obrymecsprinces@gmail.com
+* @fileoverview: Arrows section stylesheets.
+* @supported: DESKTOP & MOBILE
+* @created: 2024-03-12
+* @updated: 2024-03-13
+* @file: arrows.scss
+* @version: 0.0.3
+*/
+
+// Custom dependencies.
+@import "./_variables.scss";
+
+// Arrow displayed.
+div.arrows-displayed {
+  transform: translateY(0) !important;
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+// Help arrow.
+aside.arrows {
+  display: inline-flex;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 2;
+  // From 912 to 670.
+  @media #{$arrows-912} {
+    bottom: 48px;
+    right: 48px;
+  }
+  // From 670 to 592.
+  @media #{$arrows-670} {
+    bottom: 32px;
+    right: 32px;
+  }
+  // From 592 to 0.
+  @media #{$arrows-592} {
+    bottom: 16px;
+    right: 16px;
+  }
+  // Up arrow.
+  div:first-child {
+    transform: translateY(50px);
+    position: absolute;
+    // Icon.
+    img {
+      transform: translateY(-2px) scale(1.1);
+    }
+  }
+  // Down arrow.
+  div:last-child {
+    transform: translateY(-50px);
+    // Icon.
+    img {
+      transform: translate(1px, 3px) scale(1.2);
+    }
+  }
+  // Vector icons.
+  div > img {
+    // From 912 to 0.
+    @media #{$arrows-912} {
+      min-height: 18px;
+      min-width: 18px;
+      height: 18px;
+      width: 18px;
+    }
+  }
+  // Arrows.
+  div {
+    box-shadow: 0 0 8px $arrows-shadow-color;
+    background-color: $primary-400;
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 48px;
+    visibility: hidden;
+    cursor: pointer;
+    height: 48px;
+    width: 48px;
+    opacity: 0;
+    // Hover effect.
+    &:hover {
+      background-color: $primary-100;
+    }
+    // From 912 to 0.
+    @media #{$arrows-912} {
+      border-radius: 32px;
+      height: 32px;
+      width: 32px;
+    }
+  }
+}

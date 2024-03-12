@@ -4,7 +4,7 @@
 * @fileoverview The header view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-04
-*	@updated 2024-03-12
+*	@updated 2024-03-13
 *	@file header.jsx
 *	@version 0.0.5
 */
@@ -176,7 +176,7 @@ export default React.forwardRef(({onOptionClicked, onDownload}, ref) => {
       {/** Contact us */}
       {buildOption(2, "tr5")}
       {/** Download button */}
-      <a className = "header-btn" href = '#' onClick = {() => {
+      <a className = "header-btn" onClick = {() => {
         // Throws `download` event.
         onDownload();
         // Hides opened menu.
