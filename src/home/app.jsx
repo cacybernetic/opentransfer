@@ -4,7 +4,7 @@
 * @fileoverview The main application entry.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-04
-*	@updated 2024-03-11
+*	@updated 2024-03-12
 *	@version 0.0.4
 *	@file app.jsx
 */
@@ -27,6 +27,7 @@ import FAQs from "./components/faqs/faqs.jsx";
 export default function OpenTransfer() {
   // Attributes.
   const contacts = React.useRef(null);
+  const license = React.useRef(null);
   const header = React.useRef(null);
 
   // Overrides active header menu option to another.
@@ -83,6 +84,7 @@ export default function OpenTransfer() {
     {/** Header */}
     <Header
       onOptionClicked = {id => overrideOption(id)} ref = {header}
+      onDownload = {() => license?.current?.togglePopup()}
     />
     {/** Banner */}
     <Banner onEnter = {() => header?.current?.setOption(-1)}/>
@@ -98,6 +100,6 @@ export default function OpenTransfer() {
     {/** Footer */}
     <Footer onOptionClicked = {id => overrideOption(id)}/>
     {/** Terms and conditions */}
-    <Terms/>
+    <Terms ref = {license}/>
   </React.Fragment>;
 }
