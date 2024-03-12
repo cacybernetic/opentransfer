@@ -4,7 +4,7 @@
 * @fileoverview: Terms section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-11
-* @updated: 2024-03-12
+* @updated: 2024-03-13
 * @file: terms.scss
 * @version: 0.0.4
 */
@@ -29,7 +29,7 @@ aside.license > div.popup {
   flex-direction: column;
   border-radius: 6px;
   display: flex;
-  height: 480px;
+  height: 560px;
   cursor: auto;
   // From 412 to 0.
   @media #{$terms-412} {
@@ -65,8 +65,8 @@ button.license-decline {
   cursor: pointer;
   padding: 14px;
   outline: none;
-  // From 592 to 0.
-  @media #{$terms-592} {
+  // From 412 to 0.
+  @media #{$terms-412} {
     display: none;
   }
   // Hover effect.
@@ -162,8 +162,8 @@ div.license-footer {
     column-gap: 16px;
     margin-top: 12px;
     width: 100%;
-    // From 592 to 0.
-    @media #{$terms-592} {
+    // From 412 to 0.
+    @media #{$terms-412} {
       justify-content: center;
     }
   }

@@ -20,6 +20,7 @@ import {scrollTo} from "../common/utils/scroll/scroll.js";
 import Header from "./components/header/header.jsx";
 import Banner from "./components/banner/banner.jsx";
 import Footer from "./components/footer/footer.jsx";
+import Arrows from "./components/arrows/arrows.jsx";
 import Terms from "./components/terms/terms.jsx";
 import FAQs from "./components/faqs/faqs.jsx";
 
@@ -101,5 +102,7 @@ export default function OpenTransfer() {
     <Footer onOptionClicked = {id => overrideOption(id)}/>
     {/** Terms and conditions */}
     <Terms ref = {license}/>
+    {/** Help arrows */}
+    <Arrows/>
   </React.Fragment>;
 }
