@@ -1,0 +1,24 @@
+/**
+* @project: Open Transfer - https://cacybernetic.github.io/open_transfer
+* @fileoverview: OTR terms variables stylesheet.
+* @author: Obrymec - obrymecsprinces@gmail.com
+* @supported: DESKTOP & MOBILE
+* @file: variables.scss
+* @created: 2024-03-11
+* @updated: 2024-03-12
+* @version: 0.0.2
+*/
+
+// Responsive breakpoints.
+$terms-912: "only screen and (max-width: 912px)" !default;
+$terms-670: "only screen and (max-width: 670px)" !default;
+$terms-592: "only screen and (max-width: 592px)" !default;
+$terms-412: "only screen and (max-width: 412px)" !default;
+
+// Colors theme.
+$terms-disabled-text-color: rgb(120, 120, 120) !default;
+$terms-text-color: darken($primary-900, 13%) !default;
+$terms-dissible-color: rgba(0, 0, 0, 0.6) !default;
+$terms-btn-bg-color: rgb(248, 248, 248) !default;
+$terms-divider-color: #ddd !default;
+$terms-border-color: #ccc !default;

@@ -4,7 +4,7 @@
 * @fileoverview The header view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-04
-*	@updated 2024-03-11
+*	@updated 2024-03-12
 *	@file header.jsx
 *	@version 0.0.5
 */
@@ -22,7 +22,7 @@ import closeIcon from "/assets/icons/close.svg";
 import menuIcon from "/assets/icons/menu.svg";
 
 // Header view section.
-export default React.forwardRef(({onOptionClicked}, ref) => {
+export default React.forwardRef(({onOptionClicked, onDownload}, ref) => {
   // Attributes.
   const [state, setState] = React.useState(false);
   const [option, setOption] = React.useState(-1);
@@ -176,7 +176,12 @@ export default React.forwardRef(({onOptionClicked}, ref) => {
       {/** Contact us */}
       {buildOption(2, "tr5")}
       {/** Download button */}
-      <a className = "header-btn" href = '#' onClick = {closeMenu}>
+      <a className = "header-btn" href = '#' onClick = {() => {
+        // Throws `download` event.
+        onDownload();
+        // Hides opened menu.
+        closeMenu();
+      }}>
         {/** Icon */}
         <img
           alt = "Icon for download button."

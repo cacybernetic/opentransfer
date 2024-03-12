@@ -1,0 +1,334 @@
+/**
+* @project: Open Transfer - https://cacybernetic.github.io/open_transfer
+* @author: Obrymec - obrymecsprinces@gmail.com
+* @fileoverview: Terms section stylesheets.
+* @supported: DESKTOP & MOBILE
+* @created: 2024-03-11
+* @updated: 2024-03-12
+* @file: terms.scss
+* @version: 0.0.4
+*/
+
+// Custom dependencies.
+@import "./_variables.scss";
+
+// Displays license popup.
+aside.license-displayed {
+  transform: scale(1.0) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  // Enables dropdown.
+  select {
+    pointer-events: auto !important;
+  }
+}
+
+// Popup.
+aside.license > div.popup {
+  background-color: $white-color;
+  flex-direction: column;
+  border-radius: 6px;
+  display: flex;
+  height: 480px;
+  cursor: auto;
+  // From 412 to 0.
+  @media #{$terms-412} {
+    width: 250px;
+  }
+}
+
+// Disabled download button.
+a.license-disabled {
+  background-color: $terms-border-color !important;
+  color: $terms-disabled-text-color !important;
+  cursor: not-allowed !important;
+  img {
+    filter: brightness(50%) !important;
+  }
+  // Hover effect.
+  &:hover {
+    background-color: $terms-border-color !important;
+    color: $terms-disabled-text-color !important;
+    text-shadow: none !important;
+    img {
+      filter: brightness(50%) !important;
+    }
+  }
+}
+
+// Decline option.
+button.license-decline {
+  border: 1px ridge $terms-border-color;
+  background-color: $terms-btn-bg-color;
+  color: $terms-text-color;
+  border-radius: 32px;
+  cursor: pointer;
+  padding: 14px;
+  outline: none;
+  // From 592 to 0.
+  @media #{$terms-592} {
+    display: none;
+  }
+  // Hover effect.
+  &:hover {
+    text-shadow: 0 0 10px $white-color;
+    background-color: $secondary-900;
+  }
+}
+
+// Content.
+aside.license > div.popup > div.middle-content {
+  color: $terms-text-color;
+  padding: 0 24px 0 24px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+  // From 912 to 670.
+  @media #{$terms-912} {
+    padding: 0 20px 0 20px;
+    line-height: 24px;
+    font-size: 16px;
+  }
+  // From 670 to 592.
+  @media #{$terms-670} {
+    padding: 0 18px 0 18px;
+    line-height: 20px;
+    font-size: 14px;
+  }
+  // From 592 to 0.
+  @media #{$terms-592} {
+    padding: 0 16px 0 16px;
+    line-height: 18px;
+    font-size: 12px;
+  }
+}
+
+// License.
+aside.license {
+  background-color: $terms-dissible-color;
+  padding: 64px 96px 48px 96px;
+  backdrop-filter: blur(3px);
+  justify-content: center;
+  transform: scale(1.3);
+  align-items: center;
+  visibility: hidden;
+  position: fixed;
+  cursor: pointer;
+  display: flex;
+  opacity: 0;
+  z-index: 2;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  // From 912 to 670.
+  @media #{$terms-912} {
+    padding: 48px 64px 48px 64px;
+  }
+  // From 670 to 592.
+  @media #{$terms-670} {
+    padding: 32px;
+  }
+  // From 592 to 0.
+  @media #{$terms-592} {
+    padding: 32px 16px 32px 16px;
+  }
+}
+
+// Footer.
+div.license-footer {
+  border-top: 1px ridge $terms-divider-color;
+  padding: 16px;
+  // From 912 to 670.
+  @media #{$terms-912} {
+    font-size: 16px;
+    padding: 14px;
+  }
+  // From 670 to 592.
+  @media #{$terms-670} {
+    font-size: 14px;
+    padding: 12px;
+  }
+  // From 592 to 0.
+  @media #{$terms-592} {
+    font-size: 12px;
+    padding: 10px;
+  }
+  // Bottom buttons.
+  div.bottom-buttons {
+    justify-content: flex-end;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 16px;
+    margin-top: 12px;
+    width: 100%;
+    // From 592 to 0.
+    @media #{$terms-592} {
+      justify-content: center;
+    }
+  }
+  // Checkboxes.
+  div.terms-checkbox, div.policy-checkbox {
+    color: $terms-text-color;
+    justify-content: center;
+    display: inline-flex;
+    // Text label.
+    label {
+      line-height: 16px;
+      cursor: pointer;
+    }
+    // Links.
+    a {
+      text-decoration: underline;
+      color: $primary-400;
+    }
+    // Text hover.
+    a:hover {
+      color: $primary-900;
+    }
+    // Checkoxes.
+    input {
+      accent-color: $primary-900;
+      margin-right: 8px;
+      cursor: pointer;
+    }
+  }
+}
+
+// Download button.
+a.license-download {
+  border: 1px ridge $terms-border-color;
+  background-color: $primary-100;
+  padding: 12px 16px 12px 16px;
+  color: $terms-text-color;
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 32px;
+  column-gap: 10px;
+  cursor: pointer;
+  // From 912 to 670.
+  @media #{$terms-912} {
+    padding: 10px 14px 10px 14px;
+  }
+  // From 670 to 592.
+  @media #{$terms-670} {
+    padding: 8px 12px 8px 12px;
+    column-gap: 8px;
+  }
+  // From 592 to 0.
+  @media #{$terms-592} {
+    margin-bottom: 3px;
+  }
+  // Text.
+  span {
+    transition: all 50ms linear;
+  }
+  // Hover effect.
+  &:hover {
+    text-shadow: 0 0 10px $white-color;
+    background-color: $primary-400;
+    color: $white-color;
+    img {
+      filter: brightness(100%);
+    }
+  }
+  // Download icon.
+  img {
+    filter: brightness(20%);
+    // From 912 to 670.
+    @media #{$terms-912} {
+      min-height: 22px;
+      min-width: 22px;
+      height: 22px;
+      width: 22px;
+    }
+    // From 670 to 592.
+    @media #{$terms-670} {
+      min-height: 20px;
+      min-width: 20px;
+      height: 20px;
+      width: 20px;
+    }
+    // From 592 to 0.
+    @media #{$terms-592} {
+      min-height: 18px;
+      min-width: 18px;
+      height: 18px;
+      width: 18px;
+    }
+  }
+}
+
+// Header.
+div.license-header {
+  border-bottom: 1px ridge $terms-divider-color;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  // Dropdown.
+  select {
+    background-color: transparent;
+    color: $terms-text-color;
+    pointer-events: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 16px;
+    border: none;
+    width: 100%;
+    // From 912 to 670.
+    @media #{$terms-912} {
+      font-size: 20px;
+      padding: 14px;
+    }
+    // From 670 to 592.
+    @media #{$terms-670} {
+      font-size: 18px;
+      padding: 12px;
+    }
+    // From 592 to 0.
+    @media #{$terms-592} {
+      font-size: 16px;
+      padding: 10px;
+    }
+  }
+  // Close button.
+  img {
+    filter: brightness(30%);
+    margin-right: 16px;
+    margin-left: 12px;
+    cursor: pointer;
+    // From 912 to 670.
+    @media #{$terms-912} {
+      margin-right: 14px;
+      min-height: 28px;
+      min-width: 28px;
+      height: 28px;
+      width: 28px;
+    }
+    // From 670 to 592.
+    @media #{$terms-670} {
+      margin-right: 12px;
+      min-height: 24px;
+      min-width: 24px;
+      height: 24px;
+      width: 24px;
+    }
+    // From 592 to 0.
+    @media #{$terms-592} {
+      margin-right: 10px;
+      min-height: 20px;
+      min-width: 20px;
+      height: 20px;
+      width: 20px;
+    }
+  }
+  // Close hover.
+  img:hover {
+    background-color: $error-color;
+    filter: brightness(100%);
+    border-radius: 48px;
+  }
+}

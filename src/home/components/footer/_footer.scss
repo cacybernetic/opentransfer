@@ -4,7 +4,7 @@
 * @fileoverview: Footer section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-10
-* @updated: 2024-03-10
+* @updated: 2024-03-11
 * @file: footer.scss
 * @version: 0.0.2
 */
@@ -38,7 +38,6 @@ footer.footer {
   background-color: $primary-900;
   padding: 10px 50px 10px 50px;
   color: $white-color;
-  margin-top: 48px;
   // From 912 to 670.
   @media #{$footer-912} {
     padding: 10px 25px 10px 25px;

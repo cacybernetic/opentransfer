@@ -4,7 +4,7 @@
 * @fileoverview: OTR app global stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-04
-* @updated: 2024-03-11
+* @updated: 2024-03-12
 * @file: main.scss
 * @version: 0.0.2
 */
@@ -19,6 +19,7 @@
 @import "./components/header/_header.scss";
 @import "./components/banner/_banner.scss";
 @import "./components/footer/_footer.scss";
+@import "./components/terms/_terms.scss";
 @import "./components/faqs/_faqs.scss";
 
 // All tags.
@@ -39,6 +40,11 @@ a {
 // Mask any tag.
 .masked {
 	opacity: 0 !important;
+}
+
+// Reverts css style.                       
+.reset-style, .reset-style * {
+  all: revert;
 }
 
 // Vadodara regular font definition.

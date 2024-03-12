@@ -4,7 +4,7 @@
 * @fileoverview The contacts view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-09
-*	@updated 2024-03-11
+*	@updated 2024-03-12
 *	@file contacts.jsx
 *	@version 0.0.3
 */
@@ -26,17 +26,17 @@ export default React.forwardRef(({}, ref) => {
 
   // Toggles visibiity of faqs full questions popup.
   const togglePopup = React.useCallback(() => {
-    // Whether popup isn't displayed yet.
+    // Whether popup is already displayed.
     if (popup?.current?.classList?.contains("cts-displayed")) {
       // Hides it.
       popup?.current?.classList?.remove("cts-displayed");
-      // Hides body scrollbar. 
+      // Shows body scrollbar. 
       document.body.style.overflowY = '';
     // Otherwise.
     } else {
       // Shows it.
       popup?.current?.classList?.add("cts-displayed");
-      // Shows body scrollbar.
+      // Hides body scrollbar.
       document.body.style.overflowY = "hidden";
     }
   // Dependencies.

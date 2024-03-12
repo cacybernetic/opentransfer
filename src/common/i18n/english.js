@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-11
+* @updated 2024-03-12
 * @file english.js
 * @type {English}
 * @version 0.0.2
@@ -329,7 +329,19 @@ const english = {
       their digital goals. We invite you to visit our 
       site official website to find out more.
     `,
-    tr86: "Ours services"
+    tr86: "Ours services",
+    tr87: "Decline",
+    tr88: "Download Open Transfer | v0.5.0",
+    tr89: `
+      I've read and agree <a target = "_blank" class = "terms"
+      href = "https://www.termsfeed.com/live/7320699f-80dd-4375-8d3f-22cc7a79b945"
+      >terms and conditions</a>.
+    `,
+    tr90: `
+      I've read and agree <a target = "_blank" class = "privacy"
+      href = "https://www.privacypolicies.com/live/0ffbcaf6-fd21-449f-b807-b13c45f73429"
+      >privacy policy</a>.
+    `
   }
 };
 
