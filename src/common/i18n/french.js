@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-12
+* @updated 2024-03-13
 * @file french.js
 * @version 0.0.2
 * @type {French}
@@ -28,6 +28,7 @@ const french = {
     "québec",
     "europe",
     "europa",
+    "fr-fr",
     "fr",
     "qc"
   ],
@@ -97,7 +98,7 @@ const french = {
     tr28: "Sans devoir se rapprocher d'un marchand.",
     tr29: "Sans connexion internet, ni données mobile.",
     tr30: "Aucun frais réseau supplémentaire.",
-    tr31: "Avec opérateur réseau préféré.",
+    tr31: "Avec votre opérateur réseau préféré.",
     tr32: "Erreur réseau",
     tr33: `
       Il semble que votre navigateur vient d'être mis 
@@ -361,7 +362,7 @@ const french = {
     `,
     tr86: "Nos services",
     tr87: "Décliner",
-    tr88: "Télécharger Open Transfert | v0.5.0",
+    tr88: "Télécharger Open Transfer | v0.5.0",
     tr89: `
       J'ai lu et j'accepte les <a target = "_blank" class = "terms"
       href = "https://www.termsfeed.com/live/7320699f-80dd-4375-8d3f-22cc7a79b945"

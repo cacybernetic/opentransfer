@@ -4,16 +4,33 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-04
+* @updated 2024-03-13
 * @file language.js
 * @type {Language}
-* @version 0.0.1
+* @version 0.0.2
 */
 
 // Custom dependencies.
 import {getCookie, setCookie} from "../browser/browser.js";
 import english from "../../i18n/english.js";
 import french from "../../i18n/french.js";
+
+/**
+ * @description Gets browser active language.
+ * @function getBrowserLanguage_
+ * @private
+ * @returns {int} int
+ */
+function getBrowserLanguage_ () {
+  // The active browser language.
+  const activeLang = navigator.language || navigator.userLanguage;
+  // Converts it into lowser case.
+  const language = activeLang.toLowerCase ();
+  // Whether detected language is english.
+  if (language === "en-us") return 0;
+  // Otherwise.
+  else return 1;
+}
 
 /**
  * @classdesc Languages manager.
@@ -421,7 +438,7 @@ function Language ({
  * @exports Language
  */
 export default new Language ({
+  defaultLanguage: getBrowserLanguage_ (),
   languages: [english, french],
-  cookieName: "open_transfer",
-  defaultLanguage: 0
+  cookieName: "open_transfer"
 });

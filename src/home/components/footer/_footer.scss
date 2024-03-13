@@ -4,7 +4,7 @@
 * @fileoverview: Footer section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-10
-* @updated: 2024-03-11
+* @updated: 2024-03-13
 * @file: footer.scss
 * @version: 0.0.2
 */
@@ -130,13 +130,13 @@ div.foot-top {
       column-gap: 20px;
       font-size: 14px;
     }
-    // From 592 to 320.
+    // From 592 to 372.
     @media #{$footer-592} {
       column-gap: 16px;
       font-size: 12px;
     }
-    // From 320 to 0.
-    @media #{$footer-320} {
+    // From 372 to 0.
+    @media #{$footer-372} {
       visibility: hidden;
       column-gap: 0;
       font-size: 0;
