@@ -1,5 +1,5 @@
 /**
-* @project Open Transfer - https://cacybernetic.github.io/open_transfer
+* @project Open Transfer - https://cacybernetic.github.io/opentransfer
 * @fileoverview Manages application global languages.
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE

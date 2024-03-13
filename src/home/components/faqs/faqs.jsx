@@ -1,10 +1,10 @@
 /**
-* @project Open Transfer - https://cacybernetic.github.io/open_transfer
+* @project Open Transfer - https://cacybernetic.github.io/opentransfer
 * @author Obrymec - obrymecsprinces@gmail.com
 * @fileoverview The faqs view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-08
-*	@updated 2024-03-12
+*	@updated 2024-03-13
 *	@file faqs.jsx
 *	@version 0.0.3
 */
