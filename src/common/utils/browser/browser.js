@@ -1,10 +1,10 @@
 /**
-* @project Open Transfer - https://cacybernetic.github.io/open_transfer
+* @project Open Transfer - https://cacybernetic.github.io/opentransfer
 * @fileoverview Manages common navigator treatments.
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP, MOBILE
 * @created 2024-03-04
-* @updated 2024-03-10
+* @updated 2024-03-13
 * @file browser.js
 * @type {Browser}
 * @version 0.0.1

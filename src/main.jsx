@@ -1,10 +1,10 @@
 /**
-* @project Open Transfer - https://cacybernetic.github.io/open_transfer
+* @project Open Transfer - https://cacybernetic.github.io/opentransfer
 * @fileoverview The application root node creation.
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-04
-*	@updated 2024-03-08
+*	@updated 2024-03-13
 *	@version 0.0.2
 *	@file main.jsx
 */

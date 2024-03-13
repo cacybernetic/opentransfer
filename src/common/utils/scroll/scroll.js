@@ -1,11 +1,11 @@
 /**
-* @project Open Transfer - https://cacybernetic.github.io/open_transfer
+* @project Open Transfer - https://cacybernetic.github.io/opentransfer
 * @fileoverview Defines a class to detect scroll.
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @type {ScrollManager}
 * @created 2023-03-10
-* @updated 2023-03-10
+* @updated 2023-03-13
 * @file scroll.js
 * @version 0.0.4
 */
