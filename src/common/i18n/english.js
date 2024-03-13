@@ -262,8 +262,8 @@ const english = {
     tr62: "Does Open Transfer extend to merchant sims ?",
     tr63: `
       Unfortunately, Open Transfer does not support still 
-      support merchant sims. She can't stand that sims 
-      intended for customer use for the moment.
+      merchant sims. She can't stand that sims intended 
+      for customer use for the moment.
     `,
     tr64: `
       An error occurred while sending your message. This may 

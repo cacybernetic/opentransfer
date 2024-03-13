@@ -265,7 +265,7 @@ const french = {
       vous et votre émetteur. Cela peut être un transfert d'argent 
       par exemple. Le code QR, une fois généré, vous dispense de 
       chaque fois donné un même numéro de téléphone avant de 
-      recevoir un transfert sur de dernier.
+      recevoir un transfert sur ce dernier.
     `,
     tr60: "Peut-on faire des transferts inter-pays ?",
     tr61: `
@@ -277,10 +277,9 @@ const french = {
     `,
     tr62: "Open Transfer s'étend t-elle sur les sims marchand ?",
     tr63: `
-      Malheureusement, Open Transfer ne prends pas en charge 
-      encore en charge les sims marchand. Elle ne supporte 
-      que les sims destinées à l'usage clientèle pour le 
-      moment.
+      Malheureusement, Open Transfer ne prends pas encore en 
+      charge les sims marchand. Elle ne supporte que les sims 
+      destinées à l'usage clientèle pour le moment.
     `,
     tr64: `
       Une erreur s'est produite lors de l'envoi de votre 
