@@ -24,10 +24,21 @@ import menuIcon from "/assets/icons/menu.svg";
 // Header view section.
 export default React.forwardRef(({onOptionClicked, onDownload}, ref) => {
   // Attributes.
+  const activeLangId = lang.getActiveLanguage()?.id?.toString();
   const [state, setState] = React.useState(false);
   const [option, setOption] = React.useState(-1);
+  const dropdown = React.useRef(null);
   const hook = React.useRef(null);
   const menu = React.useRef(null);
+
+  // Overrides active language.
+  const setActiveLanguage = React.useCallback(event => {
+    // Sets active language data.
+    lang.setActiveLanguage(parseInt(event.target.value));
+    // Reloads web page.
+    window.location.reload();
+  // Dependencies.
+  }, [lang]);
 
   // Overrides active menu option to anoter option.
   const changeOption = React.useCallback(pos => {
@@ -165,9 +176,13 @@ export default React.forwardRef(({onOptionClicked, onDownload}, ref) => {
     {/** Right options */}
     <div className = "header-options">
       {/** Language selection */}
-      <select onClick = {closeMenu} name = "language">
-        <option value = "fr">FR</option>
-        <option value = "en">EN</option>
+      <select
+        onClick = {closeMenu} name = "language"
+        ref = {dropdown} value = {activeLangId}
+        onChange = {setActiveLanguage}
+      >
+        <option value = '0'>EN</option>
+        <option value = '1'>FR</option>
       </select>
       {/** Features */}
       {buildOption(0, "tr2")}

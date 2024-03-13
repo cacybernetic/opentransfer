@@ -4,7 +4,7 @@
 * @fileoverview: Contacts section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-09
-* @updated: 2024-03-11
+* @updated: 2024-03-13
 * @file: contacts.scss
 * @version: 0.0.2
 */
@@ -124,6 +124,7 @@ div.cts-container {
     // From 670 to 0.
     @media #{$contacts-670} {
       margin-bottom: 8px;
+      line-height: 18px;
       font-size: 14px;
     }
   }

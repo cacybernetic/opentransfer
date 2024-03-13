@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-12
+* @updated 2024-03-13
 * @file english.js
 * @type {English}
 * @version 0.0.2
@@ -27,6 +27,7 @@ const english = {
     "united states",
     "anglais",
     "en_us",
+    "en-us",
     "us",
     "uk",
     "en"
@@ -93,7 +94,7 @@ const english = {
     tr28: "Without having to contact a merchant.",
     tr29: "Without internet connection or mobile data.",
     tr30: "No additional network charges.",
-    tr31: "With preferred network operator.",
+    tr31: "With your preferred network operator.",
     tr32: "Network error",
     tr33: `
       It appears that your browser has just been set 
