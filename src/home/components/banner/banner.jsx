@@ -4,7 +4,7 @@
 * @fileoverview The banner view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-05
-*	@updated 2024-03-11
+*	@updated 2024-03-13
 *	@file banner.jsx
 *	@version 0.0.3
 */
@@ -21,7 +21,7 @@ import background from "/assets/images/background.png";
 import androidIcon from "/assets/icons/android.svg";
 
 // Banner view section.
-export default function Banner({onEnter}) {
+export default function Banner({onEnter, onDownload}) {
   // Attributes.
   const banner = React.useRef(null);
 
@@ -53,7 +53,7 @@ export default function Banner({onEnter}) {
         {/** Downloads */}
         <div className = "banner-downloads">
           {/** Android apk */}
-          <a href = '#'>
+          <a onClick = {() => onDownload()}>
             <div>
               <img
                 src = {androidIcon} height = {24}

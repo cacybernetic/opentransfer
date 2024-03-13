@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /open_transfer.apk
+Disallow: /assets/images/
+Disallow: /assets/fonts/
+Disallow: /assets/icons/
+Disallow: /assets/logos/
+Disallow: /style.css
+Disallow: /index.js
+Disallow: /widgets/

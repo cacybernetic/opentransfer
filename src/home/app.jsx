@@ -4,7 +4,7 @@
 * @fileoverview The main application entry.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-04
-*	@updated 2024-03-12
+*	@updated 2024-03-13
 *	@version 0.0.4
 *	@file app.jsx
 */
@@ -88,7 +88,10 @@ export default function OpenTransfer() {
       onDownload = {() => license?.current?.togglePopup()}
     />
     {/** Banner */}
-    <Banner onEnter = {() => header?.current?.setOption(-1)}/>
+    <Banner
+      onDownload = {() => license?.current?.togglePopup()}
+      onEnter = {() => header?.current?.setOption(-1)}
+    />
     {/** Features */}
     <Features onEnter = {() => header?.current?.setOption(0)}/>
     {/** FAQs */}
