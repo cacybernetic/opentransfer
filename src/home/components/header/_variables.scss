@@ -5,13 +5,13 @@
 * @supported: DESKTOP & MOBILE
 * @file: variables.scss
 * @created: 2024-03-04
-* @updated: 2024-03-13
-* @version: 0.0.1
+* @updated: 2024-03-14
+* @version: 0.0.2
 */
 
 // Responsive breakpoints.
-$header-1024: "only screen and (max-width: 1024px)" !default;
-$header-736: "only screen and (max-width: 736px)" !default;
+$header-1064: "only screen and (max-width: 1064px)" !default;
+$header-792: "only screen and (max-width: 792px)" !default;
 $header-512: "only screen and (max-width: 512px)" !default;
 $header-300: "only screen and (max-width: 300px)" !default;
 

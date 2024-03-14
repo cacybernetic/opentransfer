@@ -4,7 +4,7 @@
 * @fileoverview: Footer section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-10
-* @updated: 2024-03-13
+* @updated: 2024-03-14
 * @file: footer.scss
 * @version: 0.0.2
 */
@@ -24,7 +24,6 @@ div.foot-bottom {
   }
   // Copyright.
   span {
-    transform: translateX(-7px);
     font-style: italic;
     text-align: center;
     margin-top: 10px;
@@ -34,7 +33,6 @@ div.foot-bottom {
 
 // Footer.
 footer.footer {
-  transform: translate3d(0, 0, 0);
   background-color: $primary-900;
   padding: 10px 50px 10px 50px;
   color: $white-color;
@@ -127,16 +125,16 @@ div.foot-top {
     }
     // From 670 to 592.
     @media #{$footer-670} {
-      column-gap: 20px;
+      column-gap: 16px;
       font-size: 14px;
     }
-    // From 592 to 372.
+    // From 592 to 412.
     @media #{$footer-592} {
-      column-gap: 16px;
+      column-gap: 10px;
       font-size: 12px;
     }
-    // From 372 to 0.
-    @media #{$footer-372} {
+    // From 412 to 0.
+    @media #{$footer-412} {
       visibility: hidden;
       column-gap: 0;
       font-size: 0;

@@ -4,7 +4,7 @@
 * @fileoverview: Banner section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-05
-* @updated: 2024-03-13
+* @updated: 2024-03-14
 * @file: banner.scss
 * @version: 0.0.4
 */
@@ -127,6 +127,7 @@ div.banner-downloads {
     text-decoration: none;
     display: inline-flex;
     border-radius: 6px;
+    cursor: pointer;
     // From 326 to 0.
     @media #{$banner-326} {
       width: 100%;

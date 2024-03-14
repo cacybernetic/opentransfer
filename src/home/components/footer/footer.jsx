@@ -4,7 +4,7 @@
 * @fileoverview The footer view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-10
-*	@updated 2024-03-13
+*	@updated 2024-03-14
 *	@file footer.jsx
 *	@version 0.0.3
 */
@@ -43,9 +43,13 @@ export default function Footer({onOptionClicked}) {
         <span
           onClick = {() => onOptionClicked(1)}
         >{lang.getText("tr4")}</span>
-        {/** Contact us */}
+        {/** About */}
         <span
           onClick = {() => onOptionClicked(2)}
+        >{lang.getText("tr3")}</span>
+        {/** Contact us */}
+        <span
+          onClick = {() => onOptionClicked(3)}
         >{lang.getText("tr5")}</span>
       </div>
       {/** Right elements */}

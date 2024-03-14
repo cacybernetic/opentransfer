@@ -4,7 +4,7 @@
 * @fileoverview The terms view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-11
-*	@updated 2024-03-13
+*	@updated 2024-03-14
 *	@file terms.jsx
 *	@version 0.0.3
 */
@@ -25,7 +25,7 @@ export default React.forwardRef(({}, ref) => {
   const [value, setValue] = React.useState('1');
   const popup = React.useRef(null);
 
-  // Toggles visibiity of license popup.
+  // Toggles visibility of license popup.
   const togglePopup = React.useCallback(() => {
     // Whether popup is already displayed.
     if (popup?.current?.classList?.contains("license-displayed")) {

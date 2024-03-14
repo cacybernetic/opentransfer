@@ -1,0 +1,22 @@
+/**
+* @project: Open Transfer - https://cacybernetic.github.io/opentransfer
+* @fileoverview: OTR about variables stylesheet.
+* @author: Obrymec - obrymecsprinces@gmail.com
+* @supported: DESKTOP & MOBILE
+* @file: variables.scss
+* @created: 2024-03-14
+* @updated: 2024-03-14
+* @version: 0.0.2
+*/
+
+// Responsive breakpoints.
+$about-912: "only screen and (max-width: 912px)" !default;
+$about-670: "only screen and (max-width: 670px)" !default;
+$about-592: "only screen and (max-width: 592px)" !default;
+$about-324: "only screen and (max-width: 324px)" !default;
+
+// Colors theme.
+$about-text-color: darken($primary-900, 13%) !default;
+$about-border-color: silver !default;
+$about-shadow-color: black !default;
+$about-role-color: grey !default;

@@ -4,7 +4,7 @@
 * @fileoverview The faqs view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-08
-*	@updated 2024-03-13
+*	@updated 2024-03-14
 *	@file faqs.jsx
 *	@version 0.0.3
 */
@@ -86,12 +86,6 @@ export default function FAQs({onContactUsClicked, onEnter}) {
     {
       question: lang.getText("tr38"),
       answer: lang.getText("tr39"),
-      show: false,
-    },
-    {
-      question: lang.getText("tr40"),
-      answer: lang.getText("tr41"),
-      useHTML: true,
       show: false,
     },
     {
@@ -187,7 +181,7 @@ export default function FAQs({onContactUsClicked, onEnter}) {
   // Dependencies.
   }, [setTag, input, clear]);
 
-  // Toggles visibiity of faqs full questions popup.
+  // Toggles visibility of faqs full questions popup.
   const toggleFaqsPopup = React.useCallback(() => {
     // Whether popup is already displayed.
     if (popup?.current?.classList?.contains("faqs-popup-displayed")) {
@@ -256,15 +250,15 @@ export default function FAQs({onContactUsClicked, onEnter}) {
       {/** Question 1 */}
       <Question data = {faqsList[0]}/><br/>
       {/** Question 2 */}
-      <Question data = {faqsList[3]}/><br/>
+      <Question data = {faqsList[2]}/><br/>
       {/** Question 3 */}
-      <Question data = {faqsList[7]}/><br/>
+      <Question data = {faqsList[6]}/><br/>
       {/** Question 4 */}
       <Question data = {faqsList[1]}/><br/>
       {/** Question 5 */}
-      <Question data = {faqsList[4]}/><br/>
+      <Question data = {faqsList[3]}/><br/>
       {/** Question 6 */}
-      <Question data = {faqsList[6]}/><br/>
+      <Question data = {faqsList[5]}/><br/>
       {/** Learn more */}
       <button
         onClick = {() => toggleFaqsPopup()}

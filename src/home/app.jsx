@@ -4,7 +4,7 @@
 * @fileoverview The main application entry.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-04
-*	@updated 2024-03-13
+*	@updated 2024-03-15
 *	@version 0.0.4
 *	@file app.jsx
 */
@@ -22,6 +22,7 @@ import Banner from "./components/banner/banner.jsx";
 import Footer from "./components/footer/footer.jsx";
 import Arrows from "./components/arrows/arrows.jsx";
 import Terms from "./components/terms/terms.jsx";
+import About from "./components/about/about.jsx";
 import FAQs from "./components/faqs/faqs.jsx";
 
 // Open Transfer mobile app landing page.
@@ -30,15 +31,18 @@ export default function OpenTransfer() {
   const contacts = React.useRef(null);
   const license = React.useRef(null);
   const header = React.useRef(null);
+  const about = React.useRef(null);
 
   // Overrides active header menu option to another.
   const overrideOption = React.useCallback(position => {
-    // Whether features is selected.
+    // Whether `features` is selected.
     if (position === 0) scrollTo ("section.features");
-    // Whether faqs is selected.
+    // Whether `faqs` is selected.
     else if (position === 1) scrollTo ("section.faqs");
-    // Whether contacts is selected.
-    else contacts?.current?.togglePopup ();
+    // Whether `about` is selected.
+    else if (position === 2) about.current?.toggleAbout();
+    // Whether `contact us` is selected.
+    else contacts.current?.toggleContacts ();
   // Dependencies.
   }, [contacts])
 
@@ -85,27 +89,35 @@ export default function OpenTransfer() {
     {/** Header */}
     <Header
       onOptionClicked = {id => overrideOption(id)} ref = {header}
-      onDownload = {() => license?.current?.togglePopup()}
+      onDownload = {() => license.current?.togglePopup()}
     />
     {/** Banner */}
     <Banner
-      onDownload = {() => license?.current?.togglePopup()}
-      onEnter = {() => header?.current?.setOption(-1)}
+      onDownload = {() => license.current?.togglePopup()}
+      onEnter = {() => header.current?.setOption(-1)}
     />
     {/** Features */}
-    <Features onEnter = {() => header?.current?.setOption(0)}/>
+    <Features onEnter = {() => header.current?.setOption(0)}/>
     {/** FAQs */}
     <FAQs
-      onEnter = {() => header?.current?.setOption(1)}
-      onContactUsClicked = {() => overrideOption(2)}
+      onEnter = {() => header.current?.setOption(1)}
+      onContactUsClicked = {() => overrideOption(3)}
     />
     {/** Contacts */}
-    <Contacts ref = {contacts}/>
+    <Contacts
+      onBack = {() => header.current?.setOption(-1)}
+      ref = {contacts}
+    />
     {/** Footer */}
     <Footer onOptionClicked = {id => overrideOption(id)}/>
     {/** Terms and conditions */}
     <Terms ref = {license}/>
     {/** Help arrows */}
     <Arrows/>
+    {/** About app */}
+    <About
+      onBack = {() => header.current?.setOption(-1)}
+      ref = {about}
+    />
   </React.Fragment>;
 }

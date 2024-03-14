@@ -188,8 +188,10 @@ export default React.forwardRef(({onOptionClicked, onDownload}, ref) => {
       {buildOption(0, "tr2")}
       {/** FAQs */}
       {buildOption(1, "tr4")}
+      {/** About */}
+      {buildOption(2, "tr3")}
       {/** Contact us */}
-      {buildOption(2, "tr5")}
+      {buildOption(3, "tr5")}
       {/** Download button */}
       <a className = "header-btn" onClick = {() => {
         // Throws `download` event.
@@ -224,8 +226,10 @@ export default React.forwardRef(({onOptionClicked, onDownload}, ref) => {
       {buildContextualOption(0, "tr2")}
       {/** FAQs */}
       {buildContextualOption(1, "tr4")}
+      {/** About */}
+      {buildContextualOption(2, "tr3")}
       {/** Contact us */}
-      {buildContextualOption(2, "tr5")}
+      {buildContextualOption(3, "tr5")}
     </div>
   </header>;
 });

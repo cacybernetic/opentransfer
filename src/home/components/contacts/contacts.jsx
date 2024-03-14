@@ -4,7 +4,7 @@
 * @fileoverview The contacts view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-09
-*	@updated 2024-03-13
+*	@updated 2024-03-15
 *	@file contacts.jsx
 *	@version 0.0.3
 */
@@ -20,18 +20,20 @@ import backIcon from "/assets/icons/back.svg";
 import gmail from "/assets/logos/gmail.svg";
 
 // Possible contact links view section.
-export default React.forwardRef(({}, ref) => {
+export default React.forwardRef(({onBack}, ref) => {
   // Attributes.
   const popup = React.useRef(null);
 
-  // Toggles visibiity of faqs full questions popup.
-  const togglePopup = React.useCallback(() => {
+  // Toggles visibility of contacts section.
+  const toggleContacts = React.useCallback(() => {
     // Whether popup is already displayed.
     if (popup?.current?.classList?.contains("cts-displayed")) {
       // Hides it.
       popup?.current?.classList?.remove("cts-displayed");
       // Shows body scrollbar. 
       document.body.style.overflowY = '';
+      // Calls `back` event callback.
+      onBack();
     // Otherwise.
     } else {
       // Shows it.
@@ -62,13 +64,13 @@ export default React.forwardRef(({}, ref) => {
   // Called when component get mounted.
   React.useEffect(() => {
     // Exports public methods.
-    ref.current = {togglePopup};
+    ref.current = {toggleContacts};
   });
 
   // Sends his jsx code.
   return <aside
     className = "contacts" ref = {popup}
-    onClick = {togglePopup}
+    onClick = {toggleContacts}
   >
     {/** Back icon */}
     <img
@@ -93,7 +95,7 @@ export default React.forwardRef(({}, ref) => {
           <img
             alt = "Close icon." src = {closeIcon}
             height = {32} width = {32}
-            onClick = {togglePopup}
+            onClick = {toggleContacts}
           />
         </div>
         {/** Description */}
@@ -103,13 +105,13 @@ export default React.forwardRef(({}, ref) => {
           {/** Whatsapp */}
           <a
             href = "https://chat.whatsapp.com/InLJpXa5Z4IBwFoVpM1e78"
-            onClick = {togglePopup}
+            onClick = {toggleContacts}
             target = "_blank"
           >{buildNetworkContact("Whatsapp", whatsapp)}</a>
           {/** Google mail */}
           <a
             href = "mailto:ca.cybernetic@gmail.com"
-            onClick = {togglePopup}
+            onClick = {toggleContacts}
             target = "_blank"
           >{buildNetworkContact("Gmail", gmail)}</a>
         </div>
