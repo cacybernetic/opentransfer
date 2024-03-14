@@ -4,7 +4,7 @@
 * @fileoverview The about view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-14
-*	@updated 2024-03-14
+*	@updated 2024-03-15
 *	@file about.jsx
 *	@version 0.0.3
 */
@@ -15,11 +15,11 @@ import React from "react";
 // Custom dependencies.
 import lang from "../../../common/utils/language/language.js";
 import obrymec from "/assets/images/obrymec.jpg";
-//import mokira from "/assets/images/mokira.png";
+import mokira from "/assets/images/mokira.jpeg";
 import backIcon from "/assets/icons/back.svg";
 
 // About view section.
-export default React.forwardRef(({}, ref) => {
+export default React.forwardRef(({onBack}, ref) => {
   // Attributes.
   const popup = React.useRef(null);
 
@@ -31,6 +31,8 @@ export default React.forwardRef(({}, ref) => {
       popup?.current?.classList?.remove("about-displayed");
       // Shows body scrollbar. 
       document.body.style.overflowY = '';
+      // Calls `back` event callback.
+      onBack();
     // Otherwise.
     } else {
       // Shows it.
@@ -64,27 +66,37 @@ export default React.forwardRef(({}, ref) => {
     </div>
     {/** Avatars */}
     <div className = "avatars">
-      {/** Arnold Mokira *
+      {/** Arnold Mokira */}
       <div className = "mokira">
-        {/** Avatar *
+        {/** Avatar */}
         <img
           alt = "Mokira developer avatar profil."
           height = {64} width = {64}
           src = {mokira}
         />
-        {/** Title *
-        <span>Arnold Mokira T.</span>
-      </div>*/}
+        {/** Data */}
+        <div className = "data">
+          {/** Title */}
+          <h6>Arnold Mokira T.</h6>
+          {/** Role */}
+          <h6>Designer</h6>
+        </div>
+      </div>
       {/** Prince Obrymec */}
       <div className = "obrymec">
         {/** Avatar */}
         <img
           alt = "Obrymec developer avatar profil."
-          height = {96} width = {96}
+          height = {64} width = {64}
           src = {obrymec}
         />
-        {/** Title */}
-        <span>Prince Obrymec T.</span>
+        {/** Data */}
+        <div className = "data">
+          {/** Title */}
+          <h6>Prince Obrymec T.</h6>
+          {/** Role */}
+          <h6>Developer</h6>
+        </div>
       </div>
     </div>
     {/** Little top space */}

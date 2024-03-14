@@ -126,7 +126,7 @@ const english = {
     tr41: `
       Following numerous studies and interviews on the subject,
       it is clear that :<br/><br/>
-      👉 The user must remember the associated code to the 
+      The user must remember the associated code to the 
       operation he wishes to carry out. That represents a 
       handicap for old people or those approaching old age, 
       without forgot that USSD codes can be changed at any 
@@ -134,14 +134,14 @@ const english = {
       accustomed to using the old codes. It is still worse 
       for people who are not very present on the network 
       operators.<br/><br/>
-      👉 The user gets tired quickly due to the number and the 
+      The user gets tired quickly due to the number and the 
       breathtaking length of USSD codes to compose without 
       mentioning typing errors during the composition as well 
       as those of the network at times or at given periods, 
       thus forcing the latter to recompose the code over and 
       over again. This is annoying to the user especially 
       since it wastes his time unnecessarily.<br/><br/>
-      👉 Operators attempted to resolve the issue by providing 
+      Operators attempted to resolve the issue by providing 
       their customers with a application imbued with their 
       services. The problem is that these apps are clean and 
       centered only on their network, thus forcing the end 

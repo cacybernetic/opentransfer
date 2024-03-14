@@ -131,7 +131,7 @@ const french = {
     tr41: `
       Suite à de nombreux études et interviews sur le sujet, 
       force est de constater que :<br/><br/>
-      👉 L'utilisateur doit avoir en mémoire le code associé 
+      L'utilisateur doit avoir en mémoire le code associé 
       à l'opération dont-il souhaite effectuée. Cela 
       représente un handicape pour les vieilles personnes ou 
       celles s'approchant de l'âge de la vieillesse, sans 
@@ -140,14 +140,14 @@ const french = {
       déjà habitué à l'emploi des anciens codes. C'est encore 
       pire pour les personnes qui sont peu présent sur les 
       opérateurs réseau.<br/><br/>
-      👉 L'utilisateur se fatigue rapidement à cause du nombre 
+      L'utilisateur se fatigue rapidement à cause du nombre 
       et de la longueur époustouflante des codes USSD à 
       composer sans parlé des erreurs de frappe au cours de la 
       composition ainsi que celles du réseau par moment ou à des 
       périodes données, obligeant ainsi ce dernier à recomposer 
       le code encore et encore. Cela est fâcheux à l'utilisateur 
       d'autant plus que ça lui perd inutilement du temps.<br/><br/>
-      👉 Les opérateurs ont tenté de résoudre le problème en 
+      Les opérateurs ont tenté de résoudre le problème en 
       mettant à la disposition de leurs clientèles, une 
       application imprégnée de leurs services. Le problème est 
       que ces applications sont propres et centrées uniquement 

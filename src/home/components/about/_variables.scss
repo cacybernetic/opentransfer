@@ -16,5 +16,7 @@ $about-592: "only screen and (max-width: 592px)" !default;
 $about-324: "only screen and (max-width: 324px)" !default;
 
 // Colors theme.
+$about-text-color: darken($primary-900, 13%) !default;
 $about-border-color: silver !default;
 $about-shadow-color: black !default;
+$about-role-color: grey !default;

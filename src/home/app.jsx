@@ -4,7 +4,7 @@
 * @fileoverview The main application entry.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-04
-*	@updated 2024-03-14
+*	@updated 2024-03-15
 *	@version 0.0.4
 *	@file app.jsx
 */
@@ -101,10 +101,13 @@ export default function OpenTransfer() {
     {/** FAQs */}
     <FAQs
       onEnter = {() => header.current?.setOption(1)}
-      onContactUsClicked = {() => overrideOption(2)}
+      onContactUsClicked = {() => overrideOption(3)}
     />
     {/** Contacts */}
-    <Contacts ref = {contacts}/>
+    <Contacts
+      onBack = {() => header.current?.setOption(-1)}
+      ref = {contacts}
+    />
     {/** Footer */}
     <Footer onOptionClicked = {id => overrideOption(id)}/>
     {/** Terms and conditions */}
@@ -112,6 +115,9 @@ export default function OpenTransfer() {
     {/** Help arrows */}
     <Arrows/>
     {/** About app */}
-    <About ref = {about}/>
+    <About
+      onBack = {() => header.current?.setOption(-1)}
+      ref = {about}
+    />
   </React.Fragment>;
 }

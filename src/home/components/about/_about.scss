@@ -4,7 +4,7 @@
 * @fileoverview: About section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-14
-* @updated: 2024-03-14
+* @updated: 2024-03-15
 * @file: about.scss
 * @version: 0.0.4
 */
@@ -19,22 +19,18 @@ aside.about-displayed {
 
 // Comeback container.
 aside.about > div.return {
-  justify-content: flex-end;
+  justify-content: center;
   display: inline-flex;
   width: 100%;
-  // From 324 to 0.
-  @media #{$about-324} {
-    justify-content: center;
-  }
 }
 
 // Back button.
 aside.about > div.return > button {
-  border: 1px solid $white-color;
+  border: 1px solid $about-text-color;
+  color: $about-text-color;
   justify-content: center;
   display: inline-flex;
   align-items: center;
-  color: $white-color;
   border-radius: 6px;
   column-gap: 12px;
   cursor: pointer;
@@ -60,16 +56,16 @@ aside.about > div.return > button {
   }
   // Hover effect.
   &:hover {
-    background-color: $white-color;
-    color: $primary-900;
+    background-color: $primary-900;
+    color: $white-color;
     // Icon.
     img {
-      filter: brightness(30%);
+      filter: brightness(100%);
     }
   }
   // Back arrow.
   img {
-    filter: brightness(100%);
+    filter: brightness(30%);
     // From 592 to 0.
     @media #{$about-592} {
       min-height: 18px;
@@ -82,10 +78,12 @@ aside.about > div.return > button {
 
 // Avatars.
 aside.about > div.avatars {
-  display: inline-flex;
-  color: $white-color;
+  color: $about-text-color;
+  flex-direction: column;
   margin-top: 32px;
   font-size: 18px;
+  row-gap: 24px;
+  display: flex;
   // From 912 to 670.
   @media #{$about-912} {
     margin-top: 20px;
@@ -100,6 +98,7 @@ aside.about > div.avatars {
   @media #{$about-592} {
     margin-top: 16px;
     font-size: 12px;
+    row-gap: 20px;
   }
   // Profil hover.
   div.obrymec > img:hover, div.mokira > img:hover {
@@ -107,23 +106,32 @@ aside.about > div.avatars {
   }
   // Developers.
   div.obrymec, div.mokira {
-    flex-direction: column;
+    display: inline-flex;
     align-items: center;
-    display: flex;
+    column-gap: 16px;
+    // Data.
+    div.data {
+      transform: translateY(-6px);
+    }
+    // Role.
+    div.data > h6:nth-child(2) {
+      color: $about-role-color;
+    }
   }
   // Profil.
   div.obrymec > img, div.mokira > img {
-    box-shadow: 0 0 12px $about-shadow-color;
+    box-shadow: 0 0 8px $about-shadow-color;
     border: 2px ridge $white-color;
     border-radius: 96px;
     margin-bottom: 12px;
+    object-fit: cover;
+    min-height: 64px;
+    min-width: 64px;
+    height: 64px;
+    width: 64px;
     // From 912 to 670.
     @media #{$about-912} {
       margin-bottom: 10px;
-      min-height: 64px;
-      min-width: 64px;
-      height: 64px;
-      width: 64px;
     }
     // From 670 to 0.
     @media #{$about-670} {
@@ -138,9 +146,9 @@ aside.about > div.avatars {
 
 // Popup.
 aside.about {
-  background-color: $primary-900;
-  padding: 64px 96px 48px 96px;
+  background-color: $white-color;
   transform: translateX(100%);
+  padding: 64px 96px 48px 96px;
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
@@ -166,7 +174,7 @@ aside.about {
   }
   // Developers.
   div.sponsors > span {
-    color: $primary-400;
+    color: $about-text-color;
     font-weight: 700;
     font-size: 32px;
     // From 912 to 670.
@@ -176,7 +184,7 @@ aside.about {
   }
   // Title.
   & > span:nth-child(1) {
-    color: $primary-400;
+    color: $about-text-color;
     margin-bottom: 72px;
     font-weight: bold;
     font-size: 64px;
@@ -193,7 +201,8 @@ aside.about {
   }
   // Description.
   & > span:nth-child(2) {
-    color: $white-color;
+    color: $about-text-color;
+    text-align: center;
     line-height: 32px;
     font-size: 18px;
     // From 912 to 670.
@@ -213,9 +222,8 @@ aside.about {
   }
   // Sponsors.
   div.sponsors {
-    border-bottom: 1px ridge $about-border-color;
+    justify-content: center;
     display: inline-flex;
-    padding-bottom: 12px;
     margin-top: 12px;
     width: 100%;
     // From 912 to 670.

@@ -4,7 +4,7 @@
 * @fileoverview The contacts view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-09
-*	@updated 2024-03-14
+*	@updated 2024-03-15
 *	@file contacts.jsx
 *	@version 0.0.3
 */
@@ -20,7 +20,7 @@ import backIcon from "/assets/icons/back.svg";
 import gmail from "/assets/logos/gmail.svg";
 
 // Possible contact links view section.
-export default React.forwardRef(({}, ref) => {
+export default React.forwardRef(({onBack}, ref) => {
   // Attributes.
   const popup = React.useRef(null);
 
@@ -32,6 +32,8 @@ export default React.forwardRef(({}, ref) => {
       popup?.current?.classList?.remove("cts-displayed");
       // Shows body scrollbar. 
       document.body.style.overflowY = '';
+      // Calls `back` event callback.
+      onBack();
     // Otherwise.
     } else {
       // Shows it.
