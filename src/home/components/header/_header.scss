@@ -4,7 +4,7 @@
 * @fileoverview: Header section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-04
-* @updated: 2024-03-13
+* @updated: 2024-03-14
 * @file: header.scss
 * @version: 0.0.4
 */
@@ -46,8 +46,8 @@ header {
   right: 0;
   left: 0;
   top: 0;
-  // From 1024 to 512.
-  @media #{$header-1024} {
+  // From 1064 to 512.
+  @media #{$header-1064} {
     padding: 10px 16px 12px 12px;
   }
   // From 512 to 0.
@@ -64,8 +64,8 @@ div.app {
   // Logo.
   img {
     cursor: pointer;
-    // From 1024 to 512.
-    @media #{$header-1024} {
+    // From 1064 to 512.
+    @media #{$header-1064} {
       height: 48px;
       width: 48px;
     }
@@ -81,8 +81,8 @@ div.app {
     color: $header-text-color;
     cursor: pointer;
     font-size: 22px;
-    // From 1024 to 512.
-    @media #{$header-1024} {
+    // From 1064 to 512.
+    @media #{$header-1064} {
       font-size: 18px;
     }
     // From 512 to 300.
@@ -109,8 +109,8 @@ a.header-btn {
   column-gap: 12px;
   cursor: pointer;
   font-size: 14px;
-  // From 1024 to 512.
-  @media #{$header-1024} {
+  // From 1064 to 512.
+  @media #{$header-1064} {
     padding: 8px 16px;
     margin-left: 8px;
   }
@@ -122,8 +122,8 @@ a.header-btn {
   // Text.
   span {
     color: $header-text-color;
-    // From 1024 to 512.
-    @media #{$header-1024} {
+    // From 1064 to 512.
+    @media #{$header-1064} {
       font-size: 13px;
     }
     // From 512 to 0.
@@ -204,8 +204,8 @@ div.header-options {
   display: inline-flex;
   align-items: center;
   column-gap: 36px;
-  // From 1024 to 0.
-  @media #{$header-1024} {
+  // From 1064 to 0.
+  @media #{$header-1064} {
     column-gap: 18px;
   }
   // Language options.
@@ -216,8 +216,8 @@ div.header-options {
   img.emburger-menu {
     cursor: pointer;
     display: none;
-    // From 736 to 512.
-    @media #{$header-736} {
+    // From 792 to 512.
+    @media #{$header-792} {
       display: inline-block;
     }
     // From 512 to 0.
@@ -233,8 +233,8 @@ div.header-options {
     cursor: pointer;
     font-size: 14px;
     border: none;
-    // From 1024 to 0.
-    @media #{$header-1024} {
+    // From 1064 to 0.
+    @media #{$header-1064} {
       font-size: 12px;
     }
   }
@@ -244,12 +244,12 @@ div.header-options {
     color: $header-text-color;
     cursor: pointer;
     font-size: 14px;
-    // From 1024 to 736.
-    @media #{$header-1024} {
+    // From 1064 to 792.
+    @media #{$header-1064} {
       font-size: 12px;
     }
-    // From 736 to 0.
-    @media #{$header-736} {
+    // From 792 to 0.
+    @media #{$header-792} {
       display: none;
     }
     // Hover effect.

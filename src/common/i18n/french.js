@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-13
+* @updated 2024-03-14
 * @file french.js
 * @version 0.0.2
 * @type {French}
@@ -35,7 +35,7 @@ const french = {
   data: {
     tr1: "Open Transfer",
     tr2: "Fonctionalités",
-    tr3: "Support",
+    tr3: "À propos",
     tr4: "FAQs",
     tr5: "Contactez-nous",
     tr6: "Télécharger",
@@ -130,25 +130,25 @@ const french = {
     tr40: "Pourquoi créer un tel service ?",
     tr41: `
       Suite à de nombreux études et interviews sur le sujet, 
-      force est de constater que :<br//>
-      - L'utilisateur doit avoir en mémoire le code associé 
+      force est de constater que :<br/><br/>
+      👉 L'utilisateur doit avoir en mémoire le code associé 
       à l'opération dont-il souhaite effectuée. Cela 
       représente un handicape pour les vieilles personnes ou 
-      celles s'approchant de l'âge de la viellesse, sans 
+      celles s'approchant de l'âge de la vieillesse, sans 
       oublié que les codes USSD peuvent changés à n'importe 
       quel moment, pénalisant ainsi l'utilisateur qui s'est 
       déjà habitué à l'emploi des anciens codes. C'est encore 
       pire pour les personnes qui sont peu présent sur les 
-      opérateurs réseau.<br/>
-      - L'utilisateur se fatigue rapidement à cause du nombre 
+      opérateurs réseau.<br/><br/>
+      👉 L'utilisateur se fatigue rapidement à cause du nombre 
       et de la longueur époustouflante des codes USSD à 
       composer sans parlé des erreurs de frappe au cours de la 
       composition ainsi que celles du réseau par moment ou à des 
       périodes données, obligeant ainsi ce dernier à recomposer 
       le code encore et encore. Cela est fâcheux à l'utilisateur 
-      d'autant plus que ça lui perd inutilement du temps.<br/>
-      - Les opérateurs ont tenté de résoudre le problème en 
-      mettant à la disposition de leurs clientelles, une 
+      d'autant plus que ça lui perd inutilement du temps.<br/><br/>
+      👉 Les opérateurs ont tenté de résoudre le problème en 
+      mettant à la disposition de leurs clientèles, une 
       application imprégnée de leurs services. Le problème est 
       que ces applications sont propres et centrées uniquement 
       sur leur réseau, obligeant ainsi l'utilisateur final à 
@@ -371,7 +371,9 @@ const french = {
       J'ai lu et j'accepte les <a target = "_blank" class = "terms"
       href = "https://www.privacypolicies.com/live/0ffbcaf6-fd21-449f-b807-b13c45f73429"
       >politiques de confidentialité</a>.
-    `
+    `,
+    tr91: "Contributeurs",
+    tr92: "Retour à la page d'accueil"
   }
 };
 
