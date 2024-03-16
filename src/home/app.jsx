@@ -4,7 +4,7 @@
 * @fileoverview The main application entry.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-04
-*	@updated 2024-03-15
+*	@updated 2024-03-16
 *	@version 0.0.4
 *	@file app.jsx
 */
@@ -119,5 +119,10 @@ export default function OpenTransfer() {
       onBack = {() => header.current?.setOption(-1)}
       ref = {about}
     />
+    {/** Header vignette */}
+    <aside
+      onClick = {() => header.current?.toggleMenu()}
+      className = "header-vignette turn-off"
+    ></aside>
   </React.Fragment>;
 }

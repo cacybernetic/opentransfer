@@ -4,7 +4,7 @@
 * @fileoverview The contacts view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-09
-*	@updated 2024-03-15
+*	@updated 2024-03-16
 *	@file contacts.jsx
 *	@version 0.0.3
 */
@@ -99,7 +99,9 @@ export default React.forwardRef(({onBack}, ref) => {
           />
         </div>
         {/** Description */}
-        <span>{lang.getText("tr77")}</span>
+        <span dangerouslySetInnerHTML = {{
+          __html: lang.getText("tr77")
+        }}></span>
         {/** Networks */}
         <div className = "cts-networks">
           {/** Whatsapp */}

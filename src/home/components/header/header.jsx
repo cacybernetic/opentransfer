@@ -77,20 +77,26 @@ export default React.forwardRef(({onOptionClicked, onDownload}, ref) => {
 
   // Shows/Hides contextual menu.
   const toggleMenu = React.useCallback(() => {
+    // Contextual vignette.
+    const vignette = document.querySelector("aside.header-vignette");
     // Whether we must show it.
     if (!state) {
       // Destroys `turn-off` class from hook.
-      hook?.current?.classList.remove("turn-off");
+      hook.current?.classList.remove("turn-off");
       // Destroys `turn-off` class from menu.
-      menu?.current?.classList.remove("turn-off");
+      menu.current?.classList.remove("turn-off");
+      // Destroys `turn-off` class from vignette.
+      vignette.classList.remove("turn-off");
       // Changes state.
       setState(true);
     // Otherwise.
     } else {
-      // Adds `turn-off` class from hook.
-      hook?.current?.classList.add("turn-off");
-      // Adds `turn-off` class from menu.
-      menu?.current?.classList.add("turn-off");
+      // Adds `turn-off` class to hook.
+      hook.current?.classList.add("turn-off");
+      // Adds `turn-off` class to menu.
+      menu.current?.classList.add("turn-off");
+      // Adds `turn-off` class to vignette.
+      vignette.classList.add("turn-off");
       // Changes state.
       setState(false);
     }
@@ -120,6 +126,15 @@ export default React.forwardRef(({onOptionClicked, onDownload}, ref) => {
   // Dependencies.
   }, [changeOption, toggleMenu]);
 
+  // Closes contextual menu and reload the page.
+  const closeAndReload = React.useCallback(() => {
+    // Closes contextual menu.
+    if (state) toggleMenu();
+    // Reloads current page.
+    window.location.reload();
+  // Dependencies.
+  }, [toggleMenu, state]);
+
   // Generates contextual menu option for small screens.
   const buildContextualOption = React.useCallback((index, text) => (
     <div onClick = {() => onMenuOptionClicked(index)}>
@@ -139,7 +154,7 @@ export default React.forwardRef(({onOptionClicked, onDownload}, ref) => {
   // Called before component get mounted.
   React.useLayoutEffect(() => {
     // Exports public features.
-    ref.current = {setOption};
+    ref.current = {setOption, toggleMenu};
   });
 
   // Called when component is mounted.
@@ -164,13 +179,13 @@ export default React.forwardRef(({onOptionClicked, onDownload}, ref) => {
     <div className = "app">
       {/** Logo */}
       <img
-        onClick = {() => window.location.reload()}
         src = {appLogo} alt = "App logo."
         height = {64} width = {64}
+        onClick = {closeAndReload}
       />
       {/** Name */}
       <span
-        onClick = {() => window.location.reload()}
+        onClick = {closeAndReload}
       >{lang.getText("tr1")}</span>
     </div>
     {/** Right options */}

@@ -4,7 +4,7 @@
 * @fileoverview: Contacts section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-09
-* @updated: 2024-03-13
+* @updated: 2024-03-16
 * @file: contacts.scss
 * @version: 0.0.2
 */
@@ -101,30 +101,37 @@ div.cts-container {
   align-items: center;
   border-radius: 6px;
   display: flex;
-  padding: 24px;
+  padding: 32px;
   cursor: auto;
   // From 912 to 670.
   @media #{$contacts-912} {
+    padding: 24px;
+  }
+  // From 670 to 592.
+  @media #{$contacts-670} {
     padding: 20px;
   }
-  // From 670 to 0.
-  @media #{$contacts-670} {
+  // From 592 to 0.
+  @media #{$contacts-592} {
     padding: 16px;
   }
   // Description.
   & > span {
     color: $contacts-text-color;
     margin-bottom: 24px;
+    text-align: center;
+    line-height: 28px;
     font-size: 18px;
     // From 912 to 670.
     @media #{$contacts-912} {
       margin-bottom: 20px;
+      line-height: 24px;
       font-size: 16px;
     }
     // From 670 to 0.
     @media #{$contacts-670} {
       margin-bottom: 8px;
-      line-height: 18px;
+      line-height: 20px;
       font-size: 14px;
     }
   }

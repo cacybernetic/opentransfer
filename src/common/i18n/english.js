@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-14
+* @updated 2024-03-16
 * @file english.js
 * @type {English}
 * @version 0.0.2
@@ -298,8 +298,8 @@ const english = {
     tr75: "Learn more about Open Transfer app.",
     tr76: "Read more",
     tr77: `
-      Would you like to get in touch with us? 
-      We will be happy to help you😇.
+      Would you like to get in touch with us ? 
+      <br/>We will be happy to help you. 😇
     `,
     tr78: "Subscribe",
     tr79: "Follow us on",

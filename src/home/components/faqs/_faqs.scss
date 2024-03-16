@@ -4,7 +4,7 @@
 * @fileoverview: Faqs section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-08
-* @updated: 2024-03-13
+* @updated: 2024-03-16
 * @file: faqs.scss
 * @version: 0.0.4
 */
@@ -336,12 +336,12 @@ div.faqs-input {
   // Input field.
   input {
     box-shadow: 0 2px 3px $faqs-shadow-color inset;
+    border: 1px solid $faqs-shadow-color;
     background-color: $faqs-bg-color;
     padding: 12px 36px 12px 36px;
     color: $primary-900;
     border-radius: 4px;
     font-size: 18px;
-    border: none;
     width: 100%;
     // From 670 to 592.
     @media #{$faqs-670} {
@@ -358,7 +358,7 @@ div.faqs-input {
 // Popup.
 aside.faqs-popup {
   transform: translate3d(0, 0, 0) translateY(100%);
-  background-color: $primary-900;
+  background-color: $white-color;
   padding: 64px 96px 48px 96px;
   flex-direction: column;
   align-items: center;
@@ -385,6 +385,7 @@ aside.faqs-popup {
   }
   // Back icon.
   & > img {
+    filter: brightness(36%);
     cursor: pointer;
     position: fixed;
     left: 92px;

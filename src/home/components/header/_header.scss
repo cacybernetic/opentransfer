@@ -4,7 +4,7 @@
 * @fileoverview: Header section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-04
-* @updated: 2024-03-14
+* @updated: 2024-03-16
 * @file: header.scss
 * @version: 0.0.4
 */
@@ -15,6 +15,15 @@
 // Active option effect.
 span.header-active {
   text-shadow: 0 0 10px $header-text-shadow;
+}
+
+// Vignette.
+aside.header-vignette {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
 }
 
 // Hook.
@@ -182,7 +191,7 @@ div.header-contextual-menu {
     align-items: center;
     // Icon.
     img {
-      filter: brightness(1%);
+      filter: brightness(36%);
     }
     // Hover effect.
     &:hover {

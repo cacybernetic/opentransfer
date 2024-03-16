@@ -4,7 +4,7 @@
 * @fileoverview The about view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-14
-*	@updated 2024-03-15
+*	@updated 2024-03-16
 *	@file about.jsx
 *	@version 0.0.3
 */
@@ -79,7 +79,7 @@ export default React.forwardRef(({onBack}, ref) => {
           {/** Title */}
           <h6>Arnold Mokira T.</h6>
           {/** Role */}
-          <h6>Designer</h6>
+          <h6>Designer UX/UI</h6>
         </div>
       </div>
       {/** Prince Obrymec */}

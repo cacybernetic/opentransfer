@@ -5,7 +5,7 @@
 * @supported: DESKTOP & MOBILE
 * @file: variables.scss
 * @created: 2024-03-08
-* @updated: 2024-03-13
+* @updated: 2024-03-16
 * @version: 0.0.2
 */
 
@@ -16,6 +16,6 @@ $faqs-592: "only screen and (max-width: 592px)" !default;
 
 // Colors theme.
 $faqs-question-bg-color: lighten($primary-900, 72%) !default;
-$faqs-text-color: darken($primary-900, 13%) !default;
+$faqs-text-color: darken($primary-900, 6%) !default;
 $faqs-bg-color: rgb(255, 255, 255) !default;
 $faqs-shadow-color: silver !default;

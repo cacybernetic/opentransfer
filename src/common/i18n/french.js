@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-14
+* @updated 2024-03-16
 * @file french.js
 * @version 0.0.2
 * @type {French}
@@ -327,7 +327,7 @@ const french = {
     tr76: "En lire plus",
     tr77: `
       Souhaitez-vous entrer en contact avec nous ? 
-      Nous serons ravis de vous aidez😇.
+      <br/>Nous serons ravis de vous aidez. 😇
     `,
     tr78: "S'abonner",
     tr79: "Suivez-nous sur",

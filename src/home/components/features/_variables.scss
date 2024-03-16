@@ -5,7 +5,7 @@
 * @supported: DESKTOP & MOBILE
 * @file: variables.scss
 * @created: 2024-03-06
-* @updated: 2024-03-13
+* @updated: 2024-03-16
 * @version: 0.0.2
 */
 
@@ -16,6 +16,6 @@ $features-670: "only screen and (max-width: 670px)" !default;
 $features-592: "only screen and (max-width: 592px)" !default;
 
 // Colors theme.
-$features-text-color: darken($primary-900, 13%) !default;
+$features-text-color: darken($primary-900, 6%) !default;
 $features-bg-color: rgb(248, 248, 248) !default;
 $features-shadow-color: silver !default;
