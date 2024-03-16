@@ -6,8 +6,8 @@ import {defineConfig} from "vite";
 
 // https://vitejs.dev/config.
 export default defineConfig({
+  base: "/opentransfer/",
   server: {port: 5400},
-  base: '/',
   build: {
     target: [
       "firefox78",
