@@ -4,7 +4,7 @@
 * @fileoverview: Banner section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-05
-* @updated: 2024-03-14
+* @updated: 2024-03-16
 * @file: banner.scss
 * @version: 0.0.4
 */
@@ -108,8 +108,9 @@ div.banner-left-part {
 
 // Download options.
 div.banner-downloads {
-  display: inline-flex;
+  flex-direction: row;
   column-gap: 16px;
+  display: flex;
   // From 620 to 326.
   @media #{$banner-620} {
     justify-content: center;
@@ -118,6 +119,7 @@ div.banner-downloads {
   // From 326 to 0.
   @media #{$banner-326} {
     flex-direction: column;
+    align-items: center;
     row-gap: 16px;
   }
   // Button links.
@@ -130,7 +132,7 @@ div.banner-downloads {
     cursor: pointer;
     // From 326 to 0.
     @media #{$banner-326} {
-      width: 100%;
+      width: 132px;
     }
     // Hover.
     &:hover {
@@ -146,14 +148,6 @@ div.banner-downloads {
     border-bottom-right-radius: 6px;
     border-top-right-radius: 6px;
     margin-left: 10px;
-  }
-  // Left and right icons.
-  a > div:nth-child(1) > img, a > div:nth-child(3) > img {
-    // From 812 to 0.
-    @media #{$banner-812} {
-      height: 16px;
-      width: 16px;
-    }
   }
   // Top text.
   a > div:nth-child(2) > span:nth-child(1) {

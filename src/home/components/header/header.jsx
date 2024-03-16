@@ -4,7 +4,7 @@
 * @fileoverview The header view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-04
-*	@updated 2024-03-13
+*	@updated 2024-03-16
 *	@file header.jsx
 *	@version 0.0.5
 */
@@ -63,9 +63,9 @@ export default React.forwardRef(({onOptionClicked, onDownload}, ref) => {
     // The header tag.
     const header = document.querySelector("header.header");
     // The color opacity.
-    let opacity = ((getScrollPercent() - 30) / 20);
+    let opacity = (getScrollPercent(false) / 10);
     // Corrects generated opacity.
-    opacity = (opacity > 1.0 ? 1.0 : opacity);
+    opacity = (opacity > 1.0 ? 1.0 : (opacity < 0.0 ? 0.0 : opacity));
     // Updates header background color.
     header.style.backgroundColor = `rgba(26, 86, 48, ${opacity})`;
     // Whether we have an opacity.

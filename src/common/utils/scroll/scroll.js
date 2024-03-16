@@ -5,13 +5,34 @@
 * @supported DESKTOP & MOBILE
 * @type {ScrollManager}
 * @created 2023-03-10
-* @updated 2023-03-13
+* @updated 2023-03-16
 * @file scroll.js
 * @version 0.0.4
 */
 
 // Custom dependencies.
 import {listenLoadEvent} from "../browser/browser.js";
+
+/**
+ * @description Calculates and returns the
+ *  scroll bar progress in percentage.
+ * @param {boolean} useInnerHeight Whether
+ *  we want to compute values with window
+ *  inner height. 
+ * @function getScrollPercent
+ * @public
+ * @returns {Number} Number
+ */
+function getScrollPercent (useInnerHeight) {
+  // The document height size.
+  const height = document.body.offsetHeight;
+  // The current scroll y axis.
+  const scrollY = (
+    window.scrollY + (useInnerHeight ? window.innerHeight : 0)
+  );
+  // Sends scroll progress in percentage.
+  return ((scrollY * 100) / height);
+}
 
 /**
  * @description Stops an auto scrolling
@@ -67,31 +88,6 @@ function scrollTo (id) {
       block: "start"
     });
   }
-}
-
-/**
- * @description Calculates and
- * 	returns the scroll bar
- * 	progress in percentage.
- * @function getScrollPercent
- * @public
- * @returns {Number} Number
- */
-function getScrollPercent () {
-  // The current scroll y axis.
-  const scrollY = (
-    Math.round (window.scrollY)
-      + window.innerHeight
-  );
-  // The document height size.
-  const height = (
-    document.body.offsetHeight
-  );
-  // Returns the current progress
-  // in percentage.
-  return Math.round (
-    (scrollY * 100) / height
-  );
 }
 
 /**
