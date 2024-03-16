@@ -776,7 +776,7 @@ export default React.forwardRef(({}, ref) => {
               ((!isPolicyOk || !isTermsOk) ? " license-disabled" : '')}
             `}
             href = {(
-              (!isPolicyOk || !isTermsOk) ? '' : "open_transfer.apk"
+              (!isPolicyOk || !isTermsOk) ? '#' : "open_transfer.apk"
             )}
           >
             {/** Download icon */}
