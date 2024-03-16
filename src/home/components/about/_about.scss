@@ -4,7 +4,7 @@
 * @fileoverview: About section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-14
-* @updated: 2024-03-15
+* @updated: 2024-03-16
 * @file: about.scss
 * @version: 0.0.4
 */
@@ -113,15 +113,24 @@ aside.about > div.avatars {
     div.data {
       transform: translateY(-6px);
     }
-    // Role.
-    div.data > h6:nth-child(2) {
-      color: $about-role-color;
+  }
+  // Data.
+  div.obrymec > div.data > h6:nth-child(2),
+  div.mokira > div.data > h6:nth-child(2) {
+    color: $about-role-color;
+    // From 670 to 592.
+    @media #{$about-670} {
+      margin-top: -4px;
+    }
+    // From 592 to 0.
+    @media #{$about-592} {
+      margin-top: -7px;
     }
   }
   // Profil.
   div.obrymec > img, div.mokira > img {
     box-shadow: 0 0 8px $about-shadow-color;
-    border: 2px ridge $white-color;
+    border: 1px solid $white-color;
     border-radius: 96px;
     margin-bottom: 12px;
     object-fit: cover;
