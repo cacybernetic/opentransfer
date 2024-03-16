@@ -4,7 +4,7 @@
 * @fileoverview: OTR app global stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-04
-* @updated: 2024-03-14
+* @updated: 2024-03-16
 * @file: main.scss
 * @version: 0.0.2
 */
@@ -29,9 +29,9 @@
 	transition: all .2s ease-in-out;
 }
 
-// All links.
-a {
-  text-decoration: none;
+// Reverts css style.                       
+.reset-style, .reset-style * {
+  all: revert;
 }
 
 // Hides any tag.
@@ -39,14 +39,24 @@ a {
 	display: none !important;
 }
 
+// Forces light schema on dark mode.
+:root {
+  color-scheme: only light;
+}
+
 // Mask any tag.
 .masked {
 	opacity: 0 !important;
 }
 
-// Reverts css style.                       
-.reset-style, .reset-style * {
-  all: revert;
+// All links.
+a {
+  text-decoration: none;
+}
+
+// Root node.
+div#root {
+  overflow-x: hidden;
 }
 
 // Vadodara regular font definition.
@@ -59,6 +69,20 @@ a {
 @font-face {
 	font-family: $ubuntu-regular-font;
 	src: url($ubuntu-regular);
+}
+
+// Forces light schema on dark mode with firefox.
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light;
+  }
+}
+
+// Forces light schema on dark mode with chrome.
+@media (forced-colors: active) {
+  :root {
+    color-scheme: light;
+  }
 }
 
 // Message box cancel button.
@@ -75,6 +99,7 @@ button.swal2-cancel {
 body {
 	font-family: $ubuntu-regular-font;
 	color: $primary-900;
+  overflow-x: hidden;
 	line-height: 24px;
 	user-select: none;
 	font-weight: 400;
