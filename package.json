@@ -1,5 +1,6 @@
 {
   "description": "Open Transfer mobile app landing page website.",
+  "homepage": "https://cacybernetic.github.io/opentransfer",
   "author": "Obrymec - obrymecsprinces@gmail.com",
   "name": "open-transfer-web",
   "main": "./index.html",
@@ -18,11 +19,13 @@
     "vite-plugin-minify": "^1.5.2",
     "vite-plugin-pwa": "^0.19.2",
     "react-dom": "^18.2.0",
+    "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "sass": "^1.71.1"
   },
   "scripts": {
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "deploy": "yarn build && gh-pages -d ./dist",
     "preview": "vite preview",
     "build": "vite build",
     "dev": "vite"
@@ -30,8 +33,8 @@
   "devDependencies": {
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "@vitejs/plugin-react": "^4.2.1",
     "eslint-plugin-react": "^7.33.2",
+    "@vitejs/plugin-react": "^4.2.1",
     "@types/react-dom": "^18.2.19",
     "@types/react": "^18.2.56",
     "eslint": "^8.56.0",
