@@ -4,7 +4,7 @@
 * @fileoverview The terms view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-11
-*	@updated 2024-03-14
+*	@updated 2024-03-16
 *	@file terms.jsx
 *	@version 0.0.3
 */
@@ -23,20 +23,34 @@ export default React.forwardRef(({}, ref) => {
   const [isPolicyOk, setPolicyState] = React.useState(false);
   const [isTermsOk, setTermsState] = React.useState(false);
   const [value, setValue] = React.useState('1');
+  const terms = React.useRef(null);
   const popup = React.useRef(null);
+
+  // Calculates popup size.
+  const computePopupSizes = React.useCallback(() => {
+    // Whether width is less than or equal to 412.
+    if (window.innerWidth <= 412) {
+      // Adjusts popup height.
+      popup.current.style.height = `${(window.innerHeight - 96)}px`;
+      // Adjusts popup width.
+      popup.current.style.width = `${(window.innerWidth - 32)}px`;
+    // Otherwise.
+    } else popup.current.style = {};
+  // Dependencies.
+  }, [popup]);
 
   // Toggles visibility of license popup.
   const togglePopup = React.useCallback(() => {
     // Whether popup is already displayed.
-    if (popup?.current?.classList?.contains("license-displayed")) {
+    if (terms.current?.classList?.contains("license-displayed")) {
       // Hides it.
-      popup?.current?.classList?.remove("license-displayed");
+      terms.current?.classList?.remove("license-displayed");
       // Shows body scrollbar. 
       document.body.style.overflowY = '';
     // Otherwise.
     } else {
       // Shows it.
-      popup?.current?.classList?.add("license-displayed");
+      terms.current?.classList?.add("license-displayed");
       // Hides body scrollbar.
       document.body.style.overflowY = "hidden";
       // Resets privacy policy state.
@@ -45,20 +59,27 @@ export default React.forwardRef(({}, ref) => {
       setTermsState(false);
     }
   // Dependencies.
-  }, [popup]);
+  }, [terms]);
 
   // Called when component get mounted.
   React.useEffect(() => {
+    // Listens `resize` event.
+    window.addEventListener("resize", computePopupSizes);
     // Exports public methods.
     ref.current = {togglePopup};
+    // Computes popup sizes.
+    computePopupSizes();
   });
 
   // Builds jsx elements.
   return <aside
-    className = "license" ref = {popup} onClick = {togglePopup}
+    className = "license" ref = {terms} onClick = {togglePopup}
   >
     {/** Popup */}
-    <div className = "popup" onClick = {e => e.stopPropagation()}>
+    <div
+      className = "popup" onClick = {e => e.stopPropagation()}
+      ref = {popup}
+    >
       {/** Header */}
       <div className = "license-header">
         {/** Dropdown */}
@@ -755,7 +776,7 @@ export default React.forwardRef(({}, ref) => {
               ((!isPolicyOk || !isTermsOk) ? " license-disabled" : '')}
             `}
             href = {(
-              (!isPolicyOk || !isTermsOk) ? '#' : "/open_transfer.apk"
+              (!isPolicyOk || !isTermsOk) ? '' : "open_transfer.apk"
             )}
           >
             {/** Download icon */}

@@ -4,7 +4,7 @@
 * @fileoverview: Terms section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-11
-* @updated: 2024-03-13
+* @updated: 2024-03-16
 * @file: terms.scss
 * @version: 0.0.4
 */
@@ -33,6 +33,7 @@ aside.license > div.popup {
   cursor: auto;
   // From 412 to 0.
   @media #{$terms-412} {
+    height: 420px;
     width: 250px;
   }
 }
