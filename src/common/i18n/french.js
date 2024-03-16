@@ -322,7 +322,7 @@ const french = {
     tr71: "Visitez qu'en même",
     tr72: "Déplier",
     tr73: "Plier",
-    tr74: "Comment pouvons-nous vous aidez ?",
+    tr74: "Bésoin d'aide ?",
     tr75: "Apprendre plus sur l'application Open Transfer.",
     tr76: "En lire plus",
     tr77: `
