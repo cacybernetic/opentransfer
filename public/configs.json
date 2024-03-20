@@ -108,11 +108,11 @@
                       "label": "{option}",
                       "options": [
                         {
-                          "label": "22",
+                          "label": "tr22",
                           "value": 1
                         },
                         {
-                          "label": "78",
+                          "label": "tr78",
                           "value": 2
                         }
                       ]
