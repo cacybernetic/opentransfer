@@ -4,7 +4,7 @@
 * @fileoverview: About section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-14
-* @updated: 2024-03-16
+* @updated: 2024-03-23
 * @file: about.scss
 * @version: 0.0.4
 */
@@ -183,7 +183,7 @@ aside.about {
   }
   // Developers.
   div.sponsors > span {
-    color: $about-text-color;
+    color: $primary-400;
     font-weight: 700;
     font-size: 32px;
     // From 912 to 670.
@@ -193,7 +193,7 @@ aside.about {
   }
   // Title.
   & > span:nth-child(1) {
-    color: $about-text-color;
+    color: $primary-400;
     margin-bottom: 72px;
     font-weight: bold;
     font-size: 64px;

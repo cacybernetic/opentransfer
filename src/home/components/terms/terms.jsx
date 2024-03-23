@@ -4,7 +4,7 @@
 * @fileoverview The terms view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-11
-*	@updated 2024-03-16
+*	@updated 2024-03-23
 *	@file terms.jsx
 *	@version 0.0.3
 */
@@ -26,16 +26,12 @@ export default React.forwardRef(({}, ref) => {
   const terms = React.useRef(null);
   const popup = React.useRef(null);
 
-  // Calculates popup size.
+  // Calculates popup size. 
   const computePopupSizes = React.useCallback(() => {
-    // Whether width is less than or equal to 412.
-    if (window.innerWidth <= 412) {
-      // Adjusts popup height.
-      popup.current.style.height = `${(window.innerHeight - 96)}px`;
-      // Adjusts popup width.
-      popup.current.style.width = `${(window.innerWidth - 32)}px`;
-    // Otherwise.
-    } else popup.current.style = {};
+		// Adjusts popup height.
+		popup.current.style.height = `${(window.innerHeight - 96)}px`;
+		// Adjusts popup width.
+		popup.current.style.width = `${(window.innerWidth - 32)}px`;
   // Dependencies.
   }, [popup]);
 

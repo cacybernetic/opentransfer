@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-16
+* @updated 2024-03-23
 * @file french.js
 * @version 0.0.2
 * @type {French}
@@ -42,22 +42,22 @@ const french = {
     tr7: "Télécharger la version APK.",
     tr8: "Ne saisissez plus manuellement les codes USSD",
     tr9: `
-      Enfin une solution alternative aux pénibles codes 
-      USSD grâce à un support digital moderne adapté aux 
-      problèmes couramment relevés sur le terrain.
+			Enfin, une alternative aux codes USSD avec un support 
+			digital moderne adapté aux problèmes courants rencontrés 
+			sur le terrain.
     `,
     tr10: "L’obtenir sur",
     tr11: "Google Play",
     tr12: "Android APK",
     tr13: `
-      Open Transfer (OTR) fournit des fonctionnalités 
-      précise ne ciblant que les usage quotidiennent 
-      de la population sur les opérateurs réseau et 
-      nécessitant l'emploi de code USSD. Si vous désirez 
-      avoir un aperçu plus étendu sur l'application, 
-      ce <a href = "https://www.youtube.com/watch?v=_Q57Z8QLJdU"
-      target = "_blank" class = "feats-video-link">
-      tutoriel vidéo</a> peut vous aidez.
+			Open Transfer (OTR) fournit des fonctionnalités précises 
+			ne ciblant que les usages quotidiens de la population 
+			sur les opérateurs réseau et nécessitant l'emploi de 
+			code USSD. Si vous désirez avoir un aperçu plus 
+			étendu sur l'application, ce <a
+			href = "https://www.youtube.com/watch?v=_Q57Z8QLJdU"
+			target = "_blank" class = "feats-video-link">
+			tutoriel vidéo</a> peut vous aider.
     `,
 
     tr14: "Transfert d'argent",
@@ -65,7 +65,7 @@ const french = {
       Transférez de l'argent à vos proches, amis et 
       familles.
     `,
-    tr16: "Payement dans une boutique",
+    tr16: "Paiement dans une boutique",
     tr17: `
       Effectuez vos achats auprès de toute entité légale 
       qui accepte des paiements par le biais d'opérateurs 
@@ -78,8 +78,8 @@ const french = {
     `,
     tr20: "Consultation de solde",
     tr21: `
-      Accédez au montant actuel ou restant dans votre 
-      compte en fonction de votre opérateur réseau.
+			Choisissez de voir le montant actuel ou restant dans
+			votre compte en fonction de votre opérateur réseau.
     `,
     tr22: "Transfert autonome",
     tr23: `
@@ -103,7 +103,7 @@ const french = {
     tr33: `
       Il semble que votre navigateur vient d'être mis 
       hors internet. Vérifiez vos accessoires réseau 
-      (Wifi, router, etc...) et assurez d'être 
+      (Wifi, router, etc...) et assurez-vous d'être 
       correctement connecté à internet.
     `,
     tr34: `
@@ -115,8 +115,8 @@ const french = {
       Open Transfer est une application mobile autonome 
       conçut pour dispenser les citoyens étant sous un 
       opérateur réseau de saisir manuellement les codes 
-      USSD pour effectuer leurs tâches quotidiennent en 
-      leurs offrant une solution digitale dans le but 
+      USSD pour effectuer leurs tâches quotidiennes en 
+      leur offrant une solution digitale dans le but 
       d'automatiser la composition et le lancement des 
       codes USSD.
     `,
@@ -124,26 +124,26 @@ const french = {
     tr39: `
       Open Transfer est disponible aux citoyens possédant 
       un téléphone portable plus moderne (Smart phone, 
-      Android, Infinix, Itel, etc...) et utilisant au moins 
-      l'une des opérateurs réseau suivants: MTN ou MOOV.
+      Android, Infinix, Itel, etc.) et utilisant au moins 
+      l'un des opérateurs réseau suivant: MTN ou MOOV.
     `,
     tr40: "Pourquoi créer un tel service ?",
     tr41: `
       Suite à de nombreux études et interviews sur le sujet, 
       force est de constater que :<br/><br/>
       L'utilisateur doit avoir en mémoire le code associé 
-      à l'opération dont-il souhaite effectuée. Cela 
-      représente un handicape pour les vieilles personnes ou 
+      à l'opération qu'il souhaite effectuer. Cela 
+      représente un handicap pour les vieilles personnes ou 
       celles s'approchant de l'âge de la vieillesse, sans 
-      oublié que les codes USSD peuvent changés à n'importe 
+      oublier que les codes USSD peuvent changer à n'importe 
       quel moment, pénalisant ainsi l'utilisateur qui s'est 
       déjà habitué à l'emploi des anciens codes. C'est encore 
-      pire pour les personnes qui sont peu présent sur les 
+      pire pour les personnes qui sont peu présentes sur les 
       opérateurs réseau.<br/><br/>
       L'utilisateur se fatigue rapidement à cause du nombre 
       et de la longueur époustouflante des codes USSD à 
-      composer sans parlé des erreurs de frappe au cours de la 
-      composition ainsi que celles du réseau par moment ou à des 
+      composer sans parler des erreurs de frappe au cours de la 
+      composition ainsi que celles du réseau par moments ou à des 
       périodes données, obligeant ainsi ce dernier à recomposer 
       le code encore et encore. Cela est fâcheux à l'utilisateur 
       d'autant plus que ça lui perd inutilement du temps.<br/><br/>
@@ -153,7 +153,7 @@ const french = {
       que ces applications sont propres et centrées uniquement 
       sur leur réseau, obligeant ainsi l'utilisateur final à 
       télécharger et installer autant d'applications que de 
-      réseaux qu'il souhaiterait utilisés. Ce dernier devra donc 
+      réseaux qu'il souhaiterait utiliser. Ce dernier devra donc 
       avoir une application par réseau surchargeant inutilement 
       la mémoire de stockage de son appareil tout en sachant 
       que toutes ces mêmes applications ont des services en 
@@ -161,7 +161,7 @@ const french = {
     `,
     tr42: "Comment ça marche ?",
     tr43: `
-      Open Transfer fournit à la place du terminal sorbre intégré 
+      Open Transfer fournit à la place du terminal sobre intégré 
       au système d'exploitation de l'appareil, une interface 
       simple d'utilisation et intuitif, réduisant considérablement 
       les probabilités de commettre des erreurs de saisie et encore 
@@ -171,14 +171,14 @@ const french = {
       choisi.
     `,
     tr44: `
-      Doit-on forcément activé les données mobile pour 
+      Doit-on forcément activé les données mobiles pour 
       utiliser Open Transfer ?
     `,
     tr45: `
-      Open Transfer n'a pas bésoin de données mobile, ni 
-      internet d'ailleur. Cette application peut être aussi 
+      Open Transfer n'a pas besoin de données mobiles, ni 
+      internet d'ailleurs. Cette application peut être aussi 
       bien utilisée en ligne qu'hors ligne. Elle reste 
-      accessible à n'importe quel moment peut importe vos 
+      accessible à n'importe quel moment peu importe vos 
       conditions réseau.
     `,
     tr46: "Peut-on faire des transferts inter-réseau ?",
@@ -190,13 +190,13 @@ const french = {
       une telle fonctionnalité.
     `,
     tr48: `
-      Somme-nous obliger de créer un compte sur Open Transfer 
+      Sommes-nous obligés à créer un compte sur Open Transfer 
       avant son utilisation ?
     `,
     tr49: `
-      Open Transfer a été à la base réalisé pour vous assistez 
-      et vous aidez dans vos opérations quotidiennent avec vos 
-      opérateurs réseau. Vous n'avez pas bésoin de créer un 
+      Open Transfer a été à la base réalisée pour vous assistez 
+      et vous aidez dans vos opérations quotidiennes avec vos 
+      opérateurs réseau. Vous n'avez pas besoin de créer un 
       compte sur celle-ci et encore moins de s'authentifier 
       avant toute utilisation.
     `,
@@ -205,7 +205,7 @@ const french = {
       Open Transfer n'est qu'un simple outil. A part les frais 
       de base imposés par vos opérateurs réseau habituel, aucun 
       frais supplémentaire n'est prélevé, que cela soit sur vos 
-      paiements, achats, etc... En d'autres termes, c'est 100% 
+      paiements, achats, etc. En d'autres termes, c'est 100% 
       gratuit du téléchargement à la consommation de tous les 
       services fournis.
     `,
@@ -305,7 +305,7 @@ const french = {
     `,
     tr68: `
       Trouvez ici les réponses à toutes vos questions ou 
-      préaucupations. Si vous n'êtes pas toujours satisfait(e), 
+      préocupations. Si vous n'êtes pas toujours satisfait(e), 
       alors <span class = "faqs-contact-us">contactez-nous
       </span> pour plus de renseignement et d'éclaircissement.
     `,

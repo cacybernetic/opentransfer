@@ -4,7 +4,7 @@
 * @fileoverview: Faqs section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-08
-* @updated: 2024-03-16
+* @updated: 2024-03-23
 * @file: faqs.scss
 * @version: 0.0.4
 */
@@ -27,7 +27,6 @@ div.faqs-qst-deployed {
 div.faqs-full-qst {
   grid-template-columns: 1fr 1fr;
   align-items: start;
-  overflow-x: hidden;
   display: grid;
   gap: 32px;
   // From 670 to 592.

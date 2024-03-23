@@ -4,13 +4,22 @@
 * @fileoverview: Terms section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-11
-* @updated: 2024-03-16
+* @updated: 2024-03-23
 * @file: terms.scss
 * @version: 0.0.4
 */
 
 // Custom dependencies.
 @import "./_variables.scss";
+
+// Popup.
+aside.license > div.popup {
+  background-color: $white-color;
+  flex-direction: column;
+  border-radius: 6px;
+  display: flex;
+  cursor: auto;
+}
 
 // Displays license popup.
 aside.license-displayed {
@@ -20,21 +29,6 @@ aside.license-displayed {
   // Enables dropdown.
   select {
     pointer-events: auto !important;
-  }
-}
-
-// Popup.
-aside.license > div.popup {
-  background-color: $white-color;
-  flex-direction: column;
-  border-radius: 6px;
-  display: flex;
-  height: 560px;
-  cursor: auto;
-  // From 412 to 0.
-  @media #{$terms-412} {
-    height: 420px;
-    width: 250px;
   }
 }
 

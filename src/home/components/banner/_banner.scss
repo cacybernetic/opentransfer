@@ -4,7 +4,7 @@
 * @fileoverview: Banner section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-05
-* @updated: 2024-03-16
+* @updated: 2024-03-23
 * @file: banner.scss
 * @version: 0.0.4
 */
@@ -34,8 +34,9 @@ div.banner-content {
   background-color: $banner-bg-color;
   justify-content: space-between;
   padding: 96px 50px 12px 50px;
-  display: inline-flex;
+  display: inline-flex; 
   position: relative;
+	width: 100%;
   z-index: 1;
   // From 812 to 620.
   @media #{$banner-812} {
