@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-23
+* @updated 2024-03-25
 * @file french.js
 * @version 0.0.2
 * @type {French}
@@ -78,8 +78,8 @@ const french = {
     `,
     tr20: "Consultation de solde",
     tr21: `
-			Choisissez de voir le montant actuel ou restant dans
-			votre compte en fonction de votre opérateur réseau.
+      Accédez au montant actuel ou restant dans votre 
+      compte en fonction de votre opérateur réseau.
     `,
     tr22: "Transfert autonome",
     tr23: `
