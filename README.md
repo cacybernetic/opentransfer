@@ -54,7 +54,7 @@ yarn --version
 
 ### Sources code cloning <a id = "cloning"></a>
 ```sh
-git clone git@github.com:cacybernetic/opentransfer.git open_transfer/
+git clone git@gitlab.com:console_art/otrws.git open_transfer/
 ```
 
 ### Dependencies installation <a id = "dev-install"></a>
