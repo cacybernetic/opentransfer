@@ -4,7 +4,7 @@
 * @fileoverview The terms view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-11
-*	@updated 2024-04-02
+*	@updated 2024-04-03
 *	@file terms.jsx
 *	@version 0.0.3
 */
@@ -15,6 +15,7 @@ import React from "react";
 // Custom dependencies.
 import lang from "../../../common/utils/language/language.js";
 import downloadIcon from "/assets/icons/download.svg";
+import warningIcon from "/assets/icons/warn.svg";
 import closeIcon from "/assets/icons/close.svg";
 
 // License view section.
@@ -759,6 +760,17 @@ export default React.forwardRef(({}, ref) => {
           <label htmlFor = "privacy" dangerouslySetInnerHTML = {{
             __html: lang.getText("tr90")
           }}></label>
+        </div>
+        {/** Warning message */}
+        <div className = "warning">
+          {/** Icon */}
+          <img
+            alt = "App compatibility warning icon."
+            src = {warningIcon} height = {18}
+            width = {18}
+          />
+          {/** Message */}
+          <span>{lang.getText("tr93")}</span>
         </div>
         {/** Bottom options */}
         <div className = "bottom-buttons">

@@ -4,7 +4,7 @@
 * @fileoverview: Banner section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-05
-* @updated: 2024-03-23
+* @updated: 2024-04-03
 * @file: banner.scss
 * @version: 0.0.4
 */
@@ -36,6 +36,7 @@ div.banner-content {
   padding: 96px 50px 12px 50px;
   display: inline-flex; 
   position: relative;
+  column-gap: 32px;
 	width: 100%;
   z-index: 1;
   // From 812 to 620.
@@ -76,6 +77,10 @@ div.banner-left-part {
   @media #{$banner-620} {
     row-gap: 16px;
     width: auto;
+  }
+  // Warning section.
+  div.warning {
+    margin-bottom: 24px;
   }
   // Description.
   & > span:nth-child(2) {

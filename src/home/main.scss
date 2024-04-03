@@ -4,7 +4,7 @@
 * @fileoverview: OTR app global stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-04
-* @updated: 2024-03-16
+* @updated: 2024-04-03
 * @file: main.scss
 * @version: 0.0.2
 */
@@ -113,6 +113,17 @@ h2.swal2-title {
   // From 920 to 0.
   @media #{$otr-920} {
     font-size: 1.5rem !important;
+  }
+}
+
+// Warning section.
+div.warning {
+  color: $secondary-900;
+  line-height: 16px;
+  font-size: 12px;
+  // Warn icon.
+  img {
+    transform: translateY(-3.5px);
   }
 }
 

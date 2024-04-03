@@ -4,7 +4,7 @@
 * @fileoverview: Terms section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-11
-* @updated: 2024-03-23
+* @updated: 2024-04-03
 * @file: terms.scss
 * @version: 0.0.4
 */
@@ -148,6 +148,13 @@ div.license-footer {
   @media #{$terms-592} {
     font-size: 12px;
     padding: 10px;
+  }
+  // Warning section.
+  div.warning {
+    filter: brightness(90%);
+    font-weight: bold;
+    margin-left: -2px;
+    margin-top: 10px;
   }
   // Bottom buttons.
   div.bottom-buttons {
