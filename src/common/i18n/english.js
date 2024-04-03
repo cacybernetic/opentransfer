@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-16
+* @updated 2024-04-02
 * @file english.js
 * @type {English}
 * @version 0.0.2
@@ -344,7 +344,12 @@ const english = {
       >privacy policy</a>.
     `,
     tr91: "Contributors",
-    tr92: "Back to the landing page"
+    tr92: "Back to the landing page",
+		tr93: `
+			SIM selection may not work properly on some devices 
+			due to the diversity of Android operating systems 
+			within the respective manufacturers.
+		`
   }
 };
 

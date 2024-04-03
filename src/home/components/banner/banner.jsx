@@ -4,7 +4,7 @@
 * @fileoverview The banner view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-05
-*	@updated 2024-03-13
+*	@updated 2024-04-02
 *	@file banner.jsx
 *	@version 0.0.3
 */
@@ -14,8 +14,9 @@ import React from "react";
 
 // Custom dependencies.
 import {ScrollManager} from "../../../common/utils/scroll/scroll.js";
+import screenshot1en from "/assets/images/screenshot_1_en.png";
+import screenshot1fr from "/assets/images/screenshot_1_fr.png";
 import lang from "../../../common/utils/language/language.js";
-import homeScreen from "/assets/images/home_screen.png";
 import arrowIcon from "/assets/icons/bottom_arrow.svg";
 import background from "/assets/images/background.png";
 import androidIcon from "/assets/icons/android.svg";
@@ -23,6 +24,7 @@ import androidIcon from "/assets/icons/android.svg";
 // Banner view section.
 export default function Banner({onEnter, onDownload}) {
   // Attributes.
+  const activeLangId = lang.getActiveLanguage()?.id;
   const banner = React.useRef(null);
 
   // Called when component get mounted.
@@ -79,8 +81,8 @@ export default function Banner({onEnter, onDownload}) {
       <div className = "banner-right-part">
         {/** Mobile app home screen */}
         <img
+          src = {(activeLangId === 0 ? screenshot1en : screenshot1fr)}
           alt = "Application home screen."
-          src = {homeScreen}
           height = {480}
           width = {320}
         />

@@ -4,7 +4,7 @@
 * @fileoverview The features view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-06
-*	@updated 2024-03-13
+*	@updated 2024-04-02
 *	@file features.jsx
 *	@version 0.0.4
 */
@@ -14,11 +14,14 @@ import React from "react";
 
 // Custom dependencies.
 import {ScrollManager} from "../../../common/utils/scroll/scroll.js";
+import screenshot1en from "/assets/images/screenshot_2_en.png";
+import screenshot1fr from "/assets/images/screenshot_2_fr.png";
+import screenshot2en from "/assets/images/screenshot_3_en.png";
+import screenshot2fr from "/assets/images/screenshot_3_fr.png";
+import screenshot3en from "/assets/images/screenshot_4_en.png";
+import screenshot3fr from "/assets/images/screenshot_4_fr.png";
 import lang from "../../../common/utils/language/language.js";
 import rightArrowIcon from "/assets/icons/arrow_right.svg";
-import screenshot1 from "/assets/images/screenshot_1.png";
-import screenshot2 from "/assets/images/screenshot_2.png";
-import screenshot3 from "/assets/images/screenshot_3.png";
 import leftArrowIcon from "/assets/icons/left_arrow.svg";
 import downArrowIcon from "/assets/icons/down_arrow.svg";
 import transferIcon from "/assets/icons/exchange.svg";
@@ -30,27 +33,28 @@ import payIcon from "/assets/icons/pay.svg";
 // Features view section.
 export default function Features({onEnter}) {
   // Attributes.
+  const activeLangId = lang.getActiveLanguage()?.id;
   const [index, setIndex] = React.useState(0);
   const feature = React.useRef(null);
   const matrix = React.useRef(null);
   const infos = React.useRef(null);
   const features = [
     {
+      screenshot: (activeLangId === 0 ? screenshot1en : screenshot1fr),
       description: lang.getText("tr21"),
       title: lang.getText("tr20"),
-      screenshot: screenshot1,
       icon: balanceIcon
     },
     {
+      screenshot: (activeLangId === 0 ? screenshot2en : screenshot2fr),
       description: lang.getText("tr15"),
       title: lang.getText("tr14"),
-      screenshot: screenshot2,
       icon: transferIcon
     },
     {
+      screenshot: (activeLangId === 0 ? screenshot3en : screenshot3fr),
       description: lang.getText("tr17"),
       title: lang.getText("tr16"),
-      screenshot: screenshot3,
       icon: payIcon
     }
   ];

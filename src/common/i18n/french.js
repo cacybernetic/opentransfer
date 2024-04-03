@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-03-25
+* @updated 2024-04-02
 * @file french.js
 * @version 0.0.2
 * @type {French}
@@ -78,8 +78,8 @@ const french = {
     `,
     tr20: "Consultation de solde",
     tr21: `
-      Accédez au montant actuel ou restant dans votre 
-      compte en fonction de votre opérateur réseau.
+			Choisissez de voir le montant actuel ou restant dans
+			votre compte en fonction de votre opérateur réseau.
     `,
     tr22: "Transfert autonome",
     tr23: `
@@ -373,7 +373,12 @@ const french = {
       >politiques de confidentialité</a>.
     `,
     tr91: "Contributeurs",
-    tr92: "Retour à la page d'accueil"
+    tr92: "Retour à la page d'accueil",
+		tr93: `
+			La sélection de SIM peut ne pas correctement travailler sur 
+			certains appareils en raison de la diversité des systèmes 
+			d'exploitation Android au sein des fabricants respectifs.
+		`
   }
 };
 
