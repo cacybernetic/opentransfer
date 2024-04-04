@@ -4,7 +4,7 @@
 * @fileoverview: Banner section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-05
-* @updated: 2024-04-03
+* @updated: 2024-04-04
 * @file: banner.scss
 * @version: 0.0.4
 */
@@ -77,10 +77,6 @@ div.banner-left-part {
   @media #{$banner-620} {
     row-gap: 16px;
     width: auto;
-  }
-  // Warning section.
-  div.warning {
-    margin-bottom: 24px;
   }
   // Description.
   & > span:nth-child(2) {

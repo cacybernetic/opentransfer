@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-04-02
+* @updated 2024-04-04
 * @file english.js
 * @type {English}
 * @version 0.0.2
@@ -52,11 +52,8 @@ const english = {
     tr13: `
       Open Transfer (OTR) provides specific functionalities 
       targeting only the daily use of the population on 
-      network operators and requiring the use of USSD code. 
-      If you wish have a more extensive overview of the 
-      application, this <a href = "https://www.youtube.com/watch?v=_Q57Z8QLJdU"
-      target = "_blank" class = "feats-video-link">
-      video tutorial</a> can help you.
+      network operators and requiring the use of USSD 
+      code.
     `,
     tr14: "Money transfer",
     tr15: `

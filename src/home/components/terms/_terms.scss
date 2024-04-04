@@ -4,7 +4,7 @@
 * @fileoverview: Terms section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-11
-* @updated: 2024-04-03
+* @updated: 2024-04-04
 * @file: terms.scss
 * @version: 0.0.4
 */
@@ -149,13 +149,6 @@ div.license-footer {
     font-size: 12px;
     padding: 10px;
   }
-  // Warning section.
-  div.warning {
-    filter: brightness(90%);
-    font-weight: bold;
-    margin-left: -2px;
-    margin-top: 10px;
-  }
   // Bottom buttons.
   div.bottom-buttons {
     justify-content: flex-end;
@@ -167,6 +160,20 @@ div.license-footer {
     // From 412 to 0.
     @media #{$terms-412} {
       justify-content: center;
+    }
+  }
+  // Warning section.
+  div.warning {
+    filter: brightness(90%);
+    color: $secondary-900;
+    font-weight: bold;
+    margin-left: -2px;
+    line-height: 16px;
+    margin-top: 10px;
+    font-size: 12px;
+    // Warn icon.
+    img {
+      transform: translateY(-3.5px);
     }
   }
   // Checkboxes.

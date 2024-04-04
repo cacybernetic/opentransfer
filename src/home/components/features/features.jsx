@@ -4,7 +4,7 @@
 * @fileoverview The features view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-06
-*	@updated 2024-04-02
+*	@updated 2024-04-04
 *	@file features.jsx
 *	@version 0.0.4
 */
@@ -34,7 +34,7 @@ import payIcon from "/assets/icons/pay.svg";
 export default function Features({onEnter}) {
   // Attributes.
   const activeLangId = lang.getActiveLanguage()?.id;
-  const [index, setIndex] = React.useState(0);
+  const [index, setIndex] = React.useState(1);
   const feature = React.useRef(null);
   const matrix = React.useRef(null);
   const infos = React.useRef(null);
@@ -155,9 +155,9 @@ export default function Features({onEnter}) {
       {/** Line */}
       <div className = "line">
         {/** Balance consultation */}
-        {buildFeature(0, true, tooltip, turn)}
+        {buildFeature(0, false, tooltip, turn)}
         {/** Money transfer */}
-        {buildFeature(1, false, tooltip, turn)}
+        {buildFeature(1, true, tooltip, turn)}
         {/** Shop payment */}
         {buildFeature(2, false, tooltip, turn)}
       </div>

@@ -4,7 +4,7 @@
 * @fileoverview The banner view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-05
-*	@updated 2024-04-03
+*	@updated 2024-04-04
 *	@file banner.jsx
 *	@version 0.0.3
 */
@@ -20,7 +20,6 @@ import lang from "../../../common/utils/language/language.js";
 import arrowIcon from "/assets/icons/bottom_arrow.svg";
 import background from "/assets/images/background.png";
 import androidIcon from "/assets/icons/android.svg";
-import warningIcon from "/assets/icons/warn.svg";
 
 // Banner view section.
 export default function Banner({onEnter, onDownload}) {
@@ -76,17 +75,6 @@ export default function Banner({onEnter, onDownload}) {
               />
             </div>
           </a>
-        </div>
-        {/** Warning message */}
-        <div className = "warning">
-          {/** Icon */}
-          <img
-            alt = "App compatibility warning icon."
-            src = {warningIcon} height = {18}
-            width = {18}
-          />
-          {/** Message */}
-          <span>{lang.getText("tr93")}</span>
         </div>
       </div>
       {/** Right part */}

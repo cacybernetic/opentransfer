@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-04-02
+* @updated 2024-04-04
 * @file french.js
 * @version 0.0.2
 * @type {French}
@@ -53,13 +53,8 @@ const french = {
 			Open Transfer (OTR) fournit des fonctionnalités précises 
 			ne ciblant que les usages quotidiens de la population 
 			sur les opérateurs réseau et nécessitant l'emploi de 
-			code USSD. Si vous désirez avoir un aperçu plus 
-			étendu sur l'application, ce <a
-			href = "https://www.youtube.com/watch?v=_Q57Z8QLJdU"
-			target = "_blank" class = "feats-video-link">
-			tutoriel vidéo</a> peut vous aider.
+			code USSD.
     `,
-
     tr14: "Transfert d'argent",
     tr15: `
       Transférez de l'argent à vos proches, amis et 
