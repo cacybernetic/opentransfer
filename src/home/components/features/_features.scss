@@ -4,7 +4,7 @@
 * @fileoverview: Features section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-06
-* @updated: 2024-04-03
+* @updated: 2024-04-15
 * @file: features.scss
 * @version: 0.0.5
 */
@@ -24,6 +24,22 @@ a.feats-video-link {
   &:hover {
     color: $primary-400;
   }
+}
+
+// App preview section.
+div.preview {
+	transform: translate3d(0, 0, 0);
+	// Video slide.
+	video {
+		transform: scale(0.945, 0.96) translateX(-0.5px);
+		border-radius: 14px;
+		position: fixed;
+		z-index: 1;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		top: 0;
+	}
 }
 
 // Content.

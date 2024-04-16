@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-04-04
+* @updated 2024-04-15
 * @file english.js
 * @type {English}
 * @version 0.0.2
@@ -345,7 +345,8 @@ const english = {
 		tr93: `
 			SIM selection may not work properly on some devices 
 			due to the diversity of Android operating systems 
-			within the respective manufacturers.
+			within the respective manufacturers. This app will 
+			only work on Android 8.0 and above.
 		`
   }
 };

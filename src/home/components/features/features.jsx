@@ -4,7 +4,7 @@
 * @fileoverview The features view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-06
-*	@updated 2024-04-04
+*	@updated 2024-04-15
 *	@file features.jsx
 *	@version 0.0.4
 */
@@ -14,6 +14,12 @@ import React from "react";
 
 // Custom dependencies.
 import {ScrollManager} from "../../../common/utils/scroll/scroll.js";
+import screenshot1fr4 from "/assets/images/screenshot_2_fr.mp4";
+import screenshot1en4 from "/assets/images/screenshot_2_en.mp4";
+import screenshot2fr4 from "/assets/images/screenshot_3_fr.mp4";
+import screenshot2en4 from "/assets/images/screenshot_3_en.mp4";
+import screenshot3fr4 from "/assets/images/screenshot_4_fr.mp4";
+import screenshot3en4 from "/assets/images/screenshot_4_en.mp4";
 import screenshot1en from "/assets/images/screenshot_2_en.png";
 import screenshot1fr from "/assets/images/screenshot_2_fr.png";
 import screenshot2en from "/assets/images/screenshot_3_en.png";
@@ -41,18 +47,21 @@ export default function Features({onEnter}) {
   const features = [
     {
       screenshot: (activeLangId === 0 ? screenshot1en : screenshot1fr),
+			video: (activeLangId === 0 ? screenshot1en4 : screenshot1fr4),
       description: lang.getText("tr21"),
       title: lang.getText("tr20"),
       icon: balanceIcon
     },
     {
       screenshot: (activeLangId === 0 ? screenshot2en : screenshot2fr),
+			video: (activeLangId === 0 ? screenshot2en4 : screenshot2fr4),
       description: lang.getText("tr15"),
       title: lang.getText("tr14"),
       icon: transferIcon
     },
     {
       screenshot: (activeLangId === 0 ? screenshot3en : screenshot3fr),
+			video: (activeLangId === 0 ? screenshot3en4 : screenshot3fr4),
       description: lang.getText("tr17"),
       title: lang.getText("tr16"),
       icon: payIcon
@@ -83,8 +92,10 @@ export default function Features({onEnter}) {
       if (matrix != null) matrix.current.classList.add("masked");
       // Adds `masked` class to infos.
       if (infos != null) infos.current.classList.add("masked");
+			// Removes the old video clip.
+			document.querySelector("div.preview > video").remove();
       // Gets lines.
-      const lines = document.querySelectorAll (
+      const lines = document.querySelectorAll(
         "div.features-slider > div.line"
       );
       // Corrects passed position index.
@@ -103,6 +114,24 @@ export default function Features({onEnter}) {
         if (matrix != null) matrix.current.classList.remove("masked");
         // Destroys `masked` class to infos.
         if (infos != null) infos.current.classList.remove("masked");
+				// Creates a source tag.
+				const source = document.createElement("source");
+				// Creates a video tag.
+				const video = document.createElement("video");
+				// Loads target video.
+				source.src = features[position].video;
+				// Sets video type.
+				source.type = "video/mp4";
+				// Launch video automatically.
+				video.autoplay = true;
+				// Disables sound emission.
+				video.muted = true;
+				// Enables infinite play.
+				video.loop = true;
+				// Adds loaded video.
+				video.appendChild(source);
+				// Adds video clip.
+				document.querySelector("div.preview").appendChild(video);
         // Adding `selected` class to new active feature.
         for (let line of lines) {
           // Adds it.
@@ -202,12 +231,22 @@ export default function Features({onEnter}) {
           {/** Shadow effect */}
           <div className = "shadow-effect"></div>
           {/** Screenshot */}
-          <img
-            src = {features[index].screenshot}
-            alt = "Mobile app screenshot."
-            height = {280}
-            width = {220}
-          />
+					<div className = "preview">
+						{/** Image */}
+						<img
+							src = {features[index].screenshot}
+							alt = "Mobile app screenshot."
+							height = {280}
+							width = {220}
+						/>
+						{/** Video */}
+						<video autoPlay muted loop>
+							<source
+								src = {features[index].video}
+								type = "video/mp4"
+							/>
+						</video>
+					</div>
         </div>
       </div>
       {/** Informations */}

@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-04-04
+* @updated 2024-04-15
 * @file french.js
 * @version 0.0.2
 * @type {French}
@@ -372,7 +372,9 @@ const french = {
 		tr93: `
 			La sélection de SIM peut ne pas correctement travailler sur 
 			certains appareils en raison de la diversité des systèmes 
-			d'exploitation Android au sein des fabricants respectifs.
+			d'exploitation Android au sein des fabricants respectifs. 
+			Cette application ne fonctionnera que sur Android 8.0 et 
+			supérieur.
 		`
   }
 };

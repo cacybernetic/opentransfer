@@ -4,7 +4,7 @@
 * @fileoverview: Terms section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-11
-* @updated: 2024-04-04
+* @updated: 2024-04-15
 * @file: terms.scss
 * @version: 0.0.4
 */
@@ -168,12 +168,17 @@ div.license-footer {
     color: $secondary-900;
     font-weight: bold;
     margin-left: -2px;
-    line-height: 16px;
+    line-height: 20px;
     margin-top: 10px;
-    font-size: 12px;
+    font-size: 14px;
+		// From 670 to 0.
+    @media #{$terms-670} {
+			line-height: 16px;
+      font-size: 12px;
+    }
     // Warn icon.
     img {
-      transform: translateY(-3.5px);
+      transform: translateY(-3px);
     }
   }
   // Checkboxes.

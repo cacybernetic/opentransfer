@@ -4,7 +4,7 @@
 * @fileoverview: Banner section stylesheets.
 * @supported: DESKTOP & MOBILE
 * @created: 2024-03-05
-* @updated: 2024-04-04
+* @updated: 2024-04-15
 * @file: banner.scss
 * @version: 0.0.4
 */
@@ -132,9 +132,9 @@ div.banner-downloads {
     display: inline-flex;
     border-radius: 6px;
     cursor: pointer;
-    // From 326 to 0.
-    @media #{$banner-326} {
-      width: 132px;
+    // From 620 to 0.
+    @media #{$banner-620} {
+      width: 148px;
     }
     // Hover.
     &:hover {
@@ -176,8 +176,8 @@ div.banner-downloads {
     flex-direction: column;
     padding: 0 2px 2px 2px;
     display: flex;
-    // From 326 to 0.
-    @media #{$banner-326} {
+    // From 620 to 0.
+    @media #{$banner-620} {
       width: 100%;
     }
   }

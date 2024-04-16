@@ -4,15 +4,15 @@
   "author": "Obrymec - obrymecsprinces@gmail.com",
   "name": "open-transfer-web",
   "main": "./index.html",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "license": "MIT",
   "private": false,
   "bugs": {
-    "url": "https://github.com/cacybernetic/opentransfer/issues"
+    "url": "https://gitlab.com/console_art/otrws/issues"
   },
   "repository": {
-    "url": "https://github.com/cacybernetic/opentransfer.git",
+    "url": "https://gitlab.com/console_art/otrws.git",
     "type": "git"
   },
   "dependencies": {
