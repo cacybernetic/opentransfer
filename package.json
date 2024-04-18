@@ -9,10 +9,10 @@
   "license": "MIT",
   "private": false,
   "bugs": {
-    "url": "https://gitlab.com/console_art/otrws/issues"
+    "url": "https://github.com/cacybernetic/opentransfer/issues"
   },
   "repository": {
-    "url": "https://gitlab.com/console_art/otrws.git",
+    "url": "https://github.com/cacybernetic/opentransfer.git",
     "type": "git"
   },
   "dependencies": {
