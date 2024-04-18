@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-04-15
+* @updated 2024-04-17
 * @file french.js
 * @version 0.0.2
 * @type {French}
@@ -42,9 +42,11 @@ const french = {
     tr7: "Télécharger la version APK.",
     tr8: "Ne saisissez plus manuellement les codes USSD",
     tr9: `
-			Enfin, une alternative aux codes USSD avec un support 
-			digital moderne adapté aux problèmes courants rencontrés 
-			sur le terrain.
+			Enfin une solution alternative aux pénibles code USSD 
+			pour effectuer des transferts MoMo sans frais (0f) 
+			grâce à une application mobile fonctionnant hors 
+			connexion adaptée aux problèmes des réseaux souvent 
+			rencontrés.
     `,
     tr10: "L’obtenir sur",
     tr11: "Google Play",
