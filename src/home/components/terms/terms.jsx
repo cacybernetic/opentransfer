@@ -4,7 +4,7 @@
 * @fileoverview The terms view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-11
-*	@updated 2024-04-03
+*	@updated 2024-04-20
 *	@file terms.jsx
 *	@version 0.0.3
 */
@@ -784,7 +784,8 @@ export default React.forwardRef(({}, ref) => {
               ((!isPolicyOk || !isTermsOk) ? " license-disabled" : '')}
             `}
             href = {(
-              (!isPolicyOk || !isTermsOk) ? '#' : "open_transfer_v0.5.0.apk"
+              (!isPolicyOk || !isTermsOk) ? '#'
+							: "open_transfer_v0.5.0b16.apk"
             )}
           >
             {/** Download icon */}
