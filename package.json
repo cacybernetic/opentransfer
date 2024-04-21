@@ -4,7 +4,7 @@
   "author": "Obrymec - obrymecsprinces@gmail.com",
   "name": "open-transfer-web",
   "main": "./index.html",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "license": "MIT",
   "private": false,
