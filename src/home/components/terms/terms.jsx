@@ -785,7 +785,7 @@ export default React.forwardRef(({}, ref) => {
             `}
             href = {(
               (!isPolicyOk || !isTermsOk) ? '#'
-							: "open_transfer_v0.5.0b16.apk"
+							: "open_transfer_v0.6.0b18.apk"
             )}
           >
             {/** Download icon */}
