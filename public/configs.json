@@ -14,9 +14,9 @@
           "passwordModel": "00000",
           "name": "MTN Benin",
           "prefixes": [
-            "50", "51", "52", "53", "54", "56",
-            "57", "59", "61", "62", "66", "67",
-            "69", "90", "91", "96", "97"
+            "0150", "0151", "0152", "0153", "0154", "0156",
+            "0157", "0159", "0161", "0162", "0166", "0167",
+            "0169", "0190", "0191", "0196", "0197"
           ],
           "keywords": [
             "mtn africa 229",
@@ -55,7 +55,7 @@
         },
         {
           "logoPath": "assets/logos/moov-money-1.png",
-          "phoneNumberModel": "00 00 00 00 00",
+          "phoneNumberModel": "00 00 00 00",
           "merchantNumberModel": "0000",
           "passwordModel": "0000",
           "name": "Moov Benin",
