@@ -4,7 +4,7 @@
 * @fileoverview The terms view section.
 * @supported DESKTOP & MOBILE
 *	@created 2024-03-11
-*	@updated 2024-04-20
+*	@updated 2025-05-31
 *	@file terms.jsx
 *	@version 0.0.3
 */

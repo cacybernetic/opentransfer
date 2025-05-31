@@ -4,7 +4,7 @@
 * @author Obrymec - obrymecsprinces@gmail.com
 * @supported DESKTOP & MOBILE
 * @created 2024-03-04
-* @updated 2024-04-20
+* @updated 2025-05-31
 * @file french.js
 * @version 0.0.2
 * @type {French}
@@ -358,7 +358,7 @@ const french = {
     `,
     tr86: "Nos services",
     tr87: "Décliner",
-    tr88: "Télécharger Open Transfer | v0.5.0b16",
+    tr88: "Télécharger Open Transfer | v0.6.0b18",
     tr89: `
       J'ai lu et j'accepte les <a target = "_blank" class = "terms"
       href = "https://www.termsfeed.com/live/7320699f-80dd-4375-8d3f-22cc7a79b945"
