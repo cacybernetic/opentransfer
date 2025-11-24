@@ -23,7 +23,7 @@ composition and launch of USSD codes.
 ## Access link <a id = "links"></a>
 The official website of Open Transfer may 
 be accessible via the link below :<br/>
-- https://cacybernetic.github.io/opentransfer
+- https://cacybernetic.github.io/opentransfer/
 
 ## Final result <a id = "result"></a>
 This is the final result of the project :<br/><br/>
