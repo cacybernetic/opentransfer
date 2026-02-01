@@ -1,5 +1,5 @@
 {
-  "version": "0.0.4",
+  "version": "0.0.5",
   "countries": [
     {
       "languageName": "Français",
@@ -55,14 +55,14 @@
         },
         {
           "logoPath": "assets/logos/moov-money-1.png",
-          "phoneNumberModel": "00 00 00 00",
+          "phoneNumberModel": "00 00 00 00 00",
           "merchantNumberModel": "0000",
           "passwordModel": "0000",
           "name": "Moov Benin",
           "prefixes": [
-            "55", "58", "60", "63", "64", "65",
-            "68", "92", "93", "94", "95", "98",
-            "99"
+            "0155", "0158", "0160", "0163", "0164", "0165",
+            "0168", "0192", "0193", "0194", "0195", "0198",
+            "0199"
           ],
           "keywords": [
             "etisalat africa 229",
@@ -97,11 +97,11 @@
                   "label": "shopPayment"
                 },
                 {
-                  "sequence": "*855*11#",
+                  "sequence": "*855*5#",
                   "label": "checkMoney"
                 },
                 {
-                  "sequence": "*855*1*1*{entityNumber}*{entityNumber}*{amount}*{option}*{OTR_ID}#",
+                  "sequence": "*855*1*1*1*{entityNumber}*{entityNumber}*{amount}*{option}*{OTR_ID}#",
                   "label": "uniformTransfer",
                   "params": [
                     {
